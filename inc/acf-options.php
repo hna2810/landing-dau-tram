@@ -629,7 +629,8 @@ function lx_register_acf_field_group() {
             ),
 
             // ══════════════════════════════════════════════════════════════════
-            // TAB 6: HƯỚNG DẪN SỬ DỤNG (Bao gồm ẢNH 18, 19, 20)
+            // ══════════════════════════════════════════════════════════════════
+            // TAB 6: HƯỚNG DẪN SỬ DỤNG (VIDEO 9:16 & 3 BƯỚC)
             // ══════════════════════════════════════════════════════════════════
             array(
                 'key' => 'field_tab_usage',
@@ -642,6 +643,43 @@ function lx_register_acf_field_group() {
                 'name' => 'lx_usage_title',
                 'type' => 'text',
                 'default_value' => 'Dễ dàng chăm sóc bé <em>mỗi ngày</em>',
+            ),
+            array(
+                'key' => 'field_lx_usage_subtitle',
+                'label' => __('Mô tả phụ tiêu đề', 'lx-landing'),
+                'name' => 'lx_usage_subtitle',
+                'type' => 'text',
+                'default_value' => 'Chỉ 3 bước đơn giản giúp con yêu ấm áp đường thở, ngủ sâu trọn giấc',
+            ),
+            array(
+                'key' => 'field_lx_usage_video_url',
+                'label' => __('🎬 URL Video 9:16 (YouTube Shorts, MP4 hoặc link video)', 'lx-landing'),
+                'name' => 'lx_usage_video_url',
+                'type' => 'text',
+                'instructions' => __('Dán link YouTube (Shorts/Watch) hoặc đường dẫn file MP4 dọc tỉ lệ 9:16.', 'lx-landing'),
+                'placeholder' => 'https://www.youtube.com/shorts/... hoặc https://.../video.mp4',
+            ),
+            array(
+                'key' => 'field_lx_usage_video_poster',
+                'label' => __('🖼️ Ảnh bìa / Poster video 9:16 (tùy chọn)', 'lx-landing'),
+                'name' => 'lx_usage_video_poster',
+                'type' => 'image',
+                'return_format' => 'url',
+                'instructions' => __('Ảnh bìa hiển thị trước khi bấm phát video (khuyên dùng tỉ lệ 9:16 hoặc 720×1280px).', 'lx-landing'),
+            ),
+            array(
+                'key' => 'field_lx_usage_video_badge',
+                'label' => __('Nhãn góc trên video', 'lx-landing'),
+                'name' => 'lx_usage_video_badge',
+                'type' => 'text',
+                'default_value' => 'HD 9:16 · HƯỚNG DẪN THỰC TẾ',
+            ),
+            array(
+                'key' => 'field_lx_usage_video_sub',
+                'label' => __('Dòng chữ chú thích dưới video', 'lx-landing'),
+                'name' => 'lx_usage_video_sub',
+                'type' => 'text',
+                'default_value' => 'Xem video 30s hướng dẫn mẹ thoa dầu tràm giữ ấm cho bé',
             ),
             array(
                 'key' => 'field_lx_usage_step1_title',
@@ -659,9 +697,9 @@ function lx_register_acf_field_group() {
                 'default_value' => 'Nhỏ 2 - 3 giọt vào chậu nước tắm ấm để giữ ấm cơ thể trong suốt quá trình tắm.',
             ),
             array(
-                'key' => 'field_lx_img_step1',
-                'label' => __('📷 ẢNH 18: Nhỏ 2–3 giọt vào chậu nước tắm ấm (800×600px, 4:3)', 'lx-landing'),
-                'name' => 'lx_img_step1',
+                'key' => 'field_lx_usage_step1_icon',
+                'label' => __('Bước 1 - Icon tùy chỉnh (để trống sẽ dùng icon vector bồn tắm mặc định)', 'lx-landing'),
+                'name' => 'lx_usage_step1_icon',
                 'type' => 'image',
                 'return_format' => 'url',
             ),
@@ -681,9 +719,9 @@ function lx_register_acf_field_group() {
                 'default_value' => 'Nhỏ vài giọt ra lòng bàn tay mẹ, xoa ấm rồi massage nhẹ nhàng lên cổ, ngực, lưng và lòng bàn chân của bé.',
             ),
             array(
-                'key' => 'field_lx_img_step2',
-                'label' => __('📷 ẢNH 19: Massage cổ, ngực, lưng, chân cho bé (800×600px, 4:3)', 'lx-landing'),
-                'name' => 'lx_img_step2',
+                'key' => 'field_lx_usage_step2_icon',
+                'label' => __('Bước 2 - Icon tùy chỉnh (để trống sẽ dùng icon vector massage mặc định)', 'lx-landing'),
+                'name' => 'lx_usage_step2_icon',
                 'type' => 'image',
                 'return_format' => 'url',
             ),
@@ -703,9 +741,9 @@ function lx_register_acf_field_group() {
                 'default_value' => 'Thoa một lượng nhỏ lên vùng da bị cắn để làm dịu ngứa.',
             ),
             array(
-                'key' => 'field_lx_img_step3',
-                'label' => __('📷 ẢNH 20: Thoa nhẹ lên vết muỗi đốt (800×600px, 4:3)', 'lx-landing'),
-                'name' => 'lx_img_step3',
+                'key' => 'field_lx_usage_step3_icon',
+                'label' => __('Bước 3 - Icon tùy chỉnh (để trống sẽ dùng icon vector khiên bảo vệ mặc định)', 'lx-landing'),
+                'name' => 'lx_usage_step3_icon',
                 'type' => 'image',
                 'return_format' => 'url',
             ),

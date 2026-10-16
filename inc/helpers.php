@@ -121,3 +121,86 @@ function lx_render_image_slot($field_name, $key, $title, $spec = '', $classes = 
 
     return $html;
 }
+
+/**
+ * Render 9:16 vertical video frame for Usage section
+ *
+ * @return string HTML
+ */
+function lx_render_usage_video() {
+    $video_url   = lx_get_field('lx_usage_video_url', 'option', '');
+    $poster_url  = lx_get_image_url('lx_usage_video_poster', '', 'full', 'option');
+    $badge_text  = lx_get_field('lx_usage_video_badge', 'option', 'HD 9:16 · HƯỚNG DẪN THỰC TẾ');
+    $video_sub   = lx_get_field('lx_usage_video_sub', 'option', 'Xem video 30s hướng dẫn mẹ dùng đúng cách');
+
+    // Parse YouTube ID if YouTube URL
+    $yt_id = '';
+    if (!empty($video_url) && preg_match('/(?:youtu\.be\/|youtube\.com\/(?:embed\/|v\/|watch\?v=|shorts\/))([\w-]{11})/', $video_url, $m)) {
+        $yt_id = $m[1];
+        if (empty($poster_url)) {
+            $poster_url = 'https://img.youtube.com/vi/' . $yt_id . '/maxresdefault.jpg';
+        }
+    }
+
+    $has_video = !empty($video_url) || !empty($yt_id);
+
+    ob_start();
+    ?>
+    <div class="usage-video-wrap reveal">
+      <div class="usage-phone-frame">
+        <div class="usage-phone-notch"></div>
+        <div class="usage-video-box" id="usageVideoBox"
+             data-has-video="<?php echo $has_video ? '1' : '0'; ?>"
+             data-yt-id="<?php echo esc_attr($yt_id); ?>"
+             data-video-url="<?php echo esc_url($video_url); ?>">
+          
+          <div class="usage-video-ratio">
+            <?php if (!empty($poster_url)) : ?>
+              <img src="<?php echo esc_url($poster_url); ?>" alt="Hướng dẫn sử dụng tinh dầu tràm" class="usage-video-poster" id="usageVideoPoster" loading="lazy">
+            <?php else : ?>
+              <div class="usage-video-placeholder-bg">
+                <div class="usage-placeholder-inner">
+                  <span class="usage-ph-tag">9:16 VERTICAL VIDEO</span>
+                  <div class="usage-ph-icon">
+                    <svg width="44" height="44" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                      <rect x="2" y="2" width="20" height="20" rx="2.18" ry="2.18"></rect>
+                      <line x1="7" y1="2" x2="7" y2="22"></line>
+                      <line x1="17" y1="2" x2="17" y2="22"></line>
+                      <line x1="2" y1="12" x2="22" y2="12"></line>
+                    </svg>
+                  </div>
+                  <b>Video Mẹ Thoa Dầu Cho Bé</b>
+                  <small>Tỷ lệ dọc 9:16 chuẩn Reels / TikTok</small>
+                </div>
+              </div>
+            <?php endif; ?>
+
+            <div class="usage-video-badge">
+              <span><i class="badge-dot"></i> <?php echo esc_html($badge_text); ?></span>
+            </div>
+
+            <button type="button" class="usage-play-btn" id="usagePlayBtn" aria-label="Phát video hướng dẫn">
+              <span class="play-pulse"></span>
+              <span class="play-icon">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                  <path d="M8 5v14l11-7z"/>
+                </svg>
+              </span>
+            </button>
+
+            <div class="usage-video-container" id="usageVideoContainer"></div>
+          </div>
+        </div>
+      </div>
+      <div class="usage-video-caption">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <circle cx="12" cy="12" r="10"></circle>
+          <polygon points="10 8 16 12 10 16 10 8"></polygon>
+        </svg>
+        <span><?php echo esc_html($video_sub); ?></span>
+      </div>
+    </div>
+    <?php
+    return ob_get_clean();
+}
+

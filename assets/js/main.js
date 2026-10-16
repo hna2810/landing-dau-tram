@@ -344,4 +344,40 @@
     }
   })();
 
+  // 9. Vertical 9:16 Video Player Handler
+  (function () {
+    var playBtn = $('#usagePlayBtn');
+    var videoBox = $('#usageVideoBox');
+    var container = $('#usageVideoContainer');
+    var poster = $('#usageVideoPoster');
+
+    if (!playBtn || !videoBox || !container) return;
+
+    playBtn.addEventListener('click', function () {
+      var ytId = videoBox.getAttribute('data-yt-id');
+      var videoUrl = videoBox.getAttribute('data-video-url');
+
+      if (ytId) {
+        container.innerHTML = '<iframe src="https://www.youtube.com/embed/' + ytId + '?autoplay=1&playsinline=1&rel=0" allow="autoplay; encrypted-media; picture-in-picture" allowfullscreen></iframe>';
+        container.classList.add('playing');
+        playBtn.style.display = 'none';
+        if (poster) poster.style.display = 'none';
+      } else if (videoUrl) {
+        container.innerHTML = '<video src="' + videoUrl + '" playsinline controls autoplay style="width:100%;height:100%;object-fit:cover;"></video>';
+        container.classList.add('playing');
+        playBtn.style.display = 'none';
+        if (poster) poster.style.display = 'none';
+      } else {
+        var toast = $('#toast');
+        var toastText = $('#toastText');
+        if (toast && toastText) {
+          toastText.innerHTML = '🎬 <b>Video 9:16 đang được cập nhật!</b><br><small>Mẹ hãy tham khảo 3 bước sử dụng chi tiết ngay bên cạnh nhé ❤️</small>';
+          toast.classList.add('show');
+          setTimeout(function () { toast.classList.remove('show'); }, 4000);
+        }
+      }
+    });
+  })();
+
 })();
+
