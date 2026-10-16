@@ -57,6 +57,9 @@
 
   // 2. Image slots: fill from CONFIG.images or keep/hide placeholder notes
   document.querySelectorAll('[data-img]').forEach(function (slot) {
+    if (slot.classList.contains('filled')) {
+      return; // Already rendered by PHP on server
+    }
     var key = slot.dataset.img;
     var url = CONFIG.images[key];
     if (!url) {

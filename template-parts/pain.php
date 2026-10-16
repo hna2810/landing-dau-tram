@@ -29,13 +29,26 @@ $bridge      = lx_get_field('lx_pain_bridge', 'option', 'Đã có giải pháp d
     <p class="lead reveal lx_wow_item"><?php echo esc_html($lead); ?></p>
 
     <div class="pain-grid" style="text-align:left">
-      <div class="pain-card reveal"><!-- 📷 ẢNH 2: Bé khò khè, trằn trọc ban đêm — 600×600px (1:1). Dán URL vào CONFIG.images.pain1 --><div class="ph thumb" data-img="pain1" data-spec="600×600px (1:1)" style="aspect-ratio:1/1"><span class="ph-n">📷 ẢNH 2</span><b>Bé khò khè, trằn trọc ban đêm</b><small>600×600px (1:1)</small></div><div><h3 class="lx_wow_item"><?php echo esc_html($card1_title); ?></h3><p class="lx_wow_item"><?php echo esc_html($card1_desc); ?></p></div></div>
-      <div class="pain-card reveal"><!-- 📷 ẢNH 3: Bé hắt hơi, sổ mũi sau khi tắm — 600×600px (1:1). Dán URL vào CONFIG.images.pain2 --><div class="ph thumb" data-img="pain2" data-spec="600×600px (1:1)" style="aspect-ratio:1/1"><span class="ph-n">📷 ẢNH 3</span><b>Bé hắt hơi, sổ mũi sau khi tắm</b><small>600×600px (1:1)</small></div><div><h3 class="lx_wow_item"><?php echo esc_html($card2_title); ?></h3><p class="lx_wow_item"><?php echo esc_html($card2_desc); ?></p></div></div>
-      <div class="pain-card reveal"><!-- 📷 ẢNH 4: Mẹ ngần ngại khi cầm chai tinh dầu — 600×600px (1:1). Dán URL vào CONFIG.images.pain3 --><div class="ph thumb" data-img="pain3" data-spec="600×600px (1:1)" style="aspect-ratio:1/1"><span class="ph-n">📷 ẢNH 4</span><b>Mẹ ngần ngại khi cầm chai tinh dầu</b><small>600×600px (1:1)</small></div><div><h3 class="lx_wow_item"><?php echo esc_html($card3_title); ?></h3><p class="lx_wow_item"><?php echo esc_html($card3_desc); ?></p></div></div>
-      <div class="pain-card reveal"><!-- 📷 ẢNH 5: Vết muỗi đốt đỏ trên da bé — 600×600px (1:1). Dán URL vào CONFIG.images.pain4 --><div class="ph thumb" data-img="pain4" data-spec="600×600px (1:1)" style="aspect-ratio:1/1"><span class="ph-n">📷 ẢNH 5</span><b>Vết muỗi đốt đỏ trên da bé</b><small>600×600px (1:1)</small></div><div><h3 class="lx_wow_item"><?php echo $card4_title; ?></h3><p class="lx_wow_item"><?php echo esc_html($card4_desc); ?></p></div></div>
+      <div class="pain-card reveal">
+        <?php echo lx_render_image_slot('lx_img_pain1', 'pain1', 'ẢNH 2: Bé khò khè, trằn trọc ban đêm', '600×600px (1:1)', 'thumb', 'aspect-ratio:1/1'); ?>
+        <div><h3 class="lx_wow_item"><?php echo esc_html($card1_title); ?></h3><p class="lx_wow_item"><?php echo esc_html($card1_desc); ?></p></div>
+      </div>
+      <div class="pain-card reveal">
+        <?php echo lx_render_image_slot('lx_img_pain2', 'pain2', 'ẢNH 3: Bé hắt hơi, sổ mũi sau khi tắm', '600×600px (1:1)', 'thumb', 'aspect-ratio:1/1'); ?>
+        <div><h3 class="lx_wow_item"><?php echo esc_html($card2_title); ?></h3><p class="lx_wow_item"><?php echo esc_html($card2_desc); ?></p></div>
+      </div>
+      <div class="pain-card reveal">
+        <?php echo lx_render_image_slot('lx_img_pain3', 'pain3', 'ẢNH 4: Mẹ ngần ngại khi cầm chai tinh dầu', '600×600px (1:1)', 'thumb', 'aspect-ratio:1/1'); ?>
+        <div><h3 class="lx_wow_item"><?php echo esc_html($card3_title); ?></h3><p class="lx_wow_item"><?php echo esc_html($card3_desc); ?></p></div>
+      </div>
+      <div class="pain-card reveal">
+        <?php echo lx_render_image_slot('lx_img_pain4', 'pain4', 'ẢNH 5: Vết muỗi đốt đỏ trên da bé', '600×600px (1:1)', 'thumb', 'aspect-ratio:1/1'); ?>
+        <div><h3 class="lx_wow_item"><?php echo $card4_title; ?></h3><p class="lx_wow_item"><?php echo esc_html($card4_desc); ?></p></div>
+      </div>
     </div>
-    <div class="img-row reveal"><!-- 📷 ẢNH 6: Ảnh cảm xúc: bé quấy khóc / khò khè ban đêm, mẹ lo lắng bế con — Ảnh ngang 1200×675px (16:9), tông ấm, ánh sáng dịu. Dán URL vào CONFIG.images.pain -->
-<div class="ph " data-img="pain" style="aspect-ratio:16/9;"><span class="ph-n">📷 ẢNH 6</span><b>Ảnh cảm xúc: bé quấy khóc / khò khè ban đêm, mẹ lo lắng bế con</b><small>Ảnh ngang 1200×675px (16:9), tông ấm, ánh sáng dịu</small></div></div>
+    <div class="img-row reveal">
+      <?php echo lx_render_image_slot('lx_img_pain', 'pain', 'ẢNH 6: Ảnh cảm xúc: bé quấy khóc ban đêm, mẹ lo lắng bế con', '1200×675px (16:9), tông ấm, ánh sáng dịu', '', 'aspect-ratio:16/9;'); ?>
+    </div>
     <p class="bridge reveal lx_wow_item"><?php echo esc_html($bridge); ?></p>
   </div>
 </section>

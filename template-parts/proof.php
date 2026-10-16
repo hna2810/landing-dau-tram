@@ -38,15 +38,19 @@ $cta_text  = lx_get_field('lx_proof_cta_text', 'option', 'Đặt mua ngay – ch
       <div class="review reveal"><span class="stars">★★★★★</span><p class="lx_wow_item">“Mình biết đến sản phẩm này nhờ sử dụng dịch vụ tắm bé tại nhà của Home Care. Thấy các cô điều dưỡng dùng cho bé thích quá nên mua luôn 2 chai về dùng dần. Mẹ ở cữ xoa vào lòng bàn chân giữ ấm cực kỳ tốt!”</p><div class="who"><span class="avatar" style="background:#e9a3b8">LA</span><div><b>Mẹ Lan Anh</b><small>Thanh Hóa · Bé 5 tháng tuổi</small></div></div></div>
     </div>
     <div class="fb-grid">
-      <div class="reveal"><!-- 📷 ẢNH 21: Ảnh chụp màn hình feedback thật #1 — Tin nhắn Zalo/Messenger · 600×800px (3:4). Dán URL vào CONFIG.images.feedback1 -->
-<div class="ph " data-img="feedback1" style="aspect-ratio:3/4;"><span class="ph-n">📷 ẢNH 21</span><b>Ảnh chụp màn hình feedback thật #1</b><small>Tin nhắn Zalo/Messenger · 600×800px (3:4)</small></div></div>
-      <div class="reveal"><!-- 📷 ẢNH 22: Ảnh chụp màn hình feedback thật #2 — 600×800px (3:4). Dán URL vào CONFIG.images.feedback2 -->
-<div class="ph " data-img="feedback2" style="aspect-ratio:3/4;"><span class="ph-n">📷 ẢNH 22</span><b>Ảnh chụp màn hình feedback thật #2</b><small>600×800px (3:4)</small></div></div>
-      <div class="reveal"><!-- 📷 ẢNH 23: Ảnh chụp màn hình feedback thật #3 — 600×800px (3:4). Dán URL vào CONFIG.images.feedback3 -->
-<div class="ph " data-img="feedback3" style="aspect-ratio:3/4;"><span class="ph-n">📷 ẢNH 23</span><b>Ảnh chụp màn hình feedback thật #3</b><small>600×800px (3:4)</small></div></div>
+      <div class="reveal">
+        <?php echo lx_render_image_slot('lx_img_feedback1', 'feedback1', 'ẢNH 21: Ảnh feedback tin nhắn thật #1', 'Tin nhắn Zalo/Messenger · 600×800px (3:4)', '', 'aspect-ratio:3/4;'); ?>
+      </div>
+      <div class="reveal">
+        <?php echo lx_render_image_slot('lx_img_feedback2', 'feedback2', 'ẢNH 22: Ảnh feedback tin nhắn thật #2', '600×800px (3:4)', '', 'aspect-ratio:3/4;'); ?>
+      </div>
+      <div class="reveal">
+        <?php echo lx_render_image_slot('lx_img_feedback3', 'feedback3', 'ẢNH 23: Ảnh feedback tin nhắn thật #3', '600×800px (3:4)', '', 'aspect-ratio:3/4;'); ?>
+      </div>
     </div>
-    <div class="img-row reveal"><!-- 📷 ẢNH 24: Ảnh điều dưỡng Home Care tắm bé / massage cho bé tại nhà — Ảnh ngang 1200×675px (16:9). Dán URL vào CONFIG.images.service -->
-<div class="ph " data-img="service" style="aspect-ratio:16/9;"><span class="ph-n">📷 ẢNH 24</span><b>Ảnh điều dưỡng Home Care tắm bé / massage cho bé tại nhà</b><small>Ảnh ngang 1200×675px (16:9)</small></div></div>
+    <div class="img-row reveal">
+      <?php echo lx_render_image_slot('lx_img_service', 'service', 'ẢNH 24: Ảnh điều dưỡng Home Care tắm bé / massage cho bé tại nhà', '1200×675px (16:9)', '', 'aspect-ratio:16/9;'); ?>
+    </div>
     <div class="trust-box">
       <div class="reveal"><?php echo $trust1; ?></div>
       <div class="reveal"><?php echo $trust2; ?></div>

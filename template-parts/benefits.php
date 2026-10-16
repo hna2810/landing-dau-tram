@@ -26,13 +26,34 @@ $foot       = lx_get_field('lx_benefits_foot', 'option', 'Thoa và massage nhẹ
     <h2 class="reveal lx_wow_item"><?php echo $title; ?></h2>
     <p class="lead reveal lx_wow_item"><?php echo esc_html($lead); ?></p>
     <div class="ben-grid" style="text-align:left">
-      <div class="ben-card reveal"><span class="ben-num">01</span><!-- 📷 ẢNH 7: Bé ấm áp trong khăn sau khi tắm — 800×600px (4:3). Dán URL vào CONFIG.images.ben1 --><div class="ph card-img" data-img="ben1" data-spec="800×600px (4:3)" style="aspect-ratio:4/3"><span class="ph-n">📷 ẢNH 7</span><b>Bé ấm áp trong khăn sau khi tắm</b><small>800×600px (4:3)</small></div><h3 class="lx_wow_item"><?php echo $ben1_title; ?></h3><p class="lx_wow_item"><?php echo esc_html($ben1_desc); ?></p></div>
-      <div class="ben-card reveal"><span class="ben-num">02</span><!-- 📷 ẢNH 8: Bé ngủ say, thở êm — 800×600px (4:3). Dán URL vào CONFIG.images.ben2 --><div class="ph card-img" data-img="ben2" data-spec="800×600px (4:3)" style="aspect-ratio:4/3"><span class="ph-n">📷 ẢNH 8</span><b>Bé ngủ say, thở êm</b><small>800×600px (4:3)</small></div><h3 class="lx_wow_item"><?php echo esc_html($ben2_title); ?></h3><p class="lx_wow_item"><?php echo esc_html($ben2_desc); ?></p></div>
-      <div class="ben-card reveal"><span class="ben-num">03</span><!-- 📷 ẢNH 9: Mẹ thoa dầu lên vết muỗi đốt — 800×600px (4:3). Dán URL vào CONFIG.images.ben3 --><div class="ph card-img" data-img="ben3" data-spec="800×600px (4:3)" style="aspect-ratio:4/3"><span class="ph-n">📷 ẢNH 9</span><b>Mẹ thoa dầu lên vết muỗi đốt</b><small>800×600px (4:3)</small></div><h3 class="lx_wow_item"><?php echo esc_html($ben3_title); ?></h3><p class="lx_wow_item"><?php echo esc_html($ben3_desc); ?></p></div>
-      <div class="ben-card reveal"><span class="ben-num">04</span><!-- 📷 ẢNH 10: Cận cảnh giọt dầu trên da bé — 800×600px (4:3). Dán URL vào CONFIG.images.ben4 --><div class="ph card-img" data-img="ben4" data-spec="800×600px (4:3)" style="aspect-ratio:4/3"><span class="ph-n">📷 ẢNH 10</span><b>Cận cảnh giọt dầu trên da bé</b><small>800×600px (4:3)</small></div><h3 class="lx_wow_item"><?php echo $ben4_title; ?></h3><p class="lx_wow_item"><?php echo esc_html($ben4_desc); ?></p></div>
+      <div class="ben-card reveal">
+        <span class="ben-num">01</span>
+        <?php echo lx_render_image_slot('lx_img_ben1', 'ben1', 'ẢNH 7: Bé ấm áp trong khăn sau khi tắm', '800×600px (4:3)', 'card-img', 'aspect-ratio:4/3'); ?>
+        <h3 class="lx_wow_item"><?php echo $ben1_title; ?></h3>
+        <p class="lx_wow_item"><?php echo esc_html($ben1_desc); ?></p>
+      </div>
+      <div class="ben-card reveal">
+        <span class="ben-num">02</span>
+        <?php echo lx_render_image_slot('lx_img_ben2', 'ben2', 'ẢNH 8: Bé ngủ say, thở êm', '800×600px (4:3)', 'card-img', 'aspect-ratio:4/3'); ?>
+        <h3 class="lx_wow_item"><?php echo esc_html($ben2_title); ?></h3>
+        <p class="lx_wow_item"><?php echo esc_html($ben2_desc); ?></p>
+      </div>
+      <div class="ben-card reveal">
+        <span class="ben-num">03</span>
+        <?php echo lx_render_image_slot('lx_img_ben3', 'ben3', 'ẢNH 9: Mẹ thoa dầu lên vết muỗi đốt', '800×600px (4:3)', 'card-img', 'aspect-ratio:4/3'); ?>
+        <h3 class="lx_wow_item"><?php echo esc_html($ben3_title); ?></h3>
+        <p class="lx_wow_item"><?php echo esc_html($ben3_desc); ?></p>
+      </div>
+      <div class="ben-card reveal">
+        <span class="ben-num">04</span>
+        <?php echo lx_render_image_slot('lx_img_ben4', 'ben4', 'ẢNH 10: Cận cảnh giọt dầu trên da bé', '800×600px (4:3)', 'card-img', 'aspect-ratio:4/3'); ?>
+        <h3 class="lx_wow_item"><?php echo $ben4_title; ?></h3>
+        <p class="lx_wow_item"><?php echo esc_html($ben4_desc); ?></p>
+      </div>
     </div>
-    <div class="img-row reveal"><!-- 📷 ẢNH 11: Ảnh mẹ thoa & massage ngực, lưng hoặc lòng bàn chân cho bé — Ảnh ngang 1200×675px (16:9). Dán URL vào CONFIG.images.benefit -->
-<div class="ph " data-img="benefit" style="aspect-ratio:16/9;"><span class="ph-n">📷 ẢNH 11</span><b>Ảnh mẹ thoa & massage ngực, lưng hoặc lòng bàn chân cho bé</b><small>Ảnh ngang 1200×675px (16:9)</small></div></div>
+    <div class="img-row reveal">
+      <?php echo lx_render_image_slot('lx_img_benefit', 'benefit', 'ẢNH 11: Ảnh mẹ thoa & massage ngực, lưng hoặc lòng bàn chân cho bé', '1200×675px (16:9)', '', 'aspect-ratio:16/9;'); ?>
+    </div>
     <p class="ben-foot reveal lx_wow_item"><?php echo esc_html($foot); ?></p>
   </div>
 </section>

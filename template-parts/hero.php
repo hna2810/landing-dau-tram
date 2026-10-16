@@ -50,8 +50,7 @@ $save_price = $old_price - $unit_price;
 
     <div class="hero-visual reveal">
       <div class="glow"></div>
-      <!-- 📷 ẢNH 1: Ảnh sản phẩm chính – chai tinh dầu tràm 30ml — PNG nền trong suốt hoặc nền sáng · 1000×1000px (1:1). Dán URL vào CONFIG.images.hero -->
-<div class="ph product-img" data-img="hero" style="aspect-ratio:1/1;max-width:400px;background-color:#fff"><span class="ph-n">📷 ẢNH 1</span><b>Ảnh sản phẩm chính – chai tinh dầu tràm 30ml</b><small>PNG nền trong suốt hoặc nền sáng · 1000×1000px (1:1)</small></div>
+      <?php echo lx_render_image_slot('lx_img_hero', 'hero', 'ẢNH 1: Ảnh sản phẩm chính – chai tinh dầu tràm 30ml', 'PNG nền trong suốt hoặc nền sáng · 1000×1000px (1:1)', 'product-img', 'aspect-ratio:1/1;max-width:400px;background-color:#fff'); ?>
       <div class="badge-circle"><span>GIẢM</span><b><?php echo esc_html($badge_percent); ?></b><span>hôm nay</span></div>
       <div class="chip c1"><?php echo esc_html($chip1); ?></div>
       <div class="chip c2"><?php echo esc_html($chip2); ?></div>

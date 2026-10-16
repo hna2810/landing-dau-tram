@@ -969,3 +969,25 @@ function lx_register_acf_field_group() {
     ));
 }
 add_action('acf/init', 'lx_register_acf_field_group');
+
+/**
+ * 3. Tự động xóa sạch LiteSpeed Cache khi lưu cài đặt ACF Options
+ */
+function lx_purge_cache_on_option_update($post_id = null) {
+    if (class_exists('\LiteSpeed\Purge')) {
+        \LiteSpeed\Purge::purge_all();
+    }
+    if (function_exists('litespeed_purge_all')) {
+        litespeed_purge_all();
+    }
+    do_action('litespeed_purge_all');
+    if (!headers_sent()) {
+        header('X-LiteSpeed-Purge: *');
+    }
+}
+add_action('acf/save_post', 'lx_purge_cache_on_option_update', 20);
+add_action('updated_option', function($option_name) {
+    if (strpos($option_name, 'options_lx_') === 0 || strpos($option_name, 'lx_') === 0) {
+        lx_purge_cache_on_option_update();
+    }
+});

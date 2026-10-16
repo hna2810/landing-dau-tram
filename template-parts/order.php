@@ -9,7 +9,7 @@ if (!defined('ABSPATH')) {
     exit;
 }
 
-$title        = lx_get_field('lx_order_title', 'option', 'Cho con cơ thể ấm – <em>Cho mẹ giấc ngủ ngon</em>');
+$title        = lx_get_field('lx_order_title', 'option', 'Cho con cơ thể ấm – <em>Cho mẹ giấc ngon</em>');
 $lead         = lx_get_field('lx_order_lead', 'option', 'Đừng để đêm lạnh làm gián đoạn giấc ngủ của con. Chăm sóc sức khỏe bé yêu ngay hôm nay cùng Tinh dầu tràm Hoàng Cung Home Care!');
 $badge        = lx_get_field('lx_order_badge', 'option', 'ƯU ĐÃI CHỈ ÁP DỤNG HÔM NAY');
 $product_name = lx_get_field('lx_order_product_name', 'option', 'Tinh dầu tràm giữ ấm cho bé 30ml');
@@ -31,8 +31,7 @@ $old_price  = (int) lx_get_field('lx_old_price', 'option', 87000);
     <div class="order-grid">
       <div class="offer reveal">
         <div class="offer-head"><?php echo esc_html($badge); ?></div>
-        <!-- 📷 ẢNH 25: Banner ưu đãi: sản phẩm + giá 49K / 87K — 1200×675px (16:9). Dán URL vào CONFIG.images.offer -->
-<div class="ph " data-img="offer" style="aspect-ratio:16/9;"><span class="ph-n">📷 ẢNH 25</span><b>Banner ưu đãi: sản phẩm + giá 49K / 87K</b><small>1200×675px (16:9)</small></div>
+        <?php echo lx_render_image_slot('lx_img_offer', 'offer', 'ẢNH 25: Banner ưu đãi: sản phẩm + giá 49K / 87K', '1200×675px (16:9)', '', 'aspect-ratio:16/9;'); ?>
         <table>
           <thead><tr><th>Tên</th><th>Giá gốc</th><th>Giá ưu đãi</th></tr></thead>
           <tbody><tr><td><b><?php echo esc_html($product_name); ?></b></td><td class="old"><?php echo number_format($old_price, 0, ',', '.'); ?>đ</td><td class="new"><?php echo number_format($unit_price, 0, ',', '.'); ?>đ</td></tr></tbody>

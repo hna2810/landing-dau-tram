@@ -24,12 +24,24 @@ $warn        = lx_get_field('lx_usage_warn', 'option', '<b>Lưu ý:</b> Nên th�
       <h2 class="reveal lx_wow_item"><?php echo $title; ?></h2>
     </div>
     <div class="steps">
-      <div class="step reveal"><span class="step-n">1</span><!-- 📷 ẢNH 18: Nhỏ 2–3 giọt vào chậu nước tắm ấm của bé — 800×600px (4:3). Dán URL vào CONFIG.images.step1 -->
-<div class="ph " data-img="step1" style="aspect-ratio:4/3;"><span class="ph-n">📷 ẢNH 18</span><b>Nhỏ 2–3 giọt vào chậu nước tắm ấm của bé</b><small>800×600px (4:3)</small></div><h3 class="lx_wow_item"><?php echo esc_html($step1_title); ?></h3><p class="lx_wow_item"><?php echo esc_html($step1_desc); ?></p></div>
-      <div class="step reveal"><span class="step-n">2</span><!-- 📷 ẢNH 19: Mẹ xoa ấm tay, massage cổ, ngực, lưng, lòng bàn chân bé — 800×600px (4:3). Dán URL vào CONFIG.images.step2 -->
-<div class="ph " data-img="step2" style="aspect-ratio:4/3;"><span class="ph-n">📷 ẢNH 19</span><b>Mẹ xoa ấm tay, massage cổ, ngực, lưng, lòng bàn chân bé</b><small>800×600px (4:3)</small></div><h3 class="lx_wow_item"><?php echo esc_html($step2_title); ?></h3><p class="lx_wow_item"><?php echo esc_html($step2_desc); ?></p></div>
-      <div class="step reveal"><span class="step-n">3</span><!-- 📷 ẢNH 20: Thoa một lượng nhỏ lên vết muỗi đốt trên da bé — 800×600px (4:3). Dán URL vào CONFIG.images.step3 -->
-<div class="ph " data-img="step3" style="aspect-ratio:4/3;"><span class="ph-n">📷 ẢNH 20</span><b>Thoa một lượng nhỏ lên vết muỗi đốt trên da bé</b><small>800×600px (4:3)</small></div><h3 class="lx_wow_item"><?php echo esc_html($step3_title); ?></h3><p class="lx_wow_item"><?php echo esc_html($step3_desc); ?></p></div>
+      <div class="step reveal">
+        <span class="step-n">1</span>
+        <?php echo lx_render_image_slot('lx_img_step1', 'step1', 'ẢNH 18: Nhỏ 2–3 giọt vào chậu nước tắm ấm của bé', '800×600px (4:3)', '', 'aspect-ratio:4/3;'); ?>
+        <h3 class="lx_wow_item"><?php echo esc_html($step1_title); ?></h3>
+        <p class="lx_wow_item"><?php echo esc_html($step1_desc); ?></p>
+      </div>
+      <div class="step reveal">
+        <span class="step-n">2</span>
+        <?php echo lx_render_image_slot('lx_img_step2', 'step2', 'ẢNH 19: Massage cổ, ngực, lưng, lòng bàn chân bé', '800×600px (4:3)', '', 'aspect-ratio:4/3;'); ?>
+        <h3 class="lx_wow_item"><?php echo esc_html($step2_title); ?></h3>
+        <p class="lx_wow_item"><?php echo esc_html($step2_desc); ?></p>
+      </div>
+      <div class="step reveal">
+        <span class="step-n">3</span>
+        <?php echo lx_render_image_slot('lx_img_step3', 'step3', 'ẢNH 20: Thoa một lượng nhỏ lên vết muỗi đốt trên da bé', '800×600px (4:3)', '', 'aspect-ratio:4/3;'); ?>
+        <h3 class="lx_wow_item"><?php echo esc_html($step3_title); ?></h3>
+        <p class="lx_wow_item"><?php echo esc_html($step3_desc); ?></p>
+      </div>
     </div>
     <div class="warn reveal"><?php echo $warn; ?></div>
   </div>
