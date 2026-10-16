@@ -32,7 +32,7 @@ function lx_ensure_cf7_form() {
         . '</div>' . "\n"
         . '<div class="field">' . "\n"
         . '  <label for="fAddress">Địa chỉ nhận hàng <i>*</i></label>' . "\n"
-        . '  [textarea* your-address id:fAddress class:input autocomplete:street-address placeholder "Số nhà, tên đường, phường/xã, quận/huyện, tỉnh/thành..."]' . "\n"
+        . '  [text* your-address id:fAddress class:input autocomplete:street-address placeholder "Số nhà, tên đường, phường/xã, quận/huyện, tỉnh/thành..."]' . "\n"
         . '</div>' . "\n"
         . '<div class="field" style="display:none">' . "\n"
         . '  [hidden package default:"1 chai 30ml – 49.000đ (giá gốc 87.000đ) + FREESHIP"]' . "\n"
@@ -64,9 +64,24 @@ function lx_ensure_cf7_form() {
 
     if (!empty($existing)) {
         $fid = $existing[0]->ID;
+        wp_update_post(array(
+            'ID'           => $fid,
+            'post_content' => $form_content,
+        ));
         update_post_meta($fid, '_form', $form_content);
         update_post_meta($fid, '_messages', $messages);
         update_post_meta($fid, '_locale', 'vi');
+
+        if (function_exists('wpcf7_contact_form')) {
+            $cf = wpcf7_contact_form($fid);
+            if ($cf) {
+                $cf->set_properties(array(
+                    'form'     => $form_content,
+                    'messages' => $messages,
+                ));
+                $cf->save();
+            }
+        }
         return $fid;
     }
 
@@ -225,7 +240,7 @@ function lx_render_order_form() {
         </div>
         <div class="field">
           <label for="fAddr">Địa chỉ nhận hàng *</label>
-          <textarea id="fAddr" name="address" rows="2" autocomplete="street-address" placeholder="Số nhà, đường, phường/xã, quận/huyện, tỉnh/thành"></textarea>
+          <input id="fAddr" name="address" type="text" autocomplete="street-address" placeholder="Số nhà, đường, phường/xã, quận/huyện, tỉnh/thành">
           <div class="msg">Vui lòng nhập địa chỉ nhận hàng</div>
         </div>
         <button type="submit" class="btn btn-buy" id="submitBtn">Đặt mua ngay – Bảo vệ sức khỏe bé</button>
