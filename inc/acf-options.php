@@ -28,7 +28,7 @@ function lx_register_theme_options_page() {
 add_action('acf/init', 'lx_register_theme_options_page');
 
 /**
- * 2. Đăng ký nhóm trường ACF Local Field Group
+ * 2. Đăng ký nhóm trường ACF Local Field Group phân theo từng Section
  */
 function lx_register_acf_field_group() {
     if (!function_exists('acf_add_local_field_group')) {
@@ -39,7 +39,9 @@ function lx_register_acf_field_group() {
         'key' => 'group_lx_landing_tinh_dau_tram',
         'title' => __('Nội dung Landing Page Tinh Dầu Tràm', 'lx-landing'),
         'fields' => array(
-            // ── TAB 1: THIẾT LẬP CHUNG & GIÁ ──────────────────────────
+            // ══════════════════════════════════════════════════════════════════
+            // TAB 1: CẤU HÌNH CHUNG & GIÁ BÁN
+            // ══════════════════════════════════════════════════════════════════
             array(
                 'key' => 'field_tab_general',
                 'label' => __('Cấu hình chung & Giá bán', 'lx-landing'),
@@ -87,7 +89,7 @@ function lx_register_acf_field_group() {
                 'type' => 'true_false',
                 'ui' => 1,
                 'default_value' => 1,
-                'instructions' => __('Bật khi đang dàn trang/chờ ảnh thật. Tắt khi đã dán đầy đủ link ảnh.', 'lx-landing'),
+                'instructions' => __('Bật khi đang dàn trang/chờ ảnh thật. Tắt khi đã gắn đầy đủ ảnh.', 'lx-landing'),
             ),
             array(
                 'key' => 'field_lx_cf7_shortcode',
@@ -95,10 +97,12 @@ function lx_register_acf_field_group() {
                 'name' => 'lx_cf7_shortcode',
                 'type' => 'text',
                 'placeholder' => '[contact-form-7 id="5" title="..."]',
-                'instructions' => __('Để trống để sử dụng form tự động chuẩn của theme.', 'lx-landing'),
+                'instructions' => __('Để trống để sử dụng form chuẩn tự động của theme.', 'lx-landing'),
             ),
 
-            // ── TAB 2: ĐẦU TRANG & HERO ──────────────────────────────
+            // ══════════════════════════════════════════════════════════════════
+            // TAB 2: ĐẦU TRANG & HERO (Bao gồm ẢNH 1)
+            // ══════════════════════════════════════════════════════════════════
             array(
                 'key' => 'field_tab_hero',
                 'label' => __('Đầu trang & Hero', 'lx-landing'),
@@ -190,8 +194,17 @@ function lx_register_acf_field_group() {
                 'type' => 'text',
                 'default_value' => 'Chai 30ml',
             ),
+            array(
+                'key' => 'field_lx_img_hero',
+                'label' => __('📷 ẢNH 1: Ảnh sản phẩm chính – chai tinh dầu tràm 30ml (1000×1000px, PNG nền trong hoặc sáng)', 'lx-landing'),
+                'name' => 'lx_img_hero',
+                'type' => 'image',
+                'return_format' => 'url',
+            ),
 
-            // ── TAB 3: NỖI LO CỦA MẸ ──────────────────────────────────
+            // ══════════════════════════════════════════════════════════════════
+            // TAB 3: NỖI LO CỦA MẸ (Bao gồm ẢNH 2, 3, 4, 5, 6)
+            // ══════════════════════════════════════════════════════════════════
             array(
                 'key' => 'field_tab_pain',
                 'label' => __('Nỗi lo của mẹ', 'lx-landing'),
@@ -228,6 +241,13 @@ function lx_register_acf_field_group() {
                 'default_value' => 'Đêm lạnh khiến đường thở của bé dễ bị nghẹt, con quấy khóc, mẹ thức trắng đêm lo lắng.',
             ),
             array(
+                'key' => 'field_lx_img_pain1',
+                'label' => __('📷 ẢNH 2: Bé khò khè, trằn trọc ban đêm (600×600px)', 'lx-landing'),
+                'name' => 'lx_img_pain1',
+                'type' => 'image',
+                'return_format' => 'url',
+            ),
+            array(
                 'key' => 'field_lx_pain_card2_title',
                 'label' => __('Nỗi lo 2 - Tiêu đề', 'lx-landing'),
                 'name' => 'lx_pain_card2_title',
@@ -241,6 +261,13 @@ function lx_register_acf_field_group() {
                 'type' => 'textarea',
                 'rows' => 2,
                 'default_value' => 'Dù đã che chắn kỹ, bé vẫn dễ bị hắt hơi, sổ mũi do hạ nhiệt đột ngột.',
+            ),
+            array(
+                'key' => 'field_lx_img_pain2',
+                'label' => __('📷 ẢNH 3: Bé hắt hơi, sổ mũi sau khi tắm (600×600px)', 'lx-landing'),
+                'name' => 'lx_img_pain2',
+                'type' => 'image',
+                'return_format' => 'url',
             ),
             array(
                 'key' => 'field_lx_pain_card3_title',
@@ -258,6 +285,13 @@ function lx_register_acf_field_group() {
                 'default_value' => 'Mẹ muốn dùng tinh dầu giữ ấm nhưng lo ngại làn da trẻ sơ sinh mỏng manh bị kích ứng.',
             ),
             array(
+                'key' => 'field_lx_img_pain3',
+                'label' => __('📷 ẢNH 4: Mẹ ngần ngại khi cầm chai tinh dầu (600×600px)', 'lx-landing'),
+                'name' => 'lx_img_pain3',
+                'type' => 'image',
+                'return_format' => 'url',
+            ),
+            array(
                 'key' => 'field_lx_pain_card4_title',
                 'label' => __('Nỗi lo 4 - Tiêu đề', 'lx-landing'),
                 'name' => 'lx_pain_card4_title',
@@ -273,6 +307,20 @@ function lx_register_acf_field_group() {
                 'default_value' => 'Vết muỗi cắn làm da bé đỏ ngứa, sưng tấy khiến con khó chịu, mất ngủ.',
             ),
             array(
+                'key' => 'field_lx_img_pain4',
+                'label' => __('📷 ẢNH 5: Vết muỗi đốt đỏ trên da bé (600×600px)', 'lx-landing'),
+                'name' => 'lx_img_pain4',
+                'type' => 'image',
+                'return_format' => 'url',
+            ),
+            array(
+                'key' => 'field_lx_img_pain',
+                'label' => __('📷 ẢNH 6: Ảnh cảm xúc: bé quấy khóc ban đêm, mẹ lo lắng bế con (1200×675px, 16:9)', 'lx-landing'),
+                'name' => 'lx_img_pain',
+                'type' => 'image',
+                'return_format' => 'url',
+            ),
+            array(
                 'key' => 'field_lx_pain_bridge',
                 'label' => __('Dòng cầu nối giải pháp', 'lx-landing'),
                 'name' => 'lx_pain_bridge',
@@ -280,7 +328,9 @@ function lx_register_acf_field_group() {
                 'default_value' => 'Đã có giải pháp dịu nhẹ cho bé yêu',
             ),
 
-            // ── TAB 4: CÔNG DỤNG & LỢI ÍCH ───────────────────────────
+            // ══════════════════════════════════════════════════════════════════
+            // TAB 4: CÔNG DỤNG & LỢI ÍCH (Bao gồm ẢNH 7, 8, 9, 10, 11)
+            // ══════════════════════════════════════════════════════════════════
             array(
                 'key' => 'field_tab_benefits',
                 'label' => __('Công dụng & Lợi ích', 'lx-landing'),
@@ -317,6 +367,13 @@ function lx_register_acf_field_group() {
                 'default_value' => 'Giúp cơ thể bé luôn ấm áp, hỗ trợ đẩy khí hàn, đặc biệt thích hợp dùng khi thời tiết se lạnh, giao mùa hoặc sau khi tắm.',
             ),
             array(
+                'key' => 'field_lx_img_ben1',
+                'label' => __('📷 ẢNH 7: Bé ấm áp trong khăn sau khi tắm (800×600px, 4:3)', 'lx-landing'),
+                'name' => 'lx_img_ben1',
+                'type' => 'image',
+                'return_format' => 'url',
+            ),
+            array(
                 'key' => 'field_lx_ben2_title',
                 'label' => __('Công dụng 2 - Tiêu đề', 'lx-landing'),
                 'name' => 'lx_ben2_title',
@@ -330,6 +387,13 @@ function lx_register_acf_field_group() {
                 'type' => 'textarea',
                 'rows' => 2,
                 'default_value' => 'Hương thơm tự nhiên dễ chịu giúp thông thoáng cho đường thở, giảm tình trạng khò khè, cho bé ngủ sâu giấc hơn.',
+            ),
+            array(
+                'key' => 'field_lx_img_ben2',
+                'label' => __('📷 ẢNH 8: Bé ngủ say, thở êm (800×600px, 4:3)', 'lx-landing'),
+                'name' => 'lx_img_ben2',
+                'type' => 'image',
+                'return_format' => 'url',
             ),
             array(
                 'key' => 'field_lx_ben3_title',
@@ -347,6 +411,13 @@ function lx_register_acf_field_group() {
                 'default_value' => 'Giảm cảm giác ngứa ngáy, làm dịu vùng da sưng đỏ do muỗi hoặc côn trùng đốt.',
             ),
             array(
+                'key' => 'field_lx_img_ben3',
+                'label' => __('📷 ẢNH 9: Mẹ thoa dầu lên vết muỗi đốt (800×600px, 4:3)', 'lx-landing'),
+                'name' => 'lx_img_ben3',
+                'type' => 'image',
+                'return_format' => 'url',
+            ),
+            array(
                 'key' => 'field_lx_ben4_title',
                 'label' => __('Công dụng 4 - Tiêu đề', 'lx-landing'),
                 'name' => 'lx_ben4_title',
@@ -362,6 +433,20 @@ function lx_register_acf_field_group() {
                 'default_value' => 'Sự có mặt của dầu bơ, ô liu và argan giúp làm mềm da, giảm độ gay gắt của tinh dầu tràm nguyên chất, phù hợp cho cả làn da trẻ sơ sinh.',
             ),
             array(
+                'key' => 'field_lx_img_ben4',
+                'label' => __('📷 ẢNH 10: Cận cảnh giọt dầu trên da bé (800×600px, 4:3)', 'lx-landing'),
+                'name' => 'lx_img_ben4',
+                'type' => 'image',
+                'return_format' => 'url',
+            ),
+            array(
+                'key' => 'field_lx_img_benefit',
+                'label' => __('📷 ẢNH 11: Ảnh mẹ thoa & massage ngực/lưng/chân cho bé (1200×675px, 16:9)', 'lx-landing'),
+                'name' => 'lx_img_benefit',
+                'type' => 'image',
+                'return_format' => 'url',
+            ),
+            array(
                 'key' => 'field_lx_benefits_foot',
                 'label' => __('Ghi chú chân công dụng', 'lx-landing'),
                 'name' => 'lx_benefits_foot',
@@ -369,7 +454,9 @@ function lx_register_acf_field_group() {
                 'default_value' => 'Thoa và massage nhẹ nhàng giúp bé thư giãn, giảm căng thẳng và ngủ sâu giấc hơn.',
             ),
 
-            // ── TAB 5: THÀNH PHẦN & THIẾT KẾ ────────────────────────
+            // ══════════════════════════════════════════════════════════════════
+            // TAB 5: THÀNH PHẦN & THIẾT KẾ (Bao gồm ẢNH 12, 13, 14, 15, 16, 17)
+            // ══════════════════════════════════════════════════════════════════
             array(
                 'key' => 'field_tab_ingredients',
                 'label' => __('Thành phần & Thiết kế', 'lx-landing'),
@@ -405,6 +492,13 @@ function lx_register_acf_field_group() {
                 'default_value' => 'Giúp giữ ấm, xua tan khí lạnh và làm sạch không khí xung quanh bé.',
             ),
             array(
+                'key' => 'field_lx_img_ing1',
+                'label' => __('📷 ẢNH 12: Lá tràm (400×400px)', 'lx-landing'),
+                'name' => 'lx_img_ing1',
+                'type' => 'image',
+                'return_format' => 'url',
+            ),
+            array(
                 'key' => 'field_lx_ing2_name',
                 'label' => __('Thành phần 2 - Tên', 'lx-landing'),
                 'name' => 'lx_ing2_name',
@@ -425,6 +519,13 @@ function lx_register_acf_field_group() {
                 'type' => 'textarea',
                 'rows' => 2,
                 'default_value' => 'Giàu vitamin và dưỡng chất giúp nuôi dưỡng làn da bé mềm mại.',
+            ),
+            array(
+                'key' => 'field_lx_img_ing2',
+                'label' => __('📷 ẢNH 13: Quả bơ (400×400px)', 'lx-landing'),
+                'name' => 'lx_img_ing2',
+                'type' => 'image',
+                'return_format' => 'url',
             ),
             array(
                 'key' => 'field_lx_ing3_name',
@@ -449,6 +550,13 @@ function lx_register_acf_field_group() {
                 'default_value' => 'Tạo lớp màng bảo vệ, hạn chế tình trạng khô da.',
             ),
             array(
+                'key' => 'field_lx_img_ing3',
+                'label' => __('📷 ẢNH 14: Quả ô liu (400×400px)', 'lx-landing'),
+                'name' => 'lx_img_ing3',
+                'type' => 'image',
+                'return_format' => 'url',
+            ),
+            array(
                 'key' => 'field_lx_ing4_name',
                 'label' => __('Thành phần 4 - Tên', 'lx-landing'),
                 'name' => 'lx_ing4_name',
@@ -471,11 +579,32 @@ function lx_register_acf_field_group() {
                 'default_value' => 'Giúp xoa dịu vùng da nhạy cảm, chống kích ứng.',
             ),
             array(
+                'key' => 'field_lx_img_ing4',
+                'label' => __('📷 ẢNH 15: Hạt argan (400×400px)', 'lx-landing'),
+                'name' => 'lx_img_ing4',
+                'type' => 'image',
+                'return_format' => 'url',
+            ),
+            array(
+                'key' => 'field_lx_img_ingredients',
+                'label' => __('📷 ẢNH 16: Ảnh chai tinh dầu cạnh nguyên liệu lá tràm, bơ, ô liu, argan (1000×1000px)', 'lx-landing'),
+                'name' => 'lx_img_ingredients',
+                'type' => 'image',
+                'return_format' => 'url',
+            ),
+            array(
                 'key' => 'field_lx_compact_title',
                 'label' => __('Tiêu đề phần thiết kế nhỏ gọn', 'lx-landing'),
                 'name' => 'lx_compact_title',
                 'type' => 'text',
                 'default_value' => 'Nhỏ gọn trong tay mẹ, tiện chăm sóc bé mỗi ngày',
+            ),
+            array(
+                'key' => 'field_lx_img_handheld',
+                'label' => __('📷 ẢNH 17: Ảnh chai tinh dầu cầm gọn trong lòng bàn tay mẹ (1200×675px, 16:9)', 'lx-landing'),
+                'name' => 'lx_img_handheld',
+                'type' => 'image',
+                'return_format' => 'url',
             ),
             array(
                 'key' => 'field_lx_compact_h1',
@@ -499,7 +628,9 @@ function lx_register_acf_field_group() {
                 'default_value' => 'Dùng tiết kiệm cho cả gia đình',
             ),
 
-            // ── TAB 6: HƯỚNG DẪN SỬ DỤNG ────────────────────────────
+            // ══════════════════════════════════════════════════════════════════
+            // TAB 6: HƯỚNG DẪN SỬ DỤNG (Bao gồm ẢNH 18, 19, 20)
+            // ══════════════════════════════════════════════════════════════════
             array(
                 'key' => 'field_tab_usage',
                 'label' => __('Hướng dẫn sử dụng', 'lx-landing'),
@@ -528,6 +659,13 @@ function lx_register_acf_field_group() {
                 'default_value' => 'Nhỏ 2 - 3 giọt vào chậu nước tắm ấm để giữ ấm cơ thể trong suốt quá trình tắm.',
             ),
             array(
+                'key' => 'field_lx_img_step1',
+                'label' => __('📷 ẢNH 18: Nhỏ 2–3 giọt vào chậu nước tắm ấm (800×600px, 4:3)', 'lx-landing'),
+                'name' => 'lx_img_step1',
+                'type' => 'image',
+                'return_format' => 'url',
+            ),
+            array(
                 'key' => 'field_lx_usage_step2_title',
                 'label' => __('Bước 2 - Tiêu đề', 'lx-landing'),
                 'name' => 'lx_usage_step2_title',
@@ -541,6 +679,13 @@ function lx_register_acf_field_group() {
                 'type' => 'textarea',
                 'rows' => 2,
                 'default_value' => 'Nhỏ vài giọt ra lòng bàn tay mẹ, xoa ấm rồi massage nhẹ nhàng lên cổ, ngực, lưng và lòng bàn chân của bé.',
+            ),
+            array(
+                'key' => 'field_lx_img_step2',
+                'label' => __('📷 ẢNH 19: Massage cổ, ngực, lưng, chân cho bé (800×600px, 4:3)', 'lx-landing'),
+                'name' => 'lx_img_step2',
+                'type' => 'image',
+                'return_format' => 'url',
             ),
             array(
                 'key' => 'field_lx_usage_step3_title',
@@ -558,6 +703,13 @@ function lx_register_acf_field_group() {
                 'default_value' => 'Thoa một lượng nhỏ lên vùng da bị cắn để làm dịu ngứa.',
             ),
             array(
+                'key' => 'field_lx_img_step3',
+                'label' => __('📷 ẢNH 20: Thoa nhẹ lên vết muỗi đốt (800×600px, 4:3)', 'lx-landing'),
+                'name' => 'lx_img_step3',
+                'type' => 'image',
+                'return_format' => 'url',
+            ),
+            array(
                 'key' => 'field_lx_usage_warn',
                 'label' => __('Khung lưu ý an toàn', 'lx-landing'),
                 'name' => 'lx_usage_warn',
@@ -566,7 +718,9 @@ function lx_register_acf_field_group() {
                 'default_value' => '<b>Lưu ý:</b> Nên thử một lượng nhỏ ra tay trước khi dùng cho trẻ sơ sinh. Tránh thoa trực tiếp lên vùng mặt, gần mắt, mũi hoặc vết thương hở.',
             ),
 
-            // ── TAB 7: ĐÁNH GIÁ & UY TÍN ─────────────────────────────
+            // ══════════════════════════════════════════════════════════════════
+            // TAB 7: ĐÁNH GIÁ & UY TÍN (Bao gồm ẢNH 21, 22, 23, 24)
+            // ══════════════════════════════════════════════════════════════════
             array(
                 'key' => 'field_tab_proof',
                 'label' => __('Đánh giá & Uy tín', 'lx-landing'),
@@ -629,6 +783,34 @@ function lx_register_acf_field_group() {
                 'default_value' => 'mẹ phản hồi con ngủ ngon hơn và bớt khò khè sau khi được massage giữ ấm',
             ),
             array(
+                'key' => 'field_lx_img_feedback1',
+                'label' => __('📷 ẢNH 21: Ảnh feedback tin nhắn thật #1 (600×800px, 3:4)', 'lx-landing'),
+                'name' => 'lx_img_feedback1',
+                'type' => 'image',
+                'return_format' => 'url',
+            ),
+            array(
+                'key' => 'field_lx_img_feedback2',
+                'label' => __('📷 ẢNH 22: Ảnh feedback tin nhắn thật #2 (600×800px, 3:4)', 'lx-landing'),
+                'name' => 'lx_img_feedback2',
+                'type' => 'image',
+                'return_format' => 'url',
+            ),
+            array(
+                'key' => 'field_lx_img_feedback3',
+                'label' => __('📷 ẢNH 23: Ảnh feedback tin nhắn thật #3 (600×800px, 3:4)', 'lx-landing'),
+                'name' => 'lx_img_feedback3',
+                'type' => 'image',
+                'return_format' => 'url',
+            ),
+            array(
+                'key' => 'field_lx_img_service',
+                'label' => __('📷 ẢNH 24: Ảnh điều dưỡng Home Care tắm/massage cho bé tại nhà (1200×675px, 16:9)', 'lx-landing'),
+                'name' => 'lx_img_service',
+                'type' => 'image',
+                'return_format' => 'url',
+            ),
+            array(
                 'key' => 'field_lx_trust_box1',
                 'label' => __('Khối uy tín 1', 'lx-landing'),
                 'name' => 'lx_trust_box1',
@@ -652,7 +834,9 @@ function lx_register_acf_field_group() {
                 'default_value' => 'Đặt mua ngay – chỉ 49.000đ',
             ),
 
-            // ── TAB 8: ĐẶT HÀNG & CHỐT SALE ─────────────────────────
+            // ══════════════════════════════════════════════════════════════════
+            // TAB 8: ĐẶT HÀNG & CHỐT TRANG (Bao gồm ẢNH 25)
+            // ══════════════════════════════════════════════════════════════════
             array(
                 'key' => 'field_tab_order',
                 'label' => __('Đặt hàng & Chốt trang', 'lx-landing'),
@@ -679,6 +863,13 @@ function lx_register_acf_field_group() {
                 'name' => 'lx_order_badge',
                 'type' => 'text',
                 'default_value' => 'ƯU ĐÃI CHỈ ÁP DỤNG HÔM NAY',
+            ),
+            array(
+                'key' => 'field_lx_img_offer',
+                'label' => __('📷 ẢNH 25: Banner ưu đãi: sản phẩm + giá 49K/87K (1200×675px, 16:9)', 'lx-landing'),
+                'name' => 'lx_img_offer',
+                'type' => 'image',
+                'return_format' => 'url',
             ),
             array(
                 'key' => 'field_lx_order_product_name',
@@ -759,38 +950,6 @@ function lx_register_acf_field_group() {
                 'rows' => 2,
                 'default_value' => 'Sản phẩm không phải là thuốc và không có tác dụng thay thế thuốc chữa bệnh. Hiệu quả có thể khác nhau tùy cơ địa.',
             ),
-
-            // ── TAB 9: 25 VỊ TRÍ ẢNH LANDING PAGE ─────────────────────
-            array(
-                'key' => 'field_tab_images',
-                'label' => __('25 Vị trí ảnh Landing Page', 'lx-landing'),
-                'type' => 'tab',
-            ),
-            array('key' => 'field_lx_img_hero', 'label' => __('ẢNH 1: Ảnh sản phẩm chính – chai tinh dầu tràm 30ml (1000×1000px, PNG nền trong hoặc sáng)', 'lx-landing'), 'name' => 'lx_img_hero', 'type' => 'image', 'return_format' => 'url'),
-            array('key' => 'field_lx_img_pain1', 'label' => __('ẢNH 2: Bé khò khè, trằn trọc ban đêm (600×600px)', 'lx-landing'), 'name' => 'lx_img_pain1', 'type' => 'image', 'return_format' => 'url'),
-            array('key' => 'field_lx_img_pain2', 'label' => __('ẢNH 3: Bé hắt hơi, sổ mũi sau khi tắm (600×600px)', 'lx-landing'), 'name' => 'lx_img_pain2', 'type' => 'image', 'return_format' => 'url'),
-            array('key' => 'field_lx_img_pain3', 'label' => __('ẢNH 4: Mẹ ngần ngại khi cầm chai tinh dầu (600×600px)', 'lx-landing'), 'name' => 'lx_img_pain3', 'type' => 'image', 'return_format' => 'url'),
-            array('key' => 'field_lx_img_pain4', 'label' => __('ẢNH 5: Vết muỗi đốt đỏ trên da bé (600×600px)', 'lx-landing'), 'name' => 'lx_img_pain4', 'type' => 'image', 'return_format' => 'url'),
-            array('key' => 'field_lx_img_pain', 'label' => __('ẢNH 6: Ảnh cảm xúc: bé quấy khóc ban đêm, mẹ lo lắng bế con (1200×675px, 16:9)', 'lx-landing'), 'name' => 'lx_img_pain', 'type' => 'image', 'return_format' => 'url'),
-            array('key' => 'field_lx_img_ben1', 'label' => __('ẢNH 7: Bé ấm áp trong khăn sau khi tắm (800×600px, 4:3)', 'lx-landing'), 'name' => 'lx_img_ben1', 'type' => 'image', 'return_format' => 'url'),
-            array('key' => 'field_lx_img_ben2', 'label' => __('ẢNH 8: Bé ngủ say, thở êm (800×600px, 4:3)', 'lx-landing'), 'name' => 'lx_img_ben2', 'type' => 'image', 'return_format' => 'url'),
-            array('key' => 'field_lx_img_ben3', 'label' => __('ẢNH 9: Mẹ thoa dầu lên vết muỗi đốt (800×600px, 4:3)', 'lx-landing'), 'name' => 'lx_img_ben3', 'type' => 'image', 'return_format' => 'url'),
-            array('key' => 'field_lx_img_ben4', 'label' => __('ẢNH 10: Cận cảnh giọt dầu trên da bé (800×600px, 4:3)', 'lx-landing'), 'name' => 'lx_img_ben4', 'type' => 'image', 'return_format' => 'url'),
-            array('key' => 'field_lx_img_benefit', 'label' => __('ẢNH 11: Ảnh mẹ thoa & massage ngực/lưng/chân cho bé (1200×675px, 16:9)', 'lx-landing'), 'name' => 'lx_img_benefit', 'type' => 'image', 'return_format' => 'url'),
-            array('key' => 'field_lx_img_ing1', 'label' => __('ẢNH 12: Lá tràm (400×400px)', 'lx-landing'), 'name' => 'lx_img_ing1', 'type' => 'image', 'return_format' => 'url'),
-            array('key' => 'field_lx_img_ing2', 'label' => __('ẢNH 13: Quả bơ (400×400px)', 'lx-landing'), 'name' => 'lx_img_ing2', 'type' => 'image', 'return_format' => 'url'),
-            array('key' => 'field_lx_img_ing3', 'label' => __('ẢNH 14: Quả ô liu (400×400px)', 'lx-landing'), 'name' => 'lx_img_ing3', 'type' => 'image', 'return_format' => 'url'),
-            array('key' => 'field_lx_img_ing4', 'label' => __('ẢNH 15: Hạt argan (400×400px)', 'lx-landing'), 'name' => 'lx_img_ing4', 'type' => 'image', 'return_format' => 'url'),
-            array('key' => 'field_lx_img_ingredients', 'label' => __('ẢNH 16: Ảnh chai tinh dầu cạnh nguyên liệu lá tràm, bơ, ô liu, argan (1000×1000px)', 'lx-landing'), 'name' => 'lx_img_ingredients', 'type' => 'image', 'return_format' => 'url'),
-            array('key' => 'field_lx_img_handheld', 'label' => __('ẢNH 17: Ảnh chai tinh dầu cầm gọn trong lòng bàn tay mẹ (1200×675px, 16:9)', 'lx-landing'), 'name' => 'lx_img_handheld', 'type' => 'image', 'return_format' => 'url'),
-            array('key' => 'field_lx_img_step1', 'label' => __('ẢNH 18: Nhỏ 2–3 giọt vào chậu nước tắm ấm (800×600px, 4:3)', 'lx-landing'), 'name' => 'lx_img_step1', 'type' => 'image', 'return_format' => 'url'),
-            array('key' => 'field_lx_img_step2', 'label' => __('ẢNH 19: Massage cổ, ngực, lưng, chân cho bé (800×600px, 4:3)', 'lx-landing'), 'name' => 'lx_img_step2', 'type' => 'image', 'return_format' => 'url'),
-            array('key' => 'field_lx_img_step3', 'label' => __('ẢNH 20: Thoa nhẹ lên vết muỗi đốt (800×600px, 4:3)', 'lx-landing'), 'name' => 'lx_img_step3', 'type' => 'image', 'return_format' => 'url'),
-            array('key' => 'field_lx_img_feedback1', 'label' => __('ẢNH 21: Ảnh feedback tin nhắn thật #1 (600×800px, 3:4)', 'lx-landing'), 'name' => 'lx_img_feedback1', 'type' => 'image', 'return_format' => 'url'),
-            array('key' => 'field_lx_img_feedback2', 'label' => __('ẢNH 22: Ảnh feedback tin nhắn thật #2 (600×800px, 3:4)', 'lx-landing'), 'name' => 'lx_img_feedback2', 'type' => 'image', 'return_format' => 'url'),
-            array('key' => 'field_lx_img_feedback3', 'label' => __('ẢNH 23: Ảnh feedback tin nhắn thật #3 (600×800px, 3:4)', 'lx-landing'), 'name' => 'lx_img_feedback3', 'type' => 'image', 'return_format' => 'url'),
-            array('key' => 'field_lx_img_service', 'label' => __('ẢNH 24: Ảnh điều dưỡng Home Care tắm/massage cho bé tại nhà (1200×675px, 16:9)', 'lx-landing'), 'name' => 'lx_img_service', 'type' => 'image', 'return_format' => 'url'),
-            array('key' => 'field_lx_img_offer', 'label' => __('ẢNH 25: Banner ưu đãi: sản phẩm + giá 49K/87K (1200×675px, 16:9)', 'lx-landing'), 'name' => 'lx_img_offer', 'type' => 'image', 'return_format' => 'url'),
         ),
         'location' => array(
             array(
