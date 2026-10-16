@@ -50,7 +50,7 @@ $save_price = $old_price - $unit_price;
 
     <div class="hero-visual reveal">
       <div class="glow"></div>
-      <?php echo lx_render_image_slot('lx_img_hero', 'hero', 'ẢNH 1: Ảnh sản phẩm chính – chai tinh dầu tràm 30ml', 'Tỉ lệ 3:4 · 900×1200px', 'product-img hero-img-34'); ?>
+      <?php echo lx_render_image_slot('lx_img_hero', 'hero', 'ẢNH 1: Ảnh sản phẩm chính – chai tinh dầu tràm 30ml', 'Tỉ lệ vuông 1:1 · 1000×1000px', 'product-img hero-img-sq'); ?>
       <div class="badge-circle"><span>GIẢM</span><b><?php echo esc_html($badge_percent); ?></b><span>hôm nay</span></div>
       <div class="chip c1"><?php echo esc_html($chip1); ?></div>
       <div class="chip c2"><?php echo esc_html($chip2); ?></div>
