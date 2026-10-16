@@ -8,6 +8,9 @@
 if (!defined('ABSPATH')) {
     exit;
 }
+
+$topbar_text = lx_get_field('lx_topbar_text', 'option', 'FLASH SALE chỉ <b>49.000đ</b> (niêm yết 87.000đ) · <b>FREESHIP TOÀN QUỐC</b>');
+$nav_cta_text = lx_get_field('lx_nav_cta_text', 'option', 'Mua ngay 49K');
 ?><!DOCTYPE html>
 <html <?php language_attributes(); ?>>
 <head>
@@ -19,11 +22,11 @@ if (!defined('ABSPATH')) {
 <body <?php body_class('lx_landing_theme'); ?>>
 <?php wp_body_open(); ?>
 
-<div class="topbar">FLASH SALE chỉ <b>49.000đ</b> (niêm yết 87.000đ) · <b>FREESHIP TOÀN QUỐC</b></div>
+<div class="topbar"><?php echo $topbar_text; ?></div>
 
 <header class="nav">
   <div class="container">
     <a href="#top" class="logo" id="logo"><span class="logo-text">Home Care</span></a>
-    <a href="#dat-hang" class="nav-cta" data-cta>Mua ngay 49K</a>
+    <a href="#dat-hang" class="nav-cta" data-cta><?php echo esc_html($nav_cta_text); ?></a>
   </div>
 </header>
