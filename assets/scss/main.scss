@@ -30,10 +30,12 @@ h2 em{font-style:normal;color:var(--leaf-dark)}
 @media (prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none;transition:none}}
 
 /* Buttons */
-.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;font-weight:800;font-size:17px;padding:16px 30px;border-radius:99px;transition:transform .3s,box-shadow .3s;text-align:center;font-family:var(--font)}
-.btn-buy{background:linear-gradient(135deg,#7dbb9c,var(--leaf-btn));color:#fff;box-shadow:0 10px 26px rgba(111,174,143,.38);animation:pulse 3s ease-in-out infinite}
-.btn-buy:hover{transform:translateY(-2px)}
-@keyframes pulse{0%,100%{transform:scale(1)}50%{transform:scale(1.025)}}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;font-weight:800;font-size:17px;padding:16px 32px;border-radius:99px;position:relative;overflow:hidden;text-align:center;font-family:var(--font);letter-spacing:.3px;text-shadow:0 1px 2px rgba(0,0,0,.22);transition:box-shadow .3s ease,border-color .3s ease,opacity .3s ease;cursor:pointer;border:1px solid transparent}
+.btn-buy{background:linear-gradient(135deg,#ff643e 0%,#ee381e 52%,#c92110 100%);color:#fff!important;border-color:rgba(255,255,255,.3);box-shadow:0 10px 28px rgba(238,56,30,.42),0 2px 6px rgba(0,0,0,.08),inset 0 1px 0 rgba(255,255,255,.35);animation:cta-pulse 3.2s ease-in-out infinite}
+.btn-buy::before{content:'';position:absolute;top:-50%;left:-70%;width:45%;height:200%;background:linear-gradient(90deg,transparent,rgba(255,255,255,.35),transparent);transform:rotate(25deg);animation:cta-sheen 3.8s ease-in-out infinite;pointer-events:none}
+.btn-buy:hover{box-shadow:0 14px 36px rgba(238,56,30,.58),0 4px 10px rgba(0,0,0,.12),inset 0 1px 0 rgba(255,255,255,.5);opacity:.95;border-color:rgba(255,255,255,.5)}
+@keyframes cta-pulse{0%,100%{box-shadow:0 10px 28px rgba(238,56,30,.4),0 2px 6px rgba(0,0,0,.08),inset 0 1px 0 rgba(255,255,255,.35)}50%{box-shadow:0 14px 38px rgba(238,56,30,.62),0 4px 14px rgba(238,56,30,.28),inset 0 1px 0 rgba(255,255,255,.55)}}
+@keyframes cta-sheen{0%{left:-70%}32%,100%{left:150%}}
 
 /* Topbar */
 .topbar{background:var(--leaf);color:#fff;font-size:14px;font-weight:600;text-align:center;padding:8px 12px}
@@ -42,7 +44,9 @@ header.nav{position:sticky;top:0;z-index:50;background:rgba(255,250,243,.94);bac
 header.nav .container{display:flex;align-items:center;justify-content:space-between;height:62px;gap:12px}
 .logo img{height:38px;width:auto}
 .logo-text{font-weight:800;color:var(--leaf);font-size:18px}
-.nav-cta{background:var(--leaf-btn);color:#fff;font-weight:700;font-size:14px;padding:10px 18px;border-radius:99px;white-space:nowrap}
+.nav-cta{background:linear-gradient(135deg,#ff643e 0%,#ee381e 100%);color:#fff!important;font-weight:800;font-size:14px;padding:10px 20px;border-radius:99px;white-space:nowrap;letter-spacing:.2px;text-shadow:0 1px 2px rgba(0,0,0,.2);border:1px solid rgba(255,255,255,.3);box-shadow:0 6px 18px rgba(238,56,30,.38),inset 0 1px 0 rgba(255,255,255,.3);position:relative;overflow:hidden;transition:box-shadow .3s ease,border-color .3s ease,opacity .3s ease}
+.nav-cta::before{content:'';position:absolute;top:-50%;left:-80%;width:50%;height:200%;background:linear-gradient(90deg,transparent,rgba(255,255,255,.35),transparent);transform:rotate(25deg);animation:cta-sheen 3.8s ease-in-out infinite;pointer-events:none}
+.nav-cta:hover{box-shadow:0 8px 24px rgba(238,56,30,.55),inset 0 1px 0 rgba(255,255,255,.45);opacity:.95;border-color:rgba(255,255,255,.5)}
 
 /* Hero */
 .hero{padding:40px 0 56px;background:radial-gradient(900px 520px at 85% 10%,#ffe9dc 0,transparent 60%),radial-gradient(700px 480px at 0% 100%,var(--mint) 0,transparent 60%),radial-gradient(500px 400px at 50% 40%,#fdeef3 0,transparent 70%),var(--cream);overflow:hidden}
@@ -248,7 +252,7 @@ body:has(.sticky:not(.show)) .float-call{bottom:16px}
   .hero-visual{max-width:300px}.product-img{max-width:230px}
   .orbit-item{width:70px;height:70px;font-size:10px}.orbit-item span{font-size:22px}
   .oi1,.oi3{left:calc(50% - 35px)}.oi2,.oi4{top:calc(50% - 35px)}
-  .nav-cta{padding:8px 14px;font-size:13px}
+  .nav-cta{padding:8px 16px;font-size:13.5px;font-weight:800}
   .hero .btn{width:100%}
   .offer th,.offer td{padding:12px 10px;font-size:14px}
   .toast{max-width:calc(100% - 90px)}
