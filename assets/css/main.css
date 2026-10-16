@@ -64,12 +64,16 @@ header.nav .container{display:flex;align-items:center;justify-content:space-betw
 .hero-visual{position:relative;display:flex;justify-content:center;width:100%}
 .hero-visual .glow{position:absolute;inset:8% 6%;border-radius:50%;background:radial-gradient(circle,#ffe2cc 0,rgba(255,226,204,0) 70%);filter:blur(10px);animation:breathe 5s ease-in-out infinite}
 @keyframes breathe{50%{transform:scale(1.08)}}
-.product-img{position:relative;width:100%;max-width:420px;filter:drop-shadow(0 26px 36px rgba(111,174,143,.22));animation:floaty 6s ease-in-out infinite}
+.product-img{position:relative;width:100%;max-width:380px;filter:drop-shadow(0 20px 36px rgba(111,174,143,.22));animation:floaty 6s ease-in-out infinite}
 @keyframes floaty{50%{transform:translateY(-12px)}}
-.badge-circle{position:absolute;top:6%;right:4%;width:104px;height:104px;border-radius:50%;background:linear-gradient(135deg,#f9b4a6,#ef8a8a);color:#fff;border:4px solid #fff;display:flex;flex-direction:column;align-items:center;justify-content:center;font-weight:800;line-height:1.1;text-align:center;transform:rotate(8deg);box-shadow:0 10px 24px rgba(239,138,138,.3);font-size:13px}
+.hero-img-34{position:relative;width:100%;max-width:380px;border-radius:var(--radius);overflow:hidden;background:#fff;box-shadow:var(--shadow)}
+.hero-img-34.filled{height:0;padding-bottom:133.333%;display:block}
+.hero-img-34.filled img{position:absolute;top:0;left:0;width:100%;height:100%;object-fit:contain;object-position:center;border-radius:inherit;background:#fff}
+.hero-img-34:not(.filled){min-height:480px;padding-bottom:0}
+.badge-circle{position:absolute;top:4%;right:2%;width:104px;height:104px;border-radius:50%;background:linear-gradient(135deg,#f9b4a6,#ef8a8a);color:#fff;border:4px solid #fff;display:flex;flex-direction:column;align-items:center;justify-content:center;font-weight:800;line-height:1.1;text-align:center;transform:rotate(8deg);box-shadow:0 10px 24px rgba(239,138,138,.3);font-size:13px;z-index:6}
 .badge-circle b{font-size:26px}
-.chip{position:absolute;background:rgba(255,255,255,.92);border-radius:99px;padding:8px 12px;font-size:13px;font-weight:700;box-shadow:var(--shadow);display:flex;gap:6px;align-items:center}
-.chip.c1{left:0;top:30%}.chip.c2{left:6%;bottom:12%}.chip.c3{right:0;bottom:24%}
+.chip{position:absolute;background:rgba(255,255,255,.95);border-radius:99px;padding:8px 14px;font-size:13px;font-weight:700;box-shadow:var(--shadow);display:flex;gap:6px;align-items:center;z-index:6;border:1px solid rgba(111,174,143,.15)}
+.chip.c1{left:-8px;top:32%}.chip.c2{left:-4px;bottom:10%}.chip.c3{right:-8px;bottom:22%}
 
 /* Countdown */
 .countdown{display:flex;align-items:center;gap:8px;flex-wrap:wrap;font-weight:700;font-size:14px;color:var(--ink);margin-bottom:16px}
@@ -286,7 +290,8 @@ body:has(.sticky:not(.show)) .float-call{bottom:16px}
   .stats{grid-template-columns:1fr 1fr 1fr;gap:8px}.stat{padding:16px 6px}.stat .num{font-size:24px}.stat .lbl{font-size:12px}.stat .stars{font-size:12px;letter-spacing:1px}
   .badge-circle{width:84px;height:84px;font-size:11px}.badge-circle b{font-size:21px}
   .chip{font-size:11px;padding:6px 9px}
-  .hero-visual{max-width:300px}.product-img{max-width:230px}
+  .hero-visual{max-width:320px}.product-img,.hero-img-34{max-width:270px}
+  .chip.c1{left:0;top:28%}.chip.c2{left:0;bottom:8%}.chip.c3{right:0;bottom:18%}
   .orbit-item{width:70px;height:70px;font-size:10px}.orbit-item span{font-size:22px}
   .oi1,.oi3{left:calc(50% - 35px)}.oi2,.oi4{top:calc(50% - 35px)}
   .nav-cta{padding:8px 16px;font-size:13.5px;font-weight:800}
@@ -371,7 +376,7 @@ body:has(.sticky:not(.show)) .float-call{bottom:16px}
 
 /* Resilient Aspect Ratio & Device Compatibility */
 .ph { min-height: 160px; }
-.ph.product-img { min-height: 280px; }
+.ph.product-img { min-height: 380px; }
 .ph.thumb { min-height: 140px; }
 .ph.card-img { min-height: 180px; }
 .ph.round { min-height: 80px; min-width: 80px; }
@@ -380,6 +385,8 @@ body:has(.sticky:not(.show)) .float-call{bottom:16px}
   .btn { font-size: 15px; padding: 14px 20px; }
   .hero h1 { font-size: 28px; }
   .price-now { font-size: 28px; }
+  .hero-visual { max-width: 280px; }
+  .product-img, .hero-img-34 { max-width: 240px; }
   .usage-video-wrap { max-width: 260px; }
   .usage-step-card { padding: 16px 12px; gap: 10px; }
 }

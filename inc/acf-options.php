@@ -196,7 +196,7 @@ function lx_register_acf_field_group() {
             ),
             array(
                 'key' => 'field_lx_img_hero',
-                'label' => __('📷 ẢNH 1: Ảnh sản phẩm chính – chai tinh dầu tràm 30ml (1000×1000px, PNG nền trong hoặc sáng)', 'lx-landing'),
+                'label' => __('📷 ẢNH 1: Ảnh sản phẩm chính – chai tinh dầu tràm (Tỉ lệ dọc 3:4, vd: 900×1200px hoặc 750×1000px)', 'lx-landing'),
                 'name' => 'lx_img_hero',
                 'type' => 'image',
                 'return_format' => 'url',
