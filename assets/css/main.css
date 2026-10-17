@@ -273,12 +273,12 @@ header.nav .container{display:flex;align-items:center;justify-content:space-betw
 /* Order Section & Unified Order Card */
 .order{background:radial-gradient(1200px 600px at 50% 0%,rgba(255,215,100,.7) 0%,rgba(255,246,214,.35) 60%,transparent 80%),radial-gradient(900px 500px at 90% 80%,rgba(243,185,138,.3) 0%,transparent 60%),radial-gradient(750px 450px at 10% 85%,rgba(111,174,143,.2) 0%,transparent 55%),linear-gradient(180deg,#fff4cc 0%,#fff6d6 18%,#ffe899 50%,#fff2be 80%,#ffeed0 100%);border-top:2px solid rgba(243,185,138,.5);box-shadow:inset 0 2px 0 rgba(255,255,255,.95)}
 .unified-order-card{background:#ffffff;border-radius:28px;box-shadow:0 20px 60px rgba(0,0,0,.08),0 4px 16px rgba(212,160,80,.12);border:1px solid rgba(0,0,0,.06);overflow:hidden;max-width:1040px;margin:32px auto 0;position:relative;box-sizing:border-box}
-.uoc-header{background:linear-gradient(90deg,#ff5466 0%,#ff4258 52%,#ff344a 100%);padding:12px 28px;display:flex;align-items:center;justify-content:space-between;gap:16px;color:#ffffff;box-sizing:border-box}
+.uoc-header{background:linear-gradient(135deg,#378431 0%,#2e6c29 52%,#20521c 100%);padding:12px 28px;display:flex;align-items:center;justify-content:space-between;gap:16px;color:#ffffff;box-sizing:border-box}
 .uoc-tag{font-size:16px;font-weight:800;letter-spacing:.4px;text-transform:uppercase;display:inline-flex;align-items:center;gap:8px;white-space:nowrap}
 .uoc-countdown{display:inline-flex;align-items:center;gap:4px}
 .uoc-unit{background:#ffffff;border-radius:8px;padding:4px 8px;min-width:48px;text-align:center;box-shadow:0 2px 6px rgba(0,0,0,.12);box-sizing:border-box}
-.uoc-unit b{display:block;font-size:16px;font-weight:800;color:#ff344a;line-height:1.1}
-.uoc-unit span{display:block;font-size:8px;font-weight:700;color:#ff344a;line-height:1.1;text-transform:uppercase;margin-top:4px}
+.uoc-unit b{display:block;font-size:16px;font-weight:800;color:#2e6c29;line-height:1.1}
+.uoc-unit span{display:block;font-size:8px;font-weight:700;color:#2e6c29;line-height:1.1;text-transform:uppercase;margin-top:4px}
 .uoc-sep{font-size:16px;font-weight:800;color:#ffffff;line-height:1;margin:0 4px}
 .uoc-stock{background:rgba(0,0,0,.16);border-radius:96px;padding:4px 16px;font-size:12px;font-weight:700;color:#ffffff;white-space:nowrap;display:inline-flex;align-items:center;gap:4px}
 .uoc-stock #stockLeft{font-weight:800}
