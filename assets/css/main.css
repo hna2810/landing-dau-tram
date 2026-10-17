@@ -281,7 +281,7 @@ header.nav .container{display:flex;align-items:center;justify-content:space-betw
 .uoc-sep{font-size:16px;font-weight:800;color:#ffffff;line-height:1;margin:0 4px}
 .uoc-stock{background:rgba(0,0,0,.16);border-radius:96px;padding:4px 16px;font-size:12px;font-weight:700;color:#ffffff;white-space:nowrap;display:inline-flex;align-items:center;gap:4px}
 .uoc-stock #stockLeft{font-weight:800}
-.uoc-body{display:grid;grid-template-columns:1fr 1fr;align-items:start}
+.uoc-body{display:grid;grid-template-columns:1fr 1fr;align-items:center}
 .uoc-col-left{padding:36px 36px 40px;display:flex;flex-direction:column;box-sizing:border-box}
 .uoc-badge-hot{align-self:flex-start;background:#ffebee;color:#e53935;border:1px solid #ffcdd2;font-size:12px;font-weight:800;padding:4px 16px;border-radius:96px;margin-bottom:16px;display:inline-block}
 .uoc-img-box{position:relative;width:100%;max-width:320px;margin:0 auto 20px;border-radius:20px;border:1.5px solid #e2e8f0;box-shadow:0 4px 16px rgba(0,0,0,.04);background:#ffffff;overflow:visible}
@@ -290,7 +290,7 @@ header.nav .container{display:flex;align-items:center;justify-content:space-betw
 .uoc-save-tag{position:absolute;top:-12px;right:12px;z-index:5;background:linear-gradient(90deg,#ff416c,#ff4b2b);color:#ffffff;font-size:12px;font-weight:800;padding:4px 12px;border-radius:96px;box-shadow:0 4px 12px rgba(255,65,108,.4);text-transform:uppercase;white-space:nowrap}
 .uoc-prod-title{font-size:20px;font-weight:800;color:#1e293b;text-align:center;margin:0 0 8px;line-height:1.35}
 .uoc-prod-desc{font-size:12px;color:#64748b;text-align:center;margin:0 0 20px;line-height:1.5}
-.uoc-price-pill{border:1.5px solid #a5f3fc;background:#f0f9ff;border-radius:96px;padding:8px 20px;display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:24px;box-sizing:border-box}
+.uoc-price-pill{border:1.5px solid #a5f3fc;background:#f0f9ff;border-radius:96px;padding:8px 20px;display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:0;box-sizing:border-box}
 .uoc-price-main,.uoc-price-sub{display:flex;align-items:baseline;gap:4px}
 .uoc-price-lbl{font-size:12px;color:#475569;font-weight:600}
 .uoc-price-val{font-size:20px;font-weight:800;color:#e11d48;line-height:1}

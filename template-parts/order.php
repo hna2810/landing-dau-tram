@@ -16,10 +16,6 @@ $badge_hot    = lx_get_field('lx_order_badge_hot', 'option', '🔥 BÁN CHẠY N
 $product_name = lx_get_field('lx_order_product_name', 'option', 'Khí Hàn Sinh Khương Hoàng Cung 30ml');
 $product_desc = lx_get_field('lx_order_product_desc', 'option', 'Hỗ trợ làm ấm cơ thể, giải tỏa mệt mỏi, an lành cho mẹ & bé');
 $stock_left   = lx_get_field('lx_order_stock_left', 'option', '5');
-$b1           = lx_get_field('lx_order_bullet1', 'option', 'Chai 30ml tiện lợi – Dùng tiết kiệm cho cả gia đình');
-$b2           = lx_get_field('lx_order_bullet2', 'option', 'Miễn phí vận chuyển toàn quốc');
-$b3           = lx_get_field('lx_order_bullet3', 'option', 'Kiểm tra hàng trước khi thanh toán');
-$b4           = lx_get_field('lx_order_bullet4', 'option', 'Tư vấn miễn phí & Đồng hành cùng mẹ trong suốt quá trình sử dụng');
 
 $unit_price = (int) lx_get_field('lx_unit_price', 'option', 49000);
 $old_price  = (int) lx_get_field('lx_old_price', 'option', 87000);
@@ -84,12 +80,7 @@ $slot_offer = lx_render_image_slot('lx_img_offer', 'offer', 'ẢNH 18: Banner ư
             </div>
           </div>
 
-          <ul class="uoc-checklist">
-            <?php if (!empty($b1)) : ?><li><span class="uoc-check-icon">✓</span> <span><?php echo esc_html($b1); ?></span></li><?php endif; ?>
-            <?php if (!empty($b2)) : ?><li><span class="uoc-check-icon">✓</span> <span><?php echo esc_html($b2); ?></span></li><?php endif; ?>
-            <?php if (!empty($b3)) : ?><li><span class="uoc-check-icon">✓</span> <span><?php echo esc_html($b3); ?></span></li><?php endif; ?>
-            <?php if (!empty($b4)) : ?><li><span class="uoc-check-icon">✓</span> <span><?php echo esc_html($b4); ?></span></li><?php endif; ?>
-          </ul>
+
         </div>
 
         <!-- Right Column: Registration Form -->
