@@ -23,25 +23,21 @@ function lx_ensure_cf7_form() {
     }
 
     $form_content = '<div class="field">' . "\n"
-        . '  <label for="fName">Họ và tên mẹ <i>*</i></label>' . "\n"
+        . '  <label for="fName">1. Họ và tên mẹ <i>*</i></label>' . "\n"
         . '  [text* your-name id:fName class:input autocomplete:name placeholder "VD: Nguyễn Thu Hà"]' . "\n"
         . '</div>' . "\n"
         . '<div class="field">' . "\n"
-        . '  <label for="fPhone">Số điện thoại <i>*</i></label>' . "\n"
+        . '  <label for="fPhone">2. Số điện thoại nhận hàng <i>*</i></label>' . "\n"
         . '  [tel* your-phone id:fPhone class:input autocomplete:tel placeholder "VD: 0912 345 678"]' . "\n"
         . '</div>' . "\n"
         . '<div class="field">' . "\n"
-        . '  <label for="fAddress">Địa chỉ nhận hàng <i>*</i></label>' . "\n"
-        . '  [text* your-address id:fAddress class:input autocomplete:street-address placeholder "Số nhà, tên đường, phường/xã, quận/huyện, tỉnh/thành..."]' . "\n"
+        . '  <label for="fAddress">3. Địa chỉ giao hàng <i>*</i></label>' . "\n"
+        . '  [text* your-address id:fAddress class:input autocomplete:street-address placeholder "VD: Số 12 ngõ 34 đường ABC, Phường X, Quận Y, TP..."]' . "\n"
         . '</div>' . "\n"
         . '<div class="field" style="display:none">' . "\n"
         . '  [hidden package default:"1 chai 30ml – 49.000đ (giá niêm yết 87.000đ) + FREESHIP"]' . "\n"
         . '</div>' . "\n"
-        . '<div class="field">' . "\n"
-        . '  <label for="fNote">Ghi chú (nếu có)</label>' . "\n"
-        . '  [text your-note id:fNote class:input placeholder "Ví dụ: Giao giờ hành chính, gọi trước khi giao..."]' . "\n"
-        . '</div>' . "\n"
-        . '[submit class:btn class:btn-buy class:btn-block id:submitBtn "ĐẶT MUA NGAY - BẢO VỆ SỨC KHỎE CHO CẢ GIA ĐÌNH"]' . "\n"
+        . '[submit class:btn class:btn-buy class:btn-block id:submitBtn "🚀 GỬI NGAY!"]' . "\n"
         . '<p class="form-foot">(Tư vấn miễn phí &amp; Kiểm tra hàng trước khi thanh toán)</p>';
 
     $messages = array(
@@ -226,24 +222,22 @@ function lx_render_order_form() {
     ?>
     <form class="card reveal" id="orderForm" novalidate>
       <div id="formBody">
-        <h3>FORM ĐẶT HÀNG NHANH</h3>
-        <p class="hint">Điền thông tin, Home Care gọi xác nhận trong ít phút</p>
         <div class="field">
-          <label for="fName">Họ và tên mẹ *</label>
+          <label for="fName">1. Họ và tên mẹ <i>*</i></label>
           <input id="fName" name="name" autocomplete="name" placeholder="VD: Nguyễn Thu Hà">
           <div class="msg">Vui lòng nhập họ tên</div>
         </div>
         <div class="field">
-          <label for="fPhone">Số điện thoại *</label>
+          <label for="fPhone">2. Số điện thoại nhận hàng <i>*</i></label>
           <input id="fPhone" name="phone" type="tel" inputmode="numeric" autocomplete="tel" placeholder="VD: 0912 345 678">
           <div class="msg">Số điện thoại chưa đúng (10 số)</div>
         </div>
         <div class="field">
-          <label for="fAddr">Địa chỉ nhận hàng *</label>
-          <input id="fAddr" name="address" type="text" autocomplete="street-address" placeholder="Số nhà, đường, phường/xã, quận/huyện, tỉnh/thành">
+          <label for="fAddr">3. Địa chỉ giao hàng <i>*</i></label>
+          <input id="fAddr" name="address" type="text" autocomplete="street-address" placeholder="VD: Số 12 ngõ 34 đường ABC, Phường X, Quận Y, TP...">
           <div class="msg">Vui lòng nhập địa chỉ nhận hàng</div>
         </div>
-        <button type="submit" class="btn btn-buy" id="submitBtn">ĐẶT MUA NGAY - BẢO VỆ SỨC KHỎE CHO CẢ GIA ĐÌNH</button>
+        <button type="submit" class="btn btn-buy btn-block" id="submitBtn">🚀 GỬI NGAY!</button>
         <p class="form-foot">(Tư vấn miễn phí &amp; Kiểm tra hàng trước khi thanh toán)</p>
       </div>
       <div class="success" id="formSuccess">

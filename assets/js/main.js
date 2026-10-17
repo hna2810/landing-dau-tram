@@ -139,11 +139,11 @@
     }
 
     var pad = function (n) { return String(n).padStart(2, '0'); };
-    var cdH = $('#cd-h');
-    var cdM = $('#cd-m');
-    var cdS = $('#cd-s');
+    var cdHList = document.querySelectorAll('#cdHour, #cd-h');
+    var cdMList = document.querySelectorAll('#cdMin, #cd-m');
+    var cdSList = document.querySelectorAll('#cdSec, #cd-s');
 
-    if (cdH && cdM && cdS) {
+    if (cdHList.length && cdMList.length && cdSList.length) {
       var tick = function () {
         var left = end - Date.now();
         if (left <= 0) {
@@ -153,9 +153,12 @@
           } catch (e) {}
           left = span;
         }
-        cdH.textContent = pad(Math.floor(left / 3600e3));
-        cdM.textContent = pad(Math.floor(left / 60e3) % 60);
-        cdS.textContent = pad(Math.floor(left / 1e3) % 60);
+        var hStr = pad(Math.floor(left / 3600e3));
+        var mStr = pad(Math.floor(left / 60e3) % 60);
+        var sStr = pad(Math.floor(left / 1e3) % 60);
+        cdHList.forEach(function (el) { el.textContent = hStr; });
+        cdMList.forEach(function (el) { el.textContent = mStr; });
+        cdSList.forEach(function (el) { el.textContent = sStr; });
       };
       tick();
       setInterval(tick, 1000);
