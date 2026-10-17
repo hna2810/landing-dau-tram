@@ -94,7 +94,7 @@ if (!$has_ings && empty($title) && empty($slot_ingredients)) {
       <?php endif; ?>
 
       <?php if (!empty($slot_ingredients)) : ?>
-        <div class="reveal">
+        <div class="ingre-visual reveal">
           <?php echo $slot_ingredients; ?>
         </div>
       <?php endif; ?>

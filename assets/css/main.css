@@ -162,7 +162,10 @@ header.nav .container{display:flex;align-items:center;justify-content:space-betw
 .ingre h3{font-size:17px}
 .ingre .latin{font-size:13px;font-style:italic;color:var(--muted);margin-bottom:4px}
 .ingre p{font-size:15px;color:var(--muted)}
-.ingre-visual{position:relative;aspect-ratio:1;max-width:460px;margin:0 auto;width:100%}
+.ingre-visual{position:relative;max-width:480px;margin:0 auto;width:100%;border-radius:var(--radius);overflow:hidden}
+.ingre-visual .ph{border-radius:var(--radius);width:100%}
+.ingre-visual .ph.filled{display:block;border:none;background:none;padding:0}
+.ingre-visual .ph.filled img{width:100%;height:auto;display:block;border-radius:var(--radius);box-shadow:0 12px 32px rgba(0,0,0,.08)}
 .orbit{position:absolute;inset:0;border-radius:50%;border:2px dashed var(--mint)}
 .orbit-center{position:absolute;inset:26%;border-radius:50%;background:radial-gradient(circle at 35% 30%,#fff,#fff6d6);font-family:var(--head);display:flex;align-items:center;justify-content:center;text-align:center;font-weight:800;color:var(--leaf-dark);box-shadow:var(--shadow);font-size:15px;padding:10px}
 .orbit-item{position:absolute;width:86px;height:86px;border-radius:50%;background:#fff;box-shadow:var(--shadow);display:flex;flex-direction:column;align-items:center;justify-content:center;font-size:12px;font-weight:700;text-align:center;line-height:1.2}
@@ -331,6 +334,7 @@ body:has(.sticky:not(.show)) .float-call{bottom:16px}
 @media (max-width:960px){
   .hero-grid,.ingre-wrap,.order-grid,.pain-grid-3,.standards-wrap{grid-template-columns:minmax(0,1fr)}
   .hero-visual{order:-1;max-width:460px;margin:0 auto}
+  .ingre-visual{order:-1;max-width:460px;margin:0 auto 24px;width:100%}
   .hero{padding-top:20px}
   .ben-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
   .reviews,.steps{grid-template-columns:minmax(0,1fr)}
@@ -350,6 +354,7 @@ body:has(.sticky:not(.show)) .float-call{bottom:16px}
   .badge-circle{width:78px;height:78px;font-size:10px;top:8px;right:8px}.badge-circle b{font-size:20px}
   .chip{font-size:11px;padding:6px 10px}
   .hero-visual{max-width:100%;width:100%}.product-img,.hero-img-sq,.hero-img-34{max-width:360px;width:100%;margin:0 auto}
+  .ingre-visual{max-width:360px;width:100%;margin:0 auto 20px}
   .hero-img-sq.filled,.hero-img-34.filled{height:0!important;padding-bottom:100%!important;min-height:0!important;max-height:none!important}
   .chip.c1{left:6px;top:28%}.chip.c2{left:6px;bottom:8%}.chip.c3{right:6px;bottom:14%}
   .orbit-item{width:70px;height:70px;font-size:10px}.orbit-item span{font-size:22px}
