@@ -2,6 +2,7 @@
   --leaf:#6fae8f; --leaf-dark:#4a876a; --leaf-btn:#5f9f80; --leaf-light:#eef7f1; --mint:#dcefe4;
   --amber:#f3b98a; --amber-dark:#d98f5c; --amber-light:#fff8eb;
   --cream:#fff6d6; --red:#f28b82; --red-dark:#e5766d; --pink:#fbe3e1;
+  --cta:#2e6c29; --cta-dark:#20521c; --cta-light:#378431;
   --ink:#3d4a44; --muted:#7a8781; --line:#f3ebe0; --white:#fff;
   --radius:28px; --shadow:0 14px 36px rgba(195,160,110,.09), 0 2px 8px rgba(0,0,0,.02);
   --font:'Nunito',system-ui,sans-serif; --head:'Quicksand','Nunito',sans-serif;
@@ -45,10 +46,10 @@ h2 em{font-style:normal;color:var(--leaf-dark)}
 
 /* Buttons */
 .btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;font-weight:800;font-size:17px;padding:16px 32px;border-radius:99px;position:relative;overflow:hidden;text-align:center;font-family:var(--font);letter-spacing:.3px;text-shadow:0 1px 2px rgba(0,0,0,.22);transition:box-shadow .3s ease,border-color .3s ease,opacity .3s ease;cursor:pointer;border:1px solid transparent}
-.btn-buy{background:linear-gradient(135deg,#ff643e 0%,#ee381e 52%,#c92110 100%);color:#fff!important;border-color:rgba(255,255,255,.3);box-shadow:0 10px 28px rgba(238,56,30,.42),0 2px 6px rgba(0,0,0,.08),inset 0 1px 0 rgba(255,255,255,.35);animation:cta-pulse 3.2s ease-in-out infinite}
+.btn-buy{background:#2e6c29;background:linear-gradient(135deg,#378431 0%,#2e6c29 52%,#20521c 100%);color:#fff!important;border-color:rgba(255,255,255,.3);box-shadow:0 10px 28px rgba(46,108,41,.42),0 2px 6px rgba(0,0,0,.08),inset 0 1px 0 rgba(255,255,255,.35);animation:cta-pulse 3.2s ease-in-out infinite}
 .btn-buy::before{content:'';position:absolute;top:-50%;left:-70%;width:45%;height:200%;background:linear-gradient(90deg,transparent,rgba(255,255,255,.35),transparent);transform:rotate(25deg);animation:cta-sheen 3.8s ease-in-out infinite;pointer-events:none}
-.btn-buy:hover{box-shadow:0 14px 36px rgba(238,56,30,.58),0 4px 10px rgba(0,0,0,.12),inset 0 1px 0 rgba(255,255,255,.5);opacity:.95;border-color:rgba(255,255,255,.5)}
-@keyframes cta-pulse{0%,100%{box-shadow:0 10px 28px rgba(238,56,30,.4),0 2px 6px rgba(0,0,0,.08),inset 0 1px 0 rgba(255,255,255,.35)}50%{box-shadow:0 14px 38px rgba(238,56,30,.62),0 4px 14px rgba(238,56,30,.28),inset 0 1px 0 rgba(255,255,255,.55)}}
+.btn-buy:hover{background:linear-gradient(135deg,#3d9237 0%,#2e6c29 52%,#1a4517 100%);box-shadow:0 14px 36px rgba(46,108,41,.58),0 4px 10px rgba(0,0,0,.12),inset 0 1px 0 rgba(255,255,255,.5);opacity:.96;border-color:rgba(255,255,255,.5)}
+@keyframes cta-pulse{0%,100%{box-shadow:0 10px 28px rgba(46,108,41,.4),0 2px 6px rgba(0,0,0,.08),inset 0 1px 0 rgba(255,255,255,.35)}50%{box-shadow:0 14px 38px rgba(46,108,41,.62),0 4px 14px rgba(46,108,41,.28),inset 0 1px 0 rgba(255,255,255,.55)}}
 @keyframes cta-sheen{0%{left:-70%}32%,100%{left:150%}}
 
 /* Topbar */
@@ -58,9 +59,9 @@ header.nav{position:sticky;top:0;z-index:50;background:rgba(255,250,238,.92);bac
 header.nav .container{display:flex;align-items:center;justify-content:space-between;height:62px;gap:12px}
 .logo img{height:38px;width:auto}
 .logo-text{font-weight:800;color:var(--leaf);font-size:18px}
-.nav-cta{background:linear-gradient(135deg,#ff643e 0%,#ee381e 100%);color:#fff!important;font-weight:800;font-size:14px;padding:10px 20px;border-radius:99px;white-space:nowrap;letter-spacing:.2px;text-shadow:0 1px 2px rgba(0,0,0,.2);border:1px solid rgba(255,255,255,.3);box-shadow:0 6px 18px rgba(238,56,30,.38),inset 0 1px 0 rgba(255,255,255,.3);position:relative;overflow:hidden;transition:box-shadow .3s ease,border-color .3s ease,opacity .3s ease}
+.nav-cta{background:#2e6c29;background:linear-gradient(135deg,#378431 0%,#2e6c29 100%);color:#fff!important;font-weight:800;font-size:14px;padding:10px 20px;border-radius:99px;white-space:nowrap;letter-spacing:.2px;text-shadow:0 1px 2px rgba(0,0,0,.2);border:1px solid rgba(255,255,255,.3);box-shadow:0 6px 18px rgba(46,108,41,.38),inset 0 1px 0 rgba(255,255,255,.3);position:relative;overflow:hidden;transition:box-shadow .3s ease,border-color .3s ease,opacity .3s ease}
 .nav-cta::before{content:'';position:absolute;top:-50%;left:-80%;width:50%;height:200%;background:linear-gradient(90deg,transparent,rgba(255,255,255,.35),transparent);transform:rotate(25deg);animation:cta-sheen 3.8s ease-in-out infinite;pointer-events:none}
-.nav-cta:hover{box-shadow:0 8px 24px rgba(238,56,30,.55),inset 0 1px 0 rgba(255,255,255,.45);opacity:.95;border-color:rgba(255,255,255,.5)}
+.nav-cta:hover{background:linear-gradient(135deg,#3d9237 0%,#245720 100%);box-shadow:0 8px 24px rgba(46,108,41,.55),inset 0 1px 0 rgba(255,255,255,.45);opacity:.96;border-color:rgba(255,255,255,.5)}
 
 /* Hero */
 .hero{padding:40px 0 56px;background:transparent;overflow:hidden}
