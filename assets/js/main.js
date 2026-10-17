@@ -18,7 +18,7 @@
       ben1: '', ben2: '', ben3: '', ben4: '', benefit: '',
       ing1: '', ing2: '', ing3: '', ing4: '', ingredients: '', handheld: '', certificate: '',
       step1: '', step2: '', step3: '',
-      feedback1: '', feedback2: '', feedback3: '', service: '', offer: ''
+      feedback1: '', feedback2: '', feedback3: '', feedback4: '', service: '', offer: ''
     }, wpConfig.images || {}),
     showImageNotes: typeof wpConfig.showImageNotes !== 'undefined' ? wpConfig.showImageNotes : true,
     orderEndpoint: wpConfig.orderEndpoint || '',

@@ -95,6 +95,7 @@ function lx_enqueue_scripts() {
             'feedback1'   => lx_get_image_url('lx_img_feedback1', ''),
             'feedback2'   => lx_get_image_url('lx_img_feedback2', ''),
             'feedback3'   => lx_get_image_url('lx_img_feedback3', ''),
+            'feedback4'   => lx_get_image_url('lx_img_feedback4', ''),
             'service'     => lx_get_image_url('lx_img_service', ''),
             'offer'       => lx_get_image_url('lx_img_offer', ''),
         ),

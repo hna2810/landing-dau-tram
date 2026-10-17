@@ -1006,8 +1006,15 @@ function lx_register_acf_field_group() {
                 'return_format' => 'url',
             ),
             array(
+                'key' => 'field_lx_img_feedback4',
+                'label' => __('📷 ẢNH 24: Ảnh feedback tin nhắn thật #4 (600×800px, 3:4)', 'lx-landing'),
+                'name' => 'lx_img_feedback4',
+                'type' => 'image',
+                'return_format' => 'url',
+            ),
+            array(
                 'key' => 'field_lx_img_service',
-                'label' => __('📷 ẢNH 24: Ảnh điều dưỡng Home Care tắm/massage cho bé tại nhà (1200×675px, 16:9)', 'lx-landing'),
+                'label' => __('📷 ẢNH 25: Ảnh điều dưỡng Home Care tắm/massage cho bé tại nhà (1200×675px, 16:9)', 'lx-landing'),
                 'name' => 'lx_img_service',
                 'type' => 'image',
                 'return_format' => 'url',

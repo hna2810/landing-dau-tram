@@ -106,13 +106,14 @@ header.nav .container{display:flex;align-items:center;justify-content:space-betw
 .ph.filled img{width:100%;height:100%;object-fit:cover;border-radius:inherit}
 .ph.hide{display:none}
 .img-row{max-width:760px;margin:30px auto 0}
-.fb-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px;margin-top:28px}
+.fb-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:16px;margin-top:28px}
 .step .ph{margin:8px 0 14px;border-radius:20px;padding:10px}
 .step .ph b{font-size:14px}
 .offer .ph{border-radius:0;border-width:0 0 2px}
 .fb-grid .ph{padding:10px}.fb-grid .ph b{font-size:14px}
 .hero-visual:has(.ph:not(.filled)) .chip{display:none}
-@media (max-width:600px){.fb-grid{grid-template-columns:1fr 1fr}.fb-grid>div:last-child{grid-column:span 2;width:calc(50% - 7px);justify-self:center}.fb-grid .ph small{font-size:11px}}
+@media (max-width:960px){.fb-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}}
+@media (max-width:600px){.fb-grid{grid-template-columns:1fr 1fr;gap:12px}.fb-grid .ph small{font-size:11px}}
 
 /* Thumbnails in cards */
 .ph.thumb{flex:0 0 108px;width:108px;padding:8px;border-radius:20px;gap:2px}

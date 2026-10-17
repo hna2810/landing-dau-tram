@@ -55,9 +55,10 @@ $has_stats = ($has_stat1 || $has_stat2 || $has_stat3);
 $slot_fb1 = lx_render_image_slot('lx_img_feedback1', 'feedback1', 'ẢNH 13: Ảnh feedback tin nhắn thật #1', 'Tin nhắn Zalo/Messenger · 600×800px (3:4)', '', 'aspect-ratio:3/4;');
 $slot_fb2 = lx_render_image_slot('lx_img_feedback2', 'feedback2', 'ẢNH 14: Ảnh feedback tin nhắn thật #2', '600×800px (3:4)', '', 'aspect-ratio:3/4;');
 $slot_fb3 = lx_render_image_slot('lx_img_feedback3', 'feedback3', 'ẢNH 15: Ảnh feedback tin nhắn thật #3', '600×800px (3:4)', '', 'aspect-ratio:3/4;');
-$has_fbs  = (!empty($slot_fb1) || !empty($slot_fb2) || !empty($slot_fb3));
+$slot_fb4 = lx_render_image_slot('lx_img_feedback4', 'feedback4', 'ẢNH 16: Ảnh feedback tin nhắn thật #4', '600×800px (3:4)', '', 'aspect-ratio:3/4;');
+$has_fbs  = (!empty($slot_fb1) || !empty($slot_fb2) || !empty($slot_fb3) || !empty($slot_fb4));
 
-$slot_service = lx_render_image_slot('lx_img_service', 'service', 'ẢNH 16: Ảnh chuyên viên Home Care chăm sóc mẹ và bé', '1200×675px (16:9)', '', 'aspect-ratio:16/9;');
+$slot_service = lx_render_image_slot('lx_img_service', 'service', 'ẢNH 17: Ảnh chuyên viên Home Care chăm sóc mẹ và bé', '1200×675px (16:9)', '', 'aspect-ratio:16/9;');
 $has_trusts   = (!empty($trust1) || !empty($trust2));
 
 if (empty($title) && empty($subtitle) && !$has_stats && empty($reviews) && !$has_fbs && empty($slot_service) && !$has_trusts) {
@@ -107,6 +108,7 @@ if (empty($title) && empty($subtitle) && !$has_stats && empty($reviews) && !$has
         <?php if (!empty($slot_fb1)) : ?><div class="reveal"><?php echo $slot_fb1; ?></div><?php endif; ?>
         <?php if (!empty($slot_fb2)) : ?><div class="reveal"><?php echo $slot_fb2; ?></div><?php endif; ?>
         <?php if (!empty($slot_fb3)) : ?><div class="reveal"><?php echo $slot_fb3; ?></div><?php endif; ?>
+        <?php if (!empty($slot_fb4)) : ?><div class="reveal"><?php echo $slot_fb4; ?></div><?php endif; ?>
       </div>
     <?php endif; ?>
 
