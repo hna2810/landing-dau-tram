@@ -160,15 +160,29 @@ function lx_render_image_slot($field_name, $key, $title, $spec = '', $classes = 
 }
 
 /**
- * Render 9:16 vertical video frame for Usage section
+ * Render 9:16 vertical video frame (iPhone 18 Pro + TikTok Overlay)
  *
+ * @param string $context Context slug ('usage', 'hero', etc.)
  * @return string HTML
  */
-function lx_render_usage_video() {
-    $video_url   = lx_get_field('lx_usage_video_url', 'option', '');
-    $poster_url  = lx_get_image_url('lx_usage_video_poster', '', 'full', 'option');
-    $badge_text  = lx_get_field('lx_usage_video_badge', 'option', 'HD 9:16 · HƯỚNG DẪN THỰC TẾ');
-    $video_sub   = lx_get_field('lx_usage_video_sub', 'option', 'Xem video 30s hướng dẫn mẹ dùng đúng cách');
+function lx_render_video_frame($context = 'usage') {
+    if ($context === 'hero') {
+        $video_url   = lx_get_field('lx_hero_video_url', 'option', '');
+        $poster_url  = lx_get_image_url('lx_hero_video_poster', '', 'full', 'option');
+        $video_sub   = lx_get_field('lx_hero_video_sub', 'option', '');
+
+        // Fallback to usage video if hero video not set
+        if (empty($video_url)) {
+            $video_url = lx_get_field('lx_usage_video_url', 'option', 'https://www.youtube.com/shorts/4kOgpS5Yq5g');
+        }
+        if (empty($poster_url)) {
+            $poster_url = lx_get_image_url('lx_usage_video_poster', '', 'full', 'option');
+        }
+    } else {
+        $video_url   = lx_get_field('lx_usage_video_url', 'option', 'https://www.youtube.com/shorts/4kOgpS5Yq5g');
+        $poster_url  = lx_get_image_url('lx_usage_video_poster', '', 'full', 'option');
+        $video_sub   = lx_get_field('lx_usage_video_sub', 'option', 'Xem video 30s hướng dẫn mẹ dùng đúng cách');
+    }
 
     // Parse YouTube ID if YouTube URL
     $yt_id = '';
@@ -186,11 +200,17 @@ function lx_render_usage_video() {
         return '';
     }
 
+    $box_id       = esc_attr($context) . 'VideoBox';
+    $poster_id    = esc_attr($context) . 'VideoPoster';
+    $overlay_id   = esc_attr($context) . 'TiktokOverlay';
+    $play_btn_id  = esc_attr($context) . 'PlayBtn';
+    $container_id = esc_attr($context) . 'VideoContainer';
+
     ob_start();
     ?>
-    <div class="usage-video-wrap reveal">
+    <div class="usage-video-wrap reveal <?php echo esc_attr($context); ?>-video-wrap">
       <div class="usage-phone-frame iphone-frame">
-        <div class="usage-video-box" id="usageVideoBox"
+        <div class="usage-video-box" id="<?php echo $box_id; ?>"
              data-has-video="<?php echo $has_video ? '1' : '0'; ?>"
              data-yt-id="<?php echo esc_attr($yt_id); ?>"
              data-video-url="<?php echo esc_url($video_url); ?>">
@@ -201,7 +221,7 @@ function lx_render_usage_video() {
           
           <div class="usage-video-ratio">
             <?php if (!empty($poster_url)) : ?>
-              <img src="<?php echo esc_url($poster_url); ?>" alt="Hướng dẫn sử dụng tinh dầu giữ ấm" class="usage-video-poster" id="usageVideoPoster" loading="lazy">
+              <img src="<?php echo esc_url($poster_url); ?>" alt="Hướng dẫn sử dụng tinh dầu giữ ấm" class="usage-video-poster" id="<?php echo $poster_id; ?>" loading="lazy">
             <?php else : ?>
               <div class="usage-video-placeholder-bg">
                 <div class="usage-placeholder-inner">
@@ -220,7 +240,7 @@ function lx_render_usage_video() {
               </div>
             <?php endif; ?>
 
-            <div class="tiktok-overlay" id="tiktokOverlay">
+            <div class="tiktok-overlay" id="<?php echo $overlay_id; ?>">
               <div class="tt-top-bar">
                 <div class="tt-live-icon">
                   <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M23 7l-7 5 7 5V7z"/><rect x="1" y="5" width="15" height="14" rx="2" ry="2"/></svg>
@@ -296,7 +316,7 @@ function lx_render_usage_video() {
               </div>
             </div>
 
-            <button type="button" class="usage-play-btn" id="usagePlayBtn" aria-label="Phát video hướng dẫn">
+            <button type="button" class="usage-play-btn" id="<?php echo $play_btn_id; ?>" aria-label="Phát video hướng dẫn">
               <span class="play-pulse"></span>
               <span class="play-icon">
                 <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor">
@@ -305,11 +325,12 @@ function lx_render_usage_video() {
               </span>
             </button>
 
-            <div class="usage-video-container" id="usageVideoContainer"></div>
+            <div class="usage-video-container" id="<?php echo $container_id; ?>"></div>
             <div class="iphone-home-indicator"></div>
           </div>
         </div>
       </div>
+      <?php if (!empty($video_sub)) : ?>
       <div class="usage-video-caption">
         <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
           <circle cx="12" cy="12" r="10"></circle>
@@ -317,8 +338,18 @@ function lx_render_usage_video() {
         </svg>
         <span><?php echo esc_html($video_sub); ?></span>
       </div>
+      <?php endif; ?>
     </div>
     <?php
     return ob_get_clean();
+}
+
+/**
+ * Backward compatibility wrapper for usage video
+ *
+ * @return string HTML
+ */
+function lx_render_usage_video() {
+    return lx_render_video_frame('usage');
 }
 

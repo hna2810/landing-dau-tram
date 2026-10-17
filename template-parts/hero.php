@@ -56,7 +56,7 @@ $save_price = $old_price - $unit_price;
 
     <div class="hero-visual reveal">
       <div class="glow"></div>
-      <?php echo lx_render_image_slot('lx_img_hero', 'hero', 'ẢNH 1: Ảnh sản phẩm chính – chai xịt Khí Hàn Sinh Khương 30ml', 'Tỉ lệ vuông 1:1 · 1000×1000px', 'product-img hero-img-sq'); ?>
+      <?php echo lx_render_video_frame('hero'); ?>
       <?php if (!empty($badge_percent)) : ?>
         <div class="badge-circle"><span>GIẢM</span><b><?php echo esc_html($badge_percent); ?></b><span>hôm nay</span></div>
       <?php endif; ?>

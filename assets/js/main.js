@@ -347,40 +347,58 @@
     }
   })();
 
-  // 9. Vertical 9:16 Video Player Handler
+  // 9. Vertical 9:16 Video Player Handler (Universal for Hero & Usage)
   (function () {
-    var playBtn = $('#usagePlayBtn');
-    var videoBox = $('#usageVideoBox');
-    var container = $('#usageVideoContainer');
-    var poster = $('#usageVideoPoster');
+    var videoBoxes = document.querySelectorAll('.usage-video-box');
+    if (!videoBoxes.length) return;
 
-    if (!playBtn || !videoBox || !container) return;
+    videoBoxes.forEach(function (videoBox) {
+      var playBtn = videoBox.querySelector('.usage-play-btn');
+      var container = videoBox.querySelector('.usage-video-container');
+      var poster = videoBox.querySelector('.usage-video-poster');
+      var tt = videoBox.querySelector('.tiktok-overlay');
 
-    playBtn.addEventListener('click', function () {
-      var ytId = videoBox.getAttribute('data-yt-id');
-      var videoUrl = videoBox.getAttribute('data-video-url');
+      if (!playBtn || !container) return;
 
-      var tt = document.getElementById('tiktokOverlay');
-      if (tt) tt.classList.add('hide');
+      var startPlay = function () {
+        var ytId = videoBox.getAttribute('data-yt-id');
+        var videoUrl = videoBox.getAttribute('data-video-url');
 
-      if (ytId) {
-        container.innerHTML = '<iframe src="https://www.youtube.com/embed/' + ytId + '?autoplay=1&playsinline=1&rel=0" allow="autoplay; encrypted-media; picture-in-picture" allowfullscreen></iframe>';
-        container.classList.add('playing');
-        playBtn.style.display = 'none';
-        if (poster) poster.style.display = 'none';
-      } else if (videoUrl) {
-        container.innerHTML = '<video src="' + videoUrl + '" playsinline controls autoplay style="width:100%;height:100%;object-fit:cover;"></video>';
-        container.classList.add('playing');
-        playBtn.style.display = 'none';
-        if (poster) poster.style.display = 'none';
-      } else {
-        var toast = $('#toast');
-        var toastText = $('#toastText');
-        if (toast && toastText) {
-          toastText.innerHTML = '🎬 <b>Video 9:16 đang được cập nhật!</b><br><small>Mẹ hãy tham khảo 3 bước sử dụng chi tiết ngay bên cạnh nhé ❤️</small>';
-          toast.classList.add('show');
-          setTimeout(function () { toast.classList.remove('show'); }, 4000);
+        if (tt) tt.classList.add('hide');
+
+        if (ytId) {
+          container.innerHTML = '<iframe src="https://www.youtube.com/embed/' + ytId + '?autoplay=1&playsinline=1&rel=0" allow="autoplay; encrypted-media; picture-in-picture" allowfullscreen></iframe>';
+          container.classList.add('playing');
+          playBtn.style.display = 'none';
+          if (poster) poster.style.display = 'none';
+        } else if (videoUrl) {
+          container.innerHTML = '<video src="' + videoUrl + '" playsinline controls autoplay style="width:100%;height:100%;object-fit:cover;"></video>';
+          container.classList.add('playing');
+          playBtn.style.display = 'none';
+          if (poster) poster.style.display = 'none';
+        } else {
+          var toast = $('#toast');
+          var toastText = $('#toastText');
+          if (toast && toastText) {
+            toastText.innerHTML = '🎬 <b>Video 9:16 đang được cập nhật!</b><br><small>Mẹ hãy tham khảo thông tin chi tiết trên trang nhé ❤️</small>';
+            toast.classList.add('show');
+            setTimeout(function () { toast.classList.remove('show'); }, 4000);
+          }
         }
+      };
+
+      playBtn.addEventListener('click', function (e) {
+        e.preventDefault();
+        e.stopPropagation();
+        startPlay();
+      });
+
+      if (poster) {
+        poster.style.cursor = 'pointer';
+        poster.addEventListener('click', function (e) {
+          e.preventDefault();
+          startPlay();
+        });
       }
     });
   })();
