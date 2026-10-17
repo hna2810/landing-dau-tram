@@ -212,10 +212,10 @@ function lx_register_acf_field_group() {
             ),
             array(
                 'key' => 'field_lx_pain_question',
-                'label' => __('Câu hỏi mở đầu', 'lx-landing'),
+                'label' => __('Tiêu đề chính', 'lx-landing'),
                 'name' => 'lx_pain_question',
                 'type' => 'text',
-                'default_value' => '“Có phải mẹ đang loay hoay với những lo lắng này mỗi ngày?”',
+                'default_value' => 'Mẹ có đang lặp lại những mối lo này mỗi ngày?',
             ),
             array(
                 'key' => 'field_lx_pain_lead',

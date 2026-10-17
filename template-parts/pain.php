@@ -32,9 +32,7 @@ if (!$has_cards && empty($question) && empty($lead) && empty($bridge) && empty($
 <section class="pain wave">
   <div class="container center">
     <?php if (!empty($question)) : ?>
-      <div class="pain-qs">
-        <div class="pain-q reveal"><?php echo esc_html($question); ?></div>
-      </div>
+      <h2 class="reveal lx_wow_item"><?php echo $question; ?></h2>
     <?php endif; ?>
 
     <?php if (!empty($lead)) : ?>
