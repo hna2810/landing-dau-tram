@@ -10,11 +10,12 @@ if (!defined('ABSPATH')) {
 }
 
 $title        = lx_get_field('lx_order_title', 'option', 'Cho con cơ thể ấm – <em>Cho mẹ giấc ngủ ngon</em>');
-$lead         = lx_get_field('lx_order_lead', 'option', 'Đừng để khí lạnh làm ảnh hưởng sức khỏe mẹ và bé! Đặt mua Khí Hàn Sinh Khương ngay!');
+$lead         = lx_get_field('lx_order_lead', 'option', 'Đừng để đêm lạnh làm gián đoạn giấc ngủ. Đặt mua Khí Hàn Sinh Khương ngay!');
+$lead         = trim(str_replace(array('của con.', 'của con'), '', $lead));
+$lead         = preg_replace('/\s+/', ' ', $lead);
 $badge        = lx_get_field('lx_order_badge', 'option', 'ƯU ĐÃI SẮP KẾT THÚC');
 $badge_hot    = lx_get_field('lx_order_badge_hot', 'option', '🔥 BÁN CHẠY NHẤT');
 $product_name = lx_get_field('lx_order_product_name', 'option', 'Khí Hàn Sinh Khương Hoàng Cung 30ml');
-$product_desc = lx_get_field('lx_order_product_desc', 'option', 'Hỗ trợ làm ấm cơ thể, giải tỏa mệt mỏi, an lành cho mẹ & bé');
 $stock_left   = lx_get_field('lx_order_stock_left', 'option', '5');
 
 $unit_price = (int) lx_get_field('lx_unit_price', 'option', 49000);
@@ -44,7 +45,7 @@ $slot_offer = lx_render_image_slot('lx_img_offer', 'offer', 'ẢNH 18: Banner ư
           <div class="uoc-unit"><b id="cdSec">50</b><span>GIÂY</span></div>
         </div>
         <div class="uoc-stock">
-          ⚡ Chỉ còn <span id="stockLeft"><?php echo esc_html($stock_left); ?></span> suất trong hôm nay!
+          ⚡ Chỉ còn <span id="stockLeft"><?php echo esc_html($stock_left); ?></span> suất!
         </div>
       </div>
 
@@ -63,10 +64,6 @@ $slot_offer = lx_render_image_slot('lx_img_offer', 'offer', 'ẢNH 18: Banner ư
 
           <?php if (!empty($product_name)) : ?>
             <h3 class="uoc-prod-title"><?php echo esc_html($product_name); ?></h3>
-          <?php endif; ?>
-
-          <?php if (!empty($product_desc)) : ?>
-            <p class="uoc-prod-desc"><?php echo esc_html($product_desc); ?></p>
           <?php endif; ?>
 
           <div class="uoc-price-pill">

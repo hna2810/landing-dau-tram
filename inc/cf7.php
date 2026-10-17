@@ -42,8 +42,7 @@ function lx_ensure_cf7_form() {
         . '<div class="field" style="display:none">' . "\n"
         . '  [hidden package default:"1 chai 30ml – 49.000đ (giá niêm yết 87.000đ) + FREESHIP"]' . "\n"
         . '</div>' . "\n"
-        . '[submit class:btn class:btn-buy class:btn-block id:submitBtn "' . esc_attr($cta_text) . '"]' . "\n"
-        . '<p class="form-foot">(Tư vấn miễn phí &amp; Kiểm tra hàng trước khi thanh toán)</p>';
+        . '[submit class:btn class:btn-buy class:btn-block id:submitBtn "' . esc_attr($cta_text) . '"]';
 
     $messages = array(
         'mail_sent_ok'     => '🎉 Cảm ơn mẹ! Đơn đặt hàng đã được gửi thành công. Home Care sẽ gọi lại để xác nhận đơn ngay!',
@@ -259,7 +258,6 @@ function lx_render_order_form() {
         }
         ?>
         <button type="submit" class="btn btn-buy btn-block" id="submitBtn"><?php echo esc_html($cta_text_fallback); ?></button>
-        <p class="form-foot">(Tư vấn miễn phí &amp; Kiểm tra hàng trước khi thanh toán)</p>
       </div>
       <div class="success" id="formSuccess">
         <div class="big">✓</div>

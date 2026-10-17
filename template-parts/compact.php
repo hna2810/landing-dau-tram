@@ -44,7 +44,6 @@ if (empty($active_specs) && empty($title) && !$has_visual) {
 <section class="compact wave" id="tieu-chuan">
   <div class="container">
     <div class="center">
-      <span class="eyebrow lx_wow_item">CHỨNG NHẬN &amp; CAM KẾT</span>
       <?php if (!empty($title)) : ?><h2 class="reveal lx_wow_item"><?php echo $title; ?></h2><?php endif; ?>
     </div>
 

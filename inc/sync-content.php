@@ -198,6 +198,32 @@ function lx_sync_khi_han_sinh_khuong_content() {
         update_option('lx_usage_tip', $new_tip);
     }
 
-    update_option('lx_content_sync_version', '2.5.0');
+    // Clean order lead (remove 'của con.')
+    $cur_lead = get_option('options_lx_order_lead', '');
+    if (strpos($cur_lead, 'của con') !== false) {
+        $new_lead = trim(str_replace(array('của con.', 'của con'), '', $cur_lead));
+        $new_lead = preg_replace('/\s+/', ' ', $new_lead);
+        update_option('options_lx_order_lead', $new_lead);
+        update_option('lx_order_lead', $new_lead);
+    }
+
+    // Clear order product desc
+    update_option('options_lx_order_product_desc', '');
+    update_option('lx_order_product_desc', '');
+
+    // Clean up CF7 forms in database (remove form-foot)
+    $forms = get_posts(array('post_type' => 'wpcf7_contact_form', 'posts_per_page' => -1));
+    if (!empty($forms)) {
+        foreach ($forms as $f) {
+            $c = $f->post_content;
+            if (strpos($c, 'form-foot') !== false || strpos($c, 'Tư vấn miễn phí') !== false) {
+                $c = preg_replace('/<p class="form-foot">.*?<\/p>/s', '', $c);
+                wp_update_post(array('ID' => $f->ID, 'post_content' => $c));
+                update_post_meta($f->ID, '_form', $c);
+            }
+        }
+    }
+
+    update_option('lx_content_sync_version', '2.6.0');
 }
 add_action('init', 'lx_sync_khi_han_sinh_khuong_content');
