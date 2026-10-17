@@ -11,7 +11,7 @@ if (!defined('ABSPATH')) {
 
 function lx_sync_khi_han_sinh_khuong_content() {
     $synced_ver = get_option('lx_content_sync_version', '');
-    if ($synced_ver === '2.1.0') {
+    if ($synced_ver === '2.2.0') {
         return;
     }
 
@@ -142,6 +142,19 @@ function lx_sync_khi_han_sinh_khuong_content() {
         'lx_rev5_role'   => 'Truyền hình',
         'lx_rev5_quote'  => 'Chai 30ml nhỏ gọn xinh xắn, để trong túi xách mang đi làm hay đi du lịch đều tiện. Mẹ mình bị đau mỏi vai gáy xịt xoa bóp cũng khen êm và thư giãn lắm. Sẽ ủng hộ Home Care dài dài!',
         'lx_rev5_avatar' => 'KC',
+
+        // Footer
+        'lx_footer_title'            => 'Home Care – Chăm Sóc Mẹ & Bé Tại Nhà',
+        'lx_footer_website_url'      => 'https://homecarevietnam.com',
+        'lx_footer_website_label'    => 'homecarevietnam.com',
+        'lx_footer_hotline1'         => '0973871376',
+        'lx_footer_hotline1_display' => '0973.871.376',
+        'lx_footer_hotline2'         => '0962131515',
+        'lx_footer_hotline2_display' => '0962.131.515',
+        'lx_footer_company'          => 'CÔNG TY TNHH CHĂM SÓC MẸ VÀ BÉ TẠI NHÀ HOME CARE',
+        'lx_footer_address'          => 'Địa chỉ: 20 Huy Du, Phường Từ Liêm, TP Hà Nội, Việt Nam.',
+        'lx_footer_tax'              => 'Mã số doanh nghiệp: 0107375668 do Sở Kế hoạch & Đầu tư TP Hà Nội cấp lần đầu ngày 29/03/2016',
+        'lx_footer_copyright'        => '© 2026 Home Care. All rights reserved.',
     );
 
     foreach ($data as $key => $val) {
@@ -154,6 +167,13 @@ function lx_sync_khi_han_sinh_khuong_content() {
         }
     }
 
-    update_option('lx_content_sync_version', '2.1.0');
+    // Force update footer copyright to 2026 standard if using the old default
+    $cur_copy = get_option('options_lx_footer_copyright', '');
+    if (empty($cur_copy) || strpos($cur_copy, 'Chăm sóc mẹ') !== false) {
+        update_option('options_lx_footer_copyright', '© 2026 Home Care. All rights reserved.');
+        update_option('lx_footer_copyright', '© 2026 Home Care. All rights reserved.');
+    }
+
+    update_option('lx_content_sync_version', '2.2.0');
 }
 add_action('init', 'lx_sync_khi_han_sinh_khuong_content');

@@ -12,16 +12,17 @@ if (!defined('ABSPATH')) {
 $footer_title   = lx_get_field('lx_footer_title', 'option', 'Home Care – Chăm Sóc Mẹ & Bé Tại Nhà');
 $website_url    = lx_get_field('lx_footer_website_url', 'option', 'https://homecarevietnam.com');
 $website_label  = lx_get_field('lx_footer_website_label', 'option', 'homecarevietnam.com');
-$hotline1       = lx_get_field('lx_hotline', 'option', '0973871376');
-$hotline1_disp  = lx_get_field('lx_hotline_display', 'option', '0973.871.376');
-$hotline2       = lx_get_field('lx_hotline2', 'option', '0962131515');
-$hotline2_disp  = lx_get_field('lx_hotline2_display', 'option', '0962.131.515');
+$hotline1       = lx_get_field('lx_footer_hotline1', 'option', '0973871376');
+$hotline1_disp  = lx_get_field('lx_footer_hotline1_display', 'option', '0973.871.376');
+$hotline2       = lx_get_field('lx_footer_hotline2', 'option', '0962131515');
+$hotline2_disp  = lx_get_field('lx_footer_hotline2_display', 'option', '0962.131.515');
 
 $footer_company = lx_get_field('lx_footer_company', 'option', 'CÔNG TY TNHH CHĂM SÓC MẸ VÀ BÉ TẠI NHÀ HOME CARE');
 $footer_address = lx_get_field('lx_footer_address', 'option', 'Địa chỉ: 20 Huy Du, Phường Từ Liêm, TP Hà Nội, Việt Nam.');
 $footer_tax     = lx_get_field('lx_footer_tax', 'option', 'Mã số doanh nghiệp: 0107375668 do Sở Kế hoạch & Đầu tư TP Hà Nội cấp lần đầu ngày 29/03/2016');
 $copyright      = lx_get_field('lx_footer_copyright', 'option', '© 2026 Home Care. All rights reserved.');
 
+$hotline        = lx_get_field('lx_hotline', 'option', '0962131515');
 $zalo           = lx_get_field('lx_zalo', 'option', '0962131515');
 $unit_price     = (int) lx_get_field('lx_unit_price', 'option', 49000);
 $old_price      = (int) lx_get_field('lx_old_price', 'option', 87000);
