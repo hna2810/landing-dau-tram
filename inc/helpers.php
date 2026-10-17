@@ -217,10 +217,6 @@ function lx_render_usage_video() {
               </div>
             <?php endif; ?>
 
-            <div class="usage-video-badge">
-              <span><i class="badge-dot"></i> <?php echo esc_html($badge_text); ?></span>
-            </div>
-
             <button type="button" class="usage-play-btn" id="usagePlayBtn" aria-label="Phát video hướng dẫn">
               <span class="play-pulse"></span>
               <span class="play-icon">

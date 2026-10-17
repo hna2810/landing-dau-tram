@@ -1574,44 +1574,9 @@ header.nav .container {
 }
 
 .usage-video-badge {
-  position: absolute;
-  top: 14px;
-  left: 14px;
-  z-index: 4;
+  display: none !important;
 }
 
-.usage-video-badge span {
-  display: inline-flex;
-  align-items: center;
-  gap: 6px;
-  background: rgba(0, 0, 0, 0.58);
-  backdrop-filter: blur(6px);
-  color: #fff;
-  font-size: 11px;
-  font-weight: 700;
-  letter-spacing: 0.03em;
-  padding: 5px 12px;
-  border-radius: 99px;
-  border: 1px solid rgba(255, 255, 255, 0.2);
-}
-
-.badge-dot {
-  width: 7px;
-  height: 7px;
-  border-radius: 50%;
-  background: #ff5252;
-  box-shadow: 0 0 8px #ff5252;
-  animation: badge-blink 1.5s infinite;
-}
-
-@keyframes badge-blink {
-  0%, 100% {
-    opacity: 1;
-  }
-  50% {
-    opacity: 0.3;
-  }
-}
 .usage-play-btn {
   position: absolute;
   top: 50%;
