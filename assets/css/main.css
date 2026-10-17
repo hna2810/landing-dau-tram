@@ -1573,6 +1573,264 @@ header.nav .container {
   color: rgba(255, 255, 255, 0.8);
 }
 
+/* TikTok Interface Simulation */
+.tiktok-overlay {
+  position: absolute;
+  inset: 0;
+  z-index: 4;
+  pointer-events: none;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 0;
+  color: #fff;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  transition: opacity 0.35s ease, visibility 0.35s ease;
+}
+
+.tiktok-overlay.hide, .usage-video-container.playing ~ .tiktok-overlay, .usage-video-box:has(.playing) .tiktok-overlay {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+}
+
+.tt-top-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px 12px 0;
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.7);
+}
+
+.tt-live-icon {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 12px;
+  font-weight: 700;
+  opacity: 0.9;
+}
+
+.tt-tabs {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.tt-tab {
+  font-size: 12px;
+  font-weight: 600;
+  color: rgba(255, 255, 255, 0.75);
+}
+
+.tt-tab.is-active {
+  color: #fff;
+  font-weight: 800;
+  position: relative;
+  padding-bottom: 4px;
+}
+
+.tt-tab.is-active::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 25%;
+  right: 25%;
+  height: 2px;
+  background: #fff;
+  border-radius: 2px;
+}
+
+.tt-search-icon {
+  display: flex;
+  align-items: center;
+  opacity: 0.9;
+}
+
+.tt-sidebar {
+  position: absolute;
+  right: 8px;
+  bottom: 40px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  z-index: 5;
+}
+
+.tt-action {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2px;
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.8);
+}
+
+.tt-profile {
+  margin-bottom: 4px;
+}
+
+.tt-avatar {
+  position: relative;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: 2px solid #fff;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
+  background: #fff;
+}
+
+.tt-avatar img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 50%;
+  display: block;
+}
+
+.tt-follow-btn {
+  position: absolute;
+  bottom: -6px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background: #fe2c55;
+  color: #fff;
+  font-size: 12px;
+  font-weight: 900;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  line-height: 1;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3);
+}
+
+.tt-icon-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.6));
+}
+
+.tt-stat {
+  font-size: 12px;
+  font-weight: 700;
+  color: #fff;
+  line-height: 1.2;
+}
+
+.tt-disc {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: radial-gradient(circle at 50% 50%, #2c2c2c 0%, #000 70%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 6px solid #111;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.6);
+  animation: tt-spin 4s linear infinite;
+}
+
+.tt-disc-inner {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: #fe2c55;
+  border: 2px solid #fff;
+}
+
+@keyframes tt-spin {
+  100% {
+    transform: rotate(360deg);
+  }
+}
+.tt-bottom-info {
+  position: absolute;
+  left: 12px;
+  bottom: 16px;
+  right: 64px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  text-shadow: 0 1px 4px rgba(0, 0, 0, 0.85);
+  text-align: left;
+  z-index: 5;
+}
+
+.tt-author {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.tt-username {
+  font-size: 12px;
+  font-weight: 800;
+  color: #fff;
+  letter-spacing: 0.01em;
+}
+
+.tt-verified {
+  display: inline-flex;
+  align-items: center;
+}
+
+.tt-caption {
+  font-size: 12px;
+  font-weight: 500;
+  color: #fff;
+  line-height: 1.35;
+  margin: 0;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.tt-tags {
+  font-size: 12px;
+  font-weight: 700;
+  color: #fff;
+}
+
+.tt-music {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 12px;
+  color: #fff;
+  opacity: 0.95;
+  margin-top: 2px;
+}
+
+.tt-music-marquee {
+  max-width: 180px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.tt-progress-bar {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: rgba(255, 255, 255, 0.3);
+  z-index: 6;
+}
+
+.tt-progress-track {
+  width: 36%;
+  height: 100%;
+  background: #fff;
+}
+
 .usage-video-badge {
   display: none !important;
 }

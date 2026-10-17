@@ -360,6 +360,9 @@
       var ytId = videoBox.getAttribute('data-yt-id');
       var videoUrl = videoBox.getAttribute('data-video-url');
 
+      var tt = document.getElementById('tiktokOverlay');
+      if (tt) tt.classList.add('hide');
+
       if (ytId) {
         container.innerHTML = '<iframe src="https://www.youtube.com/embed/' + ytId + '?autoplay=1&playsinline=1&rel=0" allow="autoplay; encrypted-media; picture-in-picture" allowfullscreen></iframe>';
         container.classList.add('playing');
