@@ -1123,6 +1123,13 @@ function lx_register_acf_field_group() {
                 'default_value' => 'Tư vấn miễn phí cách dùng cho bé',
             ),
             array(
+                'key' => 'field_lx_order_cta_text',
+                'label' => __('Chữ nút đặt hàng Form CTA', 'lx-landing'),
+                'name' => 'lx_order_cta_text',
+                'type' => 'text',
+                'default_value' => 'MUA NGAY 49K – FREESHIP',
+            ),
+            array(
                 'key' => 'field_lx_final_title',
                 'label' => __('Tiêu đề chốt sale cuối trang', 'lx-landing'),
                 'name' => 'lx_final_title',

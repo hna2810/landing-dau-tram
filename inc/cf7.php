@@ -22,6 +22,11 @@ function lx_ensure_cf7_form() {
         return false;
     }
 
+    $cta_text = lx_get_field('lx_order_cta_text', 'option', 'MUA NGAY 49K – FREESHIP');
+    if (empty($cta_text)) {
+        $cta_text = 'MUA NGAY 49K – FREESHIP';
+    }
+
     $form_content = '<div class="field">' . "\n"
         . '  <label for="fName">1. Họ và tên mẹ <i>*</i></label>' . "\n"
         . '  [text* your-name id:fName class:input autocomplete:name placeholder "VD: Nguyễn Thu Hà"]' . "\n"
@@ -37,7 +42,7 @@ function lx_ensure_cf7_form() {
         . '<div class="field" style="display:none">' . "\n"
         . '  [hidden package default:"1 chai 30ml – 49.000đ (giá niêm yết 87.000đ) + FREESHIP"]' . "\n"
         . '</div>' . "\n"
-        . '[submit class:btn class:btn-buy class:btn-block id:submitBtn "🚀 GỬI NGAY!"]' . "\n"
+        . '[submit class:btn class:btn-buy class:btn-block id:submitBtn "' . esc_attr($cta_text) . '"]' . "\n"
         . '<p class="form-foot">(Tư vấn miễn phí &amp; Kiểm tra hàng trước khi thanh toán)</p>';
 
     $messages = array(
@@ -237,7 +242,13 @@ function lx_render_order_form() {
           <input id="fAddr" name="address" type="text" autocomplete="street-address" placeholder="VD: Số 12 ngõ 34 đường ABC, Phường X, Quận Y, TP...">
           <div class="msg">Vui lòng nhập địa chỉ nhận hàng</div>
         </div>
-        <button type="submit" class="btn btn-buy btn-block" id="submitBtn">🚀 GỬI NGAY!</button>
+        <?php
+        $cta_text_fallback = lx_get_field('lx_order_cta_text', 'option', 'MUA NGAY 49K – FREESHIP');
+        if (empty($cta_text_fallback)) {
+            $cta_text_fallback = 'MUA NGAY 49K – FREESHIP';
+        }
+        ?>
+        <button type="submit" class="btn btn-buy btn-block" id="submitBtn"><?php echo esc_html($cta_text_fallback); ?></button>
         <p class="form-foot">(Tư vấn miễn phí &amp; Kiểm tra hàng trước khi thanh toán)</p>
       </div>
       <div class="success" id="formSuccess">

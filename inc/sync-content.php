@@ -11,7 +11,7 @@ if (!defined('ABSPATH')) {
 
 function lx_sync_khi_han_sinh_khuong_content() {
     $synced_ver = get_option('lx_content_sync_version', '');
-    if ($synced_ver === '2.3.0') {
+    if ($synced_ver === '2.4.0') {
         return;
     }
 
@@ -116,6 +116,7 @@ function lx_sync_khi_han_sinh_khuong_content() {
         'lx_order_bullet2'      => 'Miễn phí vận chuyển toàn quốc (Freeship)',
         'lx_order_bullet3'      => 'Kiểm tra hàng trước khi thanh toán',
         'lx_order_bullet4'      => 'Tư vấn miễn phí & Đồng hành cùng mẹ trong suốt quá trình sử dụng',
+        'lx_order_cta_text'     => 'MUA NGAY 49K – FREESHIP',
 
         // Reviews
         'lx_rev1_name'   => 'Đạo diễn Thanh Hằng',
@@ -181,6 +182,13 @@ function lx_sync_khi_han_sinh_khuong_content() {
         update_option('lx_hero_title', 'Mẹ ở cữ <em>sợ lạnh</em>, bé dễ <em>nhiễm cảm</em>?');
     }
 
-    update_option('lx_content_sync_version', '2.3.0');
+    // Ensure form submit CTA text is updated
+    $cur_cta = get_option('options_lx_order_cta_text', '');
+    if (empty($cur_cta) || strpos($cur_cta, 'GỬI NGAY') !== false) {
+        update_option('options_lx_order_cta_text', 'MUA NGAY 49K – FREESHIP');
+        update_option('lx_order_cta_text', 'MUA NGAY 49K – FREESHIP');
+    }
+
+    update_option('lx_content_sync_version', '2.4.0');
 }
 add_action('init', 'lx_sync_khi_han_sinh_khuong_content');
