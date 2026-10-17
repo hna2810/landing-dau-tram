@@ -19,11 +19,14 @@ $card3_title = lx_get_field('lx_pain_card3_title', 'option', 'Bất tiện từ 
 $card3_desc  = lx_get_field('lx_pain_card3_desc', 'option', 'Cốt gừng tự ngâm hay các loại dầu xoa dạng chai đổ thường dễ làm bẩn quần áo, dính bết bàn tay, bất tiện khi muốn mang theo ra ngoài.');
 $bridge      = lx_get_field('lx_pain_bridge', 'option', 'Đã có Khí Hàn Sinh Khương Home Care – Giữ ấm dịu lành cho mẹ và bé');
 
+// Chuẩn hóa dấu phẩy nếu có khoảng trắng thừa
+$question_clean = str_replace([' ,', '  ,'], ',', $question);
+
 $has_c1 = (!empty($card1_title) || !empty($card1_desc));
 $has_c2 = (!empty($card2_title) || !empty($card2_desc));
 $has_c3 = (!empty($card3_title) || !empty($card3_desc));
 $has_cards = ($has_c1 || $has_c2 || $has_c3);
-$slot_pain = lx_render_image_slot('lx_img_pain', 'pain', 'ẢNH 5: Ảnh cảm xúc: mẹ và bé trong mùa lạnh', '1200×675px (16:9), tông ấm, ánh sáng dịu', '', 'aspect-ratio:16/9;');
+$slot_pain = lx_render_image_slot('lx_img_pain', 'pain', 'ẢNH 5: Ảnh cảm xúc: mẹ và bé trong mùa lạnh', '1200×675px (16:9), tông ấm, ánh sáng dịu', 'pain-full-img');
 
 if (!$has_cards && empty($question) && empty($lead) && empty($bridge) && empty($slot_pain)) {
     return;
@@ -31,8 +34,8 @@ if (!$has_cards && empty($question) && empty($lead) && empty($bridge) && empty($
 ?>
 <section class="pain wave">
   <div class="container center">
-    <?php if (!empty($question)) : ?>
-      <h2 class="reveal lx_wow_item"><?php echo $question; ?></h2>
+    <?php if (!empty($question_clean)) : ?>
+      <h2 class="reveal lx_wow_item"><?php echo $question_clean; ?></h2>
     <?php endif; ?>
 
     <?php if (!empty($lead)) : ?>
@@ -40,11 +43,14 @@ if (!$has_cards && empty($question) && empty($lead) && empty($bridge) && empty($
     <?php endif; ?>
 
     <?php if ($has_cards) : ?>
-      <div class="pain-grid pain-grid-3" style="text-align:left">
+      <div class="pain-grid pain-grid-3">
         <?php if ($has_c1) : ?>
           <div class="pain-card reveal">
-            <?php echo lx_render_image_slot('lx_img_pain1', 'pain1', 'ẢNH 2: Mẹ ở cữ & Sau sinh mệt mỏi, sợ lạnh', '600×600px (1:1)', 'thumb', 'aspect-ratio:1/1'); ?>
-            <div>
+            <div class="pain-card-img">
+              <?php echo lx_render_image_slot('lx_img_pain1', 'pain1', 'ẢNH 2: Mẹ ở cữ & Sau sinh mệt mỏi, sợ lạnh', '600×450px (4:3)', 'card-img'); ?>
+            </div>
+            <div class="pain-card-content">
+              <span class="pain-badge lx_wow_item"><span class="pain-badge-dot"></span> Mối lo 01</span>
               <?php if (!empty($card1_title)) : ?><h3 class="lx_wow_item"><?php echo esc_html($card1_title); ?></h3><?php endif; ?>
               <?php if (!empty($card1_desc)) : ?><p class="lx_wow_item"><?php echo esc_html($card1_desc); ?></p><?php endif; ?>
             </div>
@@ -53,8 +59,11 @@ if (!$has_cards && empty($question) && empty($lead) && empty($bridge) && empty($
 
         <?php if ($has_c2) : ?>
           <div class="pain-card reveal">
-            <?php echo lx_render_image_slot('lx_img_pain2', 'pain2', 'ẢNH 3: Trẻ sơ sinh & Trẻ nhỏ dễ nhiễm lạnh sau tắm', '600×600px (1:1)', 'thumb', 'aspect-ratio:1/1'); ?>
-            <div>
+            <div class="pain-card-img">
+              <?php echo lx_render_image_slot('lx_img_pain2', 'pain2', 'ẢNH 3: Trẻ sơ sinh & Trẻ nhỏ dễ nhiễm lạnh sau tắm', '600×450px (4:3)', 'card-img'); ?>
+            </div>
+            <div class="pain-card-content">
+              <span class="pain-badge lx_wow_item"><span class="pain-badge-dot"></span> Mối lo 02</span>
               <?php if (!empty($card2_title)) : ?><h3 class="lx_wow_item"><?php echo esc_html($card2_title); ?></h3><?php endif; ?>
               <?php if (!empty($card2_desc)) : ?><p class="lx_wow_item"><?php echo esc_html($card2_desc); ?></p><?php endif; ?>
             </div>
@@ -63,8 +72,11 @@ if (!$has_cards && empty($question) && empty($lead) && empty($bridge) && empty($
 
         <?php if ($has_c3) : ?>
           <div class="pain-card reveal">
-            <?php echo lx_render_image_slot('lx_img_pain3', 'pain3', 'ẢNH 4: Bất tiện từ cốt gừng tự ngâm, dầu đổ dính bết', '600×600px (1:1)', 'thumb', 'aspect-ratio:1/1'); ?>
-            <div>
+            <div class="pain-card-img">
+              <?php echo lx_render_image_slot('lx_img_pain3', 'pain3', 'ẢNH 4: Bất tiện từ cốt gừng tự ngâm, dầu đổ dính bết', '600×450px (4:3)', 'card-img'); ?>
+            </div>
+            <div class="pain-card-content">
+              <span class="pain-badge lx_wow_item"><span class="pain-badge-dot"></span> Mối lo 03</span>
               <?php if (!empty($card3_title)) : ?><h3 class="lx_wow_item"><?php echo esc_html($card3_title); ?></h3><?php endif; ?>
               <?php if (!empty($card3_desc)) : ?><p class="lx_wow_item"><?php echo esc_html($card3_desc); ?></p><?php endif; ?>
             </div>
@@ -80,7 +92,12 @@ if (!$has_cards && empty($question) && empty($lead) && empty($bridge) && empty($
     <?php endif; ?>
 
     <?php if (!empty($bridge)) : ?>
-      <p class="bridge reveal lx_wow_item"><?php echo esc_html($bridge); ?></p>
+      <div class="bridge-wrap reveal">
+        <p class="bridge lx_wow_item">
+          <span class="bridge-icon">💡</span>
+          <span><?php echo esc_html($bridge); ?></span>
+        </p>
+      </div>
     <?php endif; ?>
   </div>
 </section>
