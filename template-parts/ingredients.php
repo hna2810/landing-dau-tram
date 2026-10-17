@@ -30,6 +30,7 @@ $has_i1 = (!empty($ing1_name) || !empty($ing1_desc));
 $has_i2 = (!empty($ing2_name) || !empty($ing2_desc));
 $has_i3 = (!empty($ing3_name) || !empty($ing3_desc));
 $has_i4 = (!empty($ing4_name) || !empty($ing4_desc));
+$has_ings = ($has_i1 || $has_i2 || $has_i3 || $has_i4);
 $slot_ingredients = lx_render_image_slot('lx_img_ingredients', 'ingredients', 'ẢNH 10: Ảnh chai xịt Khí Hàn Sinh Khương bên cạnh thảo mộc tự nhiên', '1000×1000px (1:1)');
 
 if (!$has_ings && empty($title) && empty($slot_ingredients)) {
