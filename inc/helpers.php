@@ -224,7 +224,7 @@ function lx_render_usage_video() {
             <button type="button" class="usage-play-btn" id="usagePlayBtn" aria-label="Phát video hướng dẫn">
               <span class="play-pulse"></span>
               <span class="play-icon">
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
                   <path d="M8 5v14l11-7z"/>
                 </svg>
               </span>

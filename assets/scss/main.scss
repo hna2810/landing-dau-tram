@@ -197,11 +197,12 @@ header.nav .container{display:flex;align-items:center;justify-content:space-betw
 .usage-video-badge span{display:inline-flex;align-items:center;gap:6px;background:rgba(0,0,0,.58);backdrop-filter:blur(6px);color:#fff;font-size:11px;font-weight:700;letter-spacing:.03em;padding:5px 12px;border-radius:99px;border:1px solid rgba(255,255,255,.2)}
 .badge-dot{width:7px;height:7px;border-radius:50%;background:#ff5252;box-shadow:0 0 8px #ff5252;animation:badge-blink 1.5s infinite}
 @keyframes badge-blink{0%,100%{opacity:1}50%{opacity:.3}}
-.usage-play-btn{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:68px;height:68px;border-radius:50%;background:rgba(255,255,255,.95);color:var(--leaf-dark);border:0;display:flex;align-items:center;justify-content:center;cursor:pointer;z-index:5;box-shadow:0 10px 28px rgba(0,0,0,.3);transition:opacity .3s ease,box-shadow .3s ease}
-.usage-play-btn:hover{box-shadow:0 14px 34px rgba(0,0,0,.4),0 0 0 8px rgba(255,255,255,.3);opacity:.98}
-.play-pulse{position:absolute;inset:-6px;border-radius:50%;background:rgba(255,255,255,.35);animation:play-ring 2.2s infinite;pointer-events:none}
+.usage-play-btn{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:44px;height:44px;border-radius:50%;background:rgba(255,255,255,.95);color:var(--leaf-dark);border:0;display:flex;align-items:center;justify-content:center;cursor:pointer;z-index:5;box-shadow:0 8px 20px rgba(0,0,0,.25);transition:opacity .3s ease,box-shadow .3s ease}
+.usage-play-btn:hover{box-shadow:0 10px 24px rgba(0,0,0,.35),0 0 0 6px rgba(255,255,255,.3);opacity:.98}
+.play-pulse{position:absolute;inset:-4px;border-radius:50%;background:rgba(255,255,255,.35);animation:play-ring 2.2s infinite;pointer-events:none}
 @keyframes play-ring{0%{transform:scale(.95);opacity:.8}100%{transform:scale(1.35);opacity:0}}
-.play-icon{margin-left:3px;display:flex;align-items:center;justify-content:center}
+.play-icon{margin-left:2px;display:flex;align-items:center;justify-content:center}
+.play-icon svg{width:18px;height:18px;display:block}
 .usage-video-container{position:absolute;top:0;left:0;width:100%;height:100%;z-index:3;display:none}
 .usage-video-container.playing{display:block}
 .usage-video-container video,.usage-video-container iframe{position:absolute;top:0;left:0;width:100%;height:100%;border:0;object-fit:cover}
