@@ -102,10 +102,18 @@ if (empty($title) && empty($subtitle) && !$has_stats && empty($reviews) && !$has
       </div>
     <?php endif; ?>
 
+    <?php if ($has_fbs) : ?>
+      <div class="fb-grid">
+        <?php if (!empty($slot_fb1)) : ?><div class="reveal"><?php echo $slot_fb1; ?></div><?php endif; ?>
+        <?php if (!empty($slot_fb2)) : ?><div class="reveal"><?php echo $slot_fb2; ?></div><?php endif; ?>
+        <?php if (!empty($slot_fb3)) : ?><div class="reveal"><?php echo $slot_fb3; ?></div><?php endif; ?>
+      </div>
+    <?php endif; ?>
+
     <?php if (!empty($reviews)) : ?>
-      <div class="reviews">
-        <?php foreach ($reviews as $rev) : ?>
-          <div class="review reveal">
+      <div class="reviews<?php echo count($reviews) === 5 ? ' is-5-items' : ''; ?>">
+        <?php foreach ($reviews as $idx => $rev) : ?>
+          <div class="review reveal<?php echo (count($reviews) === 5 && $idx === 3) ? ' rev-center-start' : ''; ?>">
             <span class="stars">★★★★★</span>
             <p class="lx_wow_item">“<?php echo esc_html($rev['quote']); ?>”</p>
             <div class="who">
@@ -117,14 +125,6 @@ if (empty($title) && empty($subtitle) && !$has_stats && empty($reviews) && !$has
             </div>
           </div>
         <?php endforeach; ?>
-      </div>
-    <?php endif; ?>
-
-    <?php if ($has_fbs) : ?>
-      <div class="fb-grid">
-        <?php if (!empty($slot_fb1)) : ?><div class="reveal"><?php echo $slot_fb1; ?></div><?php endif; ?>
-        <?php if (!empty($slot_fb2)) : ?><div class="reveal"><?php echo $slot_fb2; ?></div><?php endif; ?>
-        <?php if (!empty($slot_fb3)) : ?><div class="reveal"><?php echo $slot_fb3; ?></div><?php endif; ?>
       </div>
     <?php endif; ?>
 
