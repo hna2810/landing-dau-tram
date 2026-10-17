@@ -9,6 +9,9 @@ if (!defined('ABSPATH')) {
     exit;
 }
 
+// Section disabled per user request
+return;
+
 $title    = lx_get_field('lx_final_title', 'option', 'Đừng để đêm lạnh làm <em>gián đoạn giấc ngủ</em> của con');
 $desc     = lx_get_field('lx_final_desc', 'option', 'Chỉ 49.000đ cho một mùa đông ấm áp – ưu đãi flash sale có thể kết thúc bất cứ lúc nào.');
 $cta_text = lx_get_field('lx_final_cta_text', 'option', 'Mua ngay 49K – Freeship');
