@@ -57,12 +57,6 @@ $save_price = $old_price - $unit_price;
     <div class="hero-visual reveal">
       <div class="glow"></div>
       <?php echo lx_render_video_frame('hero'); ?>
-      <?php if (!empty($badge_percent)) : ?>
-        <div class="badge-circle"><span>GIẢM</span><b><?php echo esc_html($badge_percent); ?></b><span>hôm nay</span></div>
-      <?php endif; ?>
-      <?php if (!empty($chip1)) : ?><div class="chip c1"><?php echo esc_html($chip1); ?></div><?php endif; ?>
-      <?php if (!empty($chip2)) : ?><div class="chip c2"><?php echo esc_html($chip2); ?></div><?php endif; ?>
-      <?php if (!empty($chip3)) : ?><div class="chip c3"><?php echo esc_html($chip3); ?></div><?php endif; ?>
     </div>
   </div>
 </section>

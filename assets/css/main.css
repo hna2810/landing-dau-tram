@@ -412,10 +412,10 @@ header.nav .container {
 
 .hero-visual .glow {
   position: absolute;
-  inset: 8% 6%;
+  inset: 4% 12%;
   border-radius: 50%;
-  background: radial-gradient(circle, #ffe2cc 0, rgba(255, 226, 204, 0) 70%);
-  filter: blur(16px);
+  background: radial-gradient(circle, rgba(255, 160, 90, 0.55) 0%, rgba(255, 120, 40, 0.25) 45%, rgba(255, 200, 150, 0) 70%);
+  filter: blur(24px);
   animation: breathe 5s ease-in-out infinite;
   z-index: 1;
 }
@@ -428,13 +428,13 @@ header.nav .container {
 .hero-video-wrap {
   position: relative;
   width: 100%;
-  max-width: 320px;
+  max-width: 296px;
   margin: 0 auto;
   z-index: 5;
 }
 
 .hero-video-wrap .usage-phone-frame {
-  box-shadow: 0 0 0 2px #4a2226, 0 0 0 4px #261214, 0 24px 60px rgba(0, 0, 0, 0.4), 0 8px 24px rgba(212, 170, 100, 0.2);
+  box-shadow: 0 0 0 2px #ffb380, 0 0 0 4px #b84307, 0 28px 64px rgba(184, 67, 7, 0.38), 0 8px 24px rgba(234, 97, 18, 0.3);
 }
 
 .product-img {
@@ -1487,13 +1487,13 @@ header.nav .container {
   margin: 0 auto;
 }
 
-/* iPhone 18 Pro Flagship Chassis */
+/* iPhone 18 Pro Flagship Chassis (Sunset Orange Titanium) */
 .usage-phone-frame {
   position: relative;
-  background: linear-gradient(145deg, #34181b 0%, #241214 50%, #180c0d 100%);
-  border-radius: 48px;
+  background: linear-gradient(145deg, #ff944d 0%, #ea6112 32%, #c44907 68%, #8a2f02 100%);
+  border-radius: 52px;
   padding: 8px;
-  box-shadow: 0 0 0 2px #4a2226, 0 0 0 4px #261214, 0 24px 60px rgba(0, 0, 0, 0.45), 0 4px 16px rgba(0, 0, 0, 0.25);
+  box-shadow: 0 0 0 2px #ffb380, 0 0 0 4px #b84307, 0 24px 60px rgba(184, 67, 7, 0.38), 0 6px 20px rgba(0, 0, 0, 0.35);
   box-sizing: border-box;
 }
 
@@ -1504,9 +1504,9 @@ header.nav .container {
   top: 112px;
   width: 4px;
   height: 40px;
-  background: #3d1a1e;
+  background: #d85614;
   border-radius: 2px 0 0 2px;
-  box-shadow: 0 56px 0 #3d1a1e, 0 -40px 0 0 #3d1a1e;
+  box-shadow: 0 56px 0 #d85614, 0 -40px 0 0 #d85614;
 }
 
 .usage-phone-frame::after {
@@ -1516,13 +1516,13 @@ header.nav .container {
   top: 128px;
   width: 4px;
   height: 56px;
-  background: #3d1a1e;
+  background: #d85614;
   border-radius: 0 2px 2px 0;
 }
 
 .usage-video-box {
   position: relative;
-  border-radius: 40px;
+  border-radius: 44px;
   overflow: hidden;
   background: #000000;
   box-shadow: inset 0 0 4px rgba(0, 0, 0, 0.9);
@@ -1576,7 +1576,7 @@ header.nav .container {
 .usage-video-ratio {
   position: relative;
   width: 100%;
-  padding-bottom: 177.78%;
+  padding-bottom: 212%;
   height: 0;
   overflow: hidden;
 }
@@ -3115,7 +3115,7 @@ body:has(.sticky:not(.show)) .float-call {
     max-width: calc(100% - 90px);
   }
   .usage-video-wrap {
-    max-width: 290px;
+    max-width: 264px;
   }
   .usage-step-card {
     padding: 18px 16px;
@@ -3369,7 +3369,7 @@ body:has(.sticky:not(.show)) .float-call {
     max-height: none !important;
   }
   .usage-video-wrap {
-    max-width: 260px;
+    max-width: 236px;
   }
   .usage-step-card {
     padding: 16px 12px;

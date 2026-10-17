@@ -80,10 +80,10 @@ header.nav .container{display:flex;align-items:center;justify-content:space-betw
 .save{font-size:14px;font-weight:700;color:var(--leaf);background:var(--leaf-light);padding:4px 10px;border-radius:99px}
 .hero-note{margin-top:16px;font-size:14px;color:var(--muted);background:rgba(255,255,255,.7);border-radius:16px;padding:10px 14px;display:inline-block}
 .hero-visual{position:relative;display:flex;justify-content:center;width:100%;max-width:480px;margin:0 auto}
-.hero-visual .glow{position:absolute;inset:8% 6%;border-radius:50%;background:radial-gradient(circle,#ffe2cc 0,rgba(255,226,204,0) 70%);filter:blur(16px);animation:breathe 5s ease-in-out infinite;z-index:1}
+.hero-visual .glow{position:absolute;inset:4% 12%;border-radius:50%;background:radial-gradient(circle,rgba(255,160,90,.55) 0%,rgba(255,120,40,.25) 45%,rgba(255,200,150,0) 70%);filter:blur(24px);animation:breathe 5s ease-in-out infinite;z-index:1}
 @keyframes breathe{50%{transform:scale(1.08)}}
-.hero-video-wrap{position:relative;width:100%;max-width:320px;margin:0 auto;z-index:5}
-.hero-video-wrap .usage-phone-frame{box-shadow:0 0 0 2px #4a2226,0 0 0 4px #261214,0 24px 60px rgba(0,0,0,.4),0 8px 24px rgba(212,170,100,.2)}
+.hero-video-wrap{position:relative;width:100%;max-width:296px;margin:0 auto;z-index:5}
+.hero-video-wrap .usage-phone-frame{box-shadow:0 0 0 2px #ffb380,0 0 0 4px #b84307,0 28px 64px rgba(184,67,7,.38),0 8px 24px rgba(234,97,18,.3)}
 .product-img{position:relative;width:100%;max-width:480px;filter:drop-shadow(0 20px 36px rgba(111,174,143,.22));animation:floaty 6s ease-in-out infinite}
 @keyframes floaty{50%{transform:translateY(-12px)}}
 .hero-img-sq,.hero-img-34{position:relative;width:100%;max-width:480px;border-radius:var(--radius);overflow:hidden;background:#fff;box-shadow:var(--shadow)}
@@ -224,17 +224,17 @@ header.nav .container{display:flex;align-items:center;justify-content:space-betw
 .usage{background:radial-gradient(1000px 520px at 25% 45%,rgba(255,235,160,.45) 0%,transparent 65%),radial-gradient(850px 400px at 80% 60%,rgba(243,185,138,.22) 0%,transparent 55%),linear-gradient(180deg,#fffdf8 0%,#fff8e2 20%,#fff6d6 50%,#fff9e6 80%,#fffcf5 100%);border-top:1px solid rgba(255,235,170,.5);border-bottom:1px solid rgba(255,235,170,.5);box-shadow:inset 0 1px 0 rgba(255,255,255,.8),inset 0 -1px 0 rgba(255,255,255,.8)}
 .usage-layout{display:grid;grid-template-columns:340px 1fr;gap:44px;align-items:center;margin-top:36px}
 .usage-video-wrap{width:100%;max-width:340px;margin:0 auto}
-/* iPhone 18 Pro Flagship Chassis */
+/* iPhone 18 Pro Flagship Chassis (Sunset Orange Titanium) */
 .usage-phone-frame{
   position:relative;
-  background:linear-gradient(145deg,#34181b 0%,#241214 50%,#180c0d 100%);
-  border-radius:48px;
+  background:linear-gradient(145deg,#ff944d 0%,#ea6112 32%,#c44907 68%,#8a2f02 100%);
+  border-radius:52px;
   padding:8px;
   box-shadow:
-    0 0 0 2px #4a2226,
-    0 0 0 4px #261214,
-    0 24px 60px rgba(0,0,0,.45),
-    0 4px 16px rgba(0,0,0,.25);
+    0 0 0 2px #ffb380,
+    0 0 0 4px #b84307,
+    0 24px 60px rgba(184,67,7,.38),
+    0 6px 20px rgba(0,0,0,.35);
   box-sizing:border-box;
 }
 .usage-phone-frame::before{
@@ -244,9 +244,9 @@ header.nav .container{display:flex;align-items:center;justify-content:space-betw
   top:112px;
   width:4px;
   height:40px;
-  background:#3d1a1e;
+  background:#d85614;
   border-radius:2px 0 0 2px;
-  box-shadow:0 56px 0 #3d1a1e, 0 -40px 0 0 #3d1a1e;
+  box-shadow:0 56px 0 #d85614, 0 -40px 0 0 #d85614;
 }
 .usage-phone-frame::after{
   content:"";
@@ -255,15 +255,15 @@ header.nav .container{display:flex;align-items:center;justify-content:space-betw
   top:128px;
   width:4px;
   height:56px;
-  background:#3d1a1e;
+  background:#d85614;
   border-radius:0 2px 2px 0;
 }
-.usage-video-box{position:relative;border-radius:40px;overflow:hidden;background:#000000;box-shadow:inset 0 0 4px rgba(0,0,0,.9)}
+.usage-video-box{position:relative;border-radius:44px;overflow:hidden;background:#000000;box-shadow:inset 0 0 4px rgba(0,0,0,.9)}
 .iphone-dynamic-island{position:absolute;top:8px;left:50%;transform:translateX(-50%);width:80px;height:20px;background:#000000;border-radius:20px;z-index:10;display:flex;align-items:center;justify-content:flex-end;padding:0 8px;box-shadow:0 2px 6px rgba(0,0,0,.6);pointer-events:none}
 .island-camera{width:8px;height:8px;border-radius:50%;background:#09111e;box-shadow:inset 0 0 2px #1e3a8a, 0 0 1px rgba(255,255,255,.2);display:block}
 .iphone-home-indicator{position:absolute;bottom:8px;left:50%;transform:translateX(-50%);width:96px;height:4px;background:rgba(255,255,255,.75);border-radius:4px;z-index:10;pointer-events:none;box-shadow:0 1px 3px rgba(0,0,0,.5)}
 .usage-phone-notch{display:none!important}
-.usage-video-ratio{position:relative;width:100%;padding-bottom:177.78%;height:0;overflow:hidden}
+.usage-video-ratio{position:relative;width:100%;padding-bottom:212%;height:0;overflow:hidden}
 .usage-video-poster{position:absolute;top:0;left:0;width:100%;height:100%;object-fit:cover;transition:opacity .3s ease}
 .usage-video-placeholder-bg{position:absolute;top:0;left:0;width:100%;height:100%;background:radial-gradient(circle at 50% 32%,#5f9f80 0%,#305844 72%,#1a3327 100%);display:flex;align-items:center;justify-content:center;text-align:center;color:#fff;padding:24px}
 .usage-placeholder-inner{display:flex;flex-direction:column;align-items:center;gap:12px}
@@ -888,7 +888,7 @@ body:has(.sticky:not(.show)) .float-call{bottom:16px}
   .offer-img-box .ph small{font-size:11px}
   .offer th,.offer td{padding:10px 8px;font-size:13px}
   .toast{max-width:calc(100% - 90px)}
-  .usage-video-wrap{max-width:290px}
+  .usage-video-wrap{max-width:264px}
   .usage-step-card{padding:18px 16px;gap:14px;min-width:0;box-sizing:border-box}
   .step-icon-box{flex:0 0 50px;height:50px;border-radius:14px}
   .step-icon-box svg{width:26px;height:26px}
@@ -1002,7 +1002,7 @@ body:has(.sticky:not(.show)) .float-call{bottom:16px}
   .hero-visual { max-width: 100%; }
   .product-img, .hero-img-sq, .hero-img-34 { max-width: 310px; }
   .hero-img-sq.filled, .hero-img-34.filled { height: 0 !important; padding-bottom: 100% !important; min-height: 0 !important; max-height: none !important; }
-  .usage-video-wrap { max-width: 260px; }
+  .usage-video-wrap { max-width: 236px; }
   .usage-step-card { padding: 16px 12px; gap: 10px; }
   .standards-wrap { padding: 16px 10px; }
   .standards-visual-grid { gap: 6px; }
