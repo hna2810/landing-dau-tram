@@ -20,40 +20,71 @@ $ben3_desc  = lx_get_field('lx_ben3_desc', 'option', 'Chiết xuất gừng tự
 $ben4_title = lx_get_field('lx_ben4_title', 'option', 'Hương thơm thảo mộc thư giãn');
 $ben4_desc  = lx_get_field('lx_ben4_desc', 'option', 'Mùi hương tự nhiên từ sả chanh, rau mùi và tía tô giúp giải tỏa căng thẳng, mang lại cảm giác thư thái như đi spa.');
 $foot       = lx_get_field('lx_benefits_foot', 'option', 'Thoa và massage nhẹ nhàng giúp mẹ và bé thư giãn, giảm căng thẳng và ngủ sâu giấc hơn.');
+
+$has_b1 = (!empty($ben1_title) || !empty($ben1_desc));
+$has_b2 = (!empty($ben2_title) || !empty($ben2_desc));
+$has_b3 = (!empty($ben3_title) || !empty($ben3_desc));
+$has_b4 = (!empty($ben4_title) || !empty($ben4_desc));
+$has_bens = ($has_b1 || $has_b2 || $has_b3 || $has_b4);
+$slot_benefit = lx_render_image_slot('lx_img_benefit', 'benefit', 'ẢNH 11: Ảnh mẹ thoa & massage ngực, lưng hoặc lòng bàn chân cho bé', '1200×675px (16:9)', '', 'aspect-ratio:16/9;');
+
+if (!$has_bens && empty($title) && empty($lead) && empty($foot) && empty($slot_benefit)) {
+    return;
+}
 ?>
 <section class="benefits wave flip">
   <div class="container center">
-    <h2 class="reveal lx_wow_item"><?php echo $title; ?></h2>
-    <p class="lead reveal lx_wow_item"><?php echo esc_html($lead); ?></p>
-    <div class="ben-grid" style="text-align:left">
-      <div class="ben-card reveal">
-        <span class="ben-num">01</span>
-        <?php echo lx_render_image_slot('lx_img_ben1', 'ben1', 'ẢNH 7: Bé ấm áp trong khăn sau khi tắm', '800×600px (4:3)', 'card-img', 'aspect-ratio:4/3'); ?>
-        <h3 class="lx_wow_item"><?php echo $ben1_title; ?></h3>
-        <p class="lx_wow_item"><?php echo esc_html($ben1_desc); ?></p>
+    <?php if (!empty($title)) : ?><h2 class="reveal lx_wow_item"><?php echo $title; ?></h2><?php endif; ?>
+    <?php if (!empty($lead)) : ?><p class="lead reveal lx_wow_item"><?php echo esc_html($lead); ?></p><?php endif; ?>
+
+    <?php if ($has_bens) : ?>
+      <div class="ben-grid" style="text-align:left">
+        <?php if ($has_b1) : ?>
+          <div class="ben-card reveal">
+            <span class="ben-num">01</span>
+            <?php echo lx_render_image_slot('lx_img_ben1', 'ben1', 'ẢNH 7: Bé ấm áp trong khăn sau khi tắm', '800×600px (4:3)', 'card-img', 'aspect-ratio:4/3'); ?>
+            <?php if (!empty($ben1_title)) : ?><h3 class="lx_wow_item"><?php echo $ben1_title; ?></h3><?php endif; ?>
+            <?php if (!empty($ben1_desc)) : ?><p class="lx_wow_item"><?php echo esc_html($ben1_desc); ?></p><?php endif; ?>
+          </div>
+        <?php endif; ?>
+
+        <?php if ($has_b2) : ?>
+          <div class="ben-card reveal">
+            <span class="ben-num">02</span>
+            <?php echo lx_render_image_slot('lx_img_ben2', 'ben2', 'ẢNH 8: Bé ngủ say, thở êm', '800×600px (4:3)', 'card-img', 'aspect-ratio:4/3'); ?>
+            <?php if (!empty($ben2_title)) : ?><h3 class="lx_wow_item"><?php echo esc_html($ben2_title); ?></h3><?php endif; ?>
+            <?php if (!empty($ben2_desc)) : ?><p class="lx_wow_item"><?php echo esc_html($ben2_desc); ?></p><?php endif; ?>
+          </div>
+        <?php endif; ?>
+
+        <?php if ($has_b3) : ?>
+          <div class="ben-card reveal">
+            <span class="ben-num">03</span>
+            <?php echo lx_render_image_slot('lx_img_ben3', 'ben3', 'ẢNH 9: Mẹ thoa dầu lên vết muỗi đốt', '800×600px (4:3)', 'card-img', 'aspect-ratio:4/3'); ?>
+            <?php if (!empty($ben3_title)) : ?><h3 class="lx_wow_item"><?php echo esc_html($ben3_title); ?></h3><?php endif; ?>
+            <?php if (!empty($ben3_desc)) : ?><p class="lx_wow_item"><?php echo esc_html($ben3_desc); ?></p><?php endif; ?>
+          </div>
+        <?php endif; ?>
+
+        <?php if ($has_b4) : ?>
+          <div class="ben-card reveal">
+            <span class="ben-num">04</span>
+            <?php echo lx_render_image_slot('lx_img_ben4', 'ben4', 'ẢNH 10: Cận cảnh giọt dầu trên da bé', '800×600px (4:3)', 'card-img', 'aspect-ratio:4/3'); ?>
+            <?php if (!empty($ben4_title)) : ?><h3 class="lx_wow_item"><?php echo $ben4_title; ?></h3><?php endif; ?>
+            <?php if (!empty($ben4_desc)) : ?><p class="lx_wow_item"><?php echo esc_html($ben4_desc); ?></p><?php endif; ?>
+          </div>
+        <?php endif; ?>
       </div>
-      <div class="ben-card reveal">
-        <span class="ben-num">02</span>
-        <?php echo lx_render_image_slot('lx_img_ben2', 'ben2', 'ẢNH 8: Bé ngủ say, thở êm', '800×600px (4:3)', 'card-img', 'aspect-ratio:4/3'); ?>
-        <h3 class="lx_wow_item"><?php echo esc_html($ben2_title); ?></h3>
-        <p class="lx_wow_item"><?php echo esc_html($ben2_desc); ?></p>
+    <?php endif; ?>
+
+    <?php if (!empty($slot_benefit)) : ?>
+      <div class="img-row reveal">
+        <?php echo $slot_benefit; ?>
       </div>
-      <div class="ben-card reveal">
-        <span class="ben-num">03</span>
-        <?php echo lx_render_image_slot('lx_img_ben3', 'ben3', 'ẢNH 9: Mẹ thoa dầu lên vết muỗi đốt', '800×600px (4:3)', 'card-img', 'aspect-ratio:4/3'); ?>
-        <h3 class="lx_wow_item"><?php echo esc_html($ben3_title); ?></h3>
-        <p class="lx_wow_item"><?php echo esc_html($ben3_desc); ?></p>
-      </div>
-      <div class="ben-card reveal">
-        <span class="ben-num">04</span>
-        <?php echo lx_render_image_slot('lx_img_ben4', 'ben4', 'ẢNH 10: Cận cảnh giọt dầu trên da bé', '800×600px (4:3)', 'card-img', 'aspect-ratio:4/3'); ?>
-        <h3 class="lx_wow_item"><?php echo $ben4_title; ?></h3>
-        <p class="lx_wow_item"><?php echo esc_html($ben4_desc); ?></p>
-      </div>
-    </div>
-    <div class="img-row reveal">
-      <?php echo lx_render_image_slot('lx_img_benefit', 'benefit', 'ẢNH 11: Ảnh mẹ thoa & massage ngực, lưng hoặc lòng bàn chân cho bé', '1200×675px (16:9)', '', 'aspect-ratio:16/9;'); ?>
-    </div>
-    <p class="ben-foot reveal lx_wow_item"><?php echo esc_html($foot); ?></p>
+    <?php endif; ?>
+
+    <?php if (!empty($foot)) : ?>
+      <p class="ben-foot reveal lx_wow_item"><?php echo esc_html($foot); ?></p>
+    <?php endif; ?>
   </div>
 </section>

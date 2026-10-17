@@ -21,18 +21,24 @@ $hotline_formatted = preg_replace('/(\d{4})(\d{3})(\d+)/', '$1 $2 $3', $hotline)
 ?>
 <footer class="wave">
   <div class="container">
-    <p class="lx_wow_item"><?php echo $copyright; ?></p>
-    <p class="lx_wow_item">Hotline: <a id="footPhone" href="tel:<?php echo esc_attr($hotline); ?>"><?php echo esc_html($hotline_formatted); ?></a> · <a href="https://homecarevietnam.com/products/tinh-dau-tram-cho-be" target="_blank" rel="noopener">homecarevietnam.com</a></p>
-    <p class="lx_wow_item" style="margin-top:8px;font-size:12px"><?php echo esc_html($disclaimer); ?></p>
+    <?php if (!empty($copyright)) : ?><p class="lx_wow_item"><?php echo $copyright; ?></p><?php endif; ?>
+    <?php if (!empty($hotline)) : ?>
+      <p class="lx_wow_item">Hotline: <a id="footPhone" href="tel:<?php echo esc_attr($hotline); ?>"><?php echo esc_html($hotline_formatted); ?></a> · <a href="https://homecarevietnam.com/products/tinh-dau-tram-cho-be" target="_blank" rel="noopener">homecarevietnam.com</a></p>
+    <?php endif; ?>
+    <?php if (!empty($disclaimer)) : ?><p class="lx_wow_item" style="margin-top:8px;font-size:12px"><?php echo esc_html($disclaimer); ?></p><?php endif; ?>
   </div>
 </footer>
 
+<?php if (!empty($zalo) || !empty($hotline)) : ?>
 <div class="float-call">
-  <a class="zl" id="zaloBtn" href="https://zalo.me/<?php echo esc_attr($zalo); ?>" target="_blank" rel="noopener" title="Chat Zalo">Zalo</a>
+  <?php if (!empty($zalo)) : ?><a class="zl" id="zaloBtn" href="https://zalo.me/<?php echo esc_attr($zalo); ?>" target="_blank" rel="noopener" title="Chat Zalo">Zalo</a><?php endif; ?>
+  <?php if (!empty($hotline)) : ?>
   <a class="call" id="callBtn" href="tel:<?php echo esc_attr($hotline); ?>" title="Gọi ngay">
     <svg width="22" height="22" viewBox="0 0 24 24" fill="#fff" aria-hidden="true"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25 11.4 11.4 0 0 0 3.6.57 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.45.57 3.57a1 1 0 0 1-.25 1z"/></svg>
   </a>
+  <?php endif; ?>
 </div>
+<?php endif; ?>
 
 <div class="toast" id="toast">
   <span class="t-ico"></span>

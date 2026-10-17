@@ -18,23 +18,61 @@ if (!defined('ABSPATH')) {
  * @return mixed
  */
 function lx_get_field($field_name, $post_id = 'option', $default = '') {
-    // 1. Try ACF get_field first
-    if (function_exists('get_field')) {
-        $value = get_field($field_name, $post_id);
-        if ($value !== null && $value !== false && $value !== '') {
-            return $value;
+    // 1. Check options page storage
+    if ($post_id === 'option' || $post_id === 'options') {
+        $not_set = '__LX_NOT_SET__';
+        $opt = get_option('options_' . $field_name, $not_set);
+        if ($opt === $not_set) {
+            $opt = get_option($field_name, $not_set);
+        }
+
+        // If field exists in database
+        if ($opt !== $not_set) {
+            // User explicitly cleared/saved as empty
+            if ($opt === null || $opt === false || (is_string($opt) && trim($opt) === '')) {
+                return '';
+            }
+            if (function_exists('get_field')) {
+                $acf_val = get_field($field_name, 'option');
+                if ($acf_val !== null && $acf_val !== false && $acf_val !== '') {
+                    return $acf_val;
+                }
+            }
+            return $opt;
+        }
+
+        // Field not yet stored in wp_options, check get_field fallback
+        if (function_exists('get_field')) {
+            $acf_val = get_field($field_name, 'option');
+            if ($acf_val !== null && $acf_val !== false && $acf_val !== '') {
+                return $acf_val;
+            }
+        }
+
+        return $default;
+    }
+
+    // 2. Check post/page meta
+    if (is_numeric($post_id) && function_exists('metadata_exists')) {
+        if (metadata_exists('post', (int) $post_id, $field_name)) {
+            $meta = get_post_meta((int) $post_id, $field_name, true);
+            if ($meta === null || $meta === false || (is_string($meta) && trim($meta) === '')) {
+                return '';
+            }
+            if (function_exists('get_field')) {
+                $val = get_field($field_name, $post_id);
+                if ($val !== null && $val !== false && $val !== '') {
+                    return $val;
+                }
+            }
+            return $meta;
         }
     }
 
-    // 2. Fallback to direct WordPress get_option
-    if ($post_id === 'option' || $post_id === 'options') {
-        $opt = get_option('options_' . $field_name, null);
-        if ($opt !== null && $opt !== false && $opt !== '') {
-            return $opt;
-        }
-        $opt_direct = get_option($field_name, null);
-        if ($opt_direct !== null && $opt_direct !== false && $opt_direct !== '') {
-            return $opt_direct;
+    if (function_exists('get_field')) {
+        $val = get_field($field_name, $post_id);
+        if ($val !== null && $val !== false && $val !== '') {
+            return $val;
         }
     }
 
@@ -102,8 +140,7 @@ function lx_render_image_slot($field_name, $key, $title, $spec = '', $classes = 
     }
 
     if (!$show_placeholders) {
-        $outer_classes = trim('ph ' . $classes . ' hide');
-        return '<div class="' . esc_attr($outer_classes) . '" data-img="' . esc_attr($key) . '" style="' . esc_attr($style) . '"></div>';
+        return '';
     }
 
     $outer_classes = trim('ph ' . $classes);
@@ -143,6 +180,11 @@ function lx_render_usage_video() {
     }
 
     $has_video = !empty($video_url) || !empty($yt_id);
+    $show_placeholders = (bool) lx_get_field('lx_show_placeholders', 'option', true);
+
+    if (!$has_video && empty($poster_url) && !$show_placeholders) {
+        return '';
+    }
 
     ob_start();
     ?>

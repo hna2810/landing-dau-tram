@@ -11,7 +11,7 @@ if (!defined('ABSPATH')) {
 
 function lx_sync_khi_han_sinh_khuong_content() {
     $synced_ver = get_option('lx_content_sync_version', '');
-    if ($synced_ver === '2.0.0') {
+    if ($synced_ver === '2.1.0') {
         return;
     }
 
@@ -116,13 +116,44 @@ function lx_sync_khi_han_sinh_khuong_content() {
         'lx_order_bullet2'      => 'Miễn phí vận chuyển toàn quốc (Freeship)',
         'lx_order_bullet3'      => 'Kiểm tra hàng trước khi thanh toán',
         'lx_order_bullet4'      => 'Tư vấn miễn phí & Đồng hành cùng mẹ trong suốt quá trình sử dụng',
+
+        // Reviews
+        'lx_rev1_name'   => 'Đạo diễn Thanh Hằng',
+        'lx_rev1_role'   => 'Khách hàng thân thiết Home Care',
+        'lx_rev1_quote'  => 'Bé nhà mình da nhạy cảm nên tìm sản phẩm giữ ấm thuần chay như này rất yên tâm. Dung tích 30ml dạng xịt tiện lợi, mang đi đâu cũng tiện. Mùa gió về xịt chút vào lòng bàn chân rồi đi tất cho con là yên tâm bé ngủ ngon cả đêm, không lo lạnh bụng hay giật mình.',
+        'lx_rev1_avatar' => 'TH',
+
+        'lx_rev2_name'   => 'Diễn viên Thanh Huyền',
+        'lx_rev2_role'   => 'Mẹ sau sinh',
+        'lx_rev2_quote'  => 'Đúng là chân ái cho các mẹ ở cữ mùa này luôn ạ. Em mới sinh xong mệt mỏi mà sợ gió khủng khiếp. Từ hôm dùng chai xịt Khí Hàn Sinh Khương này thấy đỡ hẳn. Tia xịt ra mịn lắm, massage chút là ngấm, người ấm lên nhanh mà không bị rát da. Thích nhất là cái mùi thảo mộc dịu nhẹ, không bị nồng hắc ảnh hưởng tới bé. 10 điểm cho độ tiện lợi!',
+        'lx_rev2_avatar' => 'TH',
+
+        'lx_rev3_name'   => 'Nhà Thiết kế Cao Ngọc',
+        'lx_rev3_role'   => 'Mẹ bỉm sữa',
+        'lx_rev3_quote'  => 'Bé nhà mình da nhạy cảm nên mình rất ngại dùng dầu gió thông thường vì sợ cay rát. Loại tinh dầu này của Home Care mùi thơm sả chanh tía tô rất dễ chịu, độ ấm dịu nhẹ. Mỗi lần tắm xong xịt chút xíu xoa lưng và lòng bàn chân cho con là yên tâm con không bị nhiễm lạnh.',
+        'lx_rev3_avatar' => 'CN',
+
+        'lx_rev4_name'   => 'Ca sĩ Thu Thảo',
+        'lx_rev4_role'   => 'Mẹ ở cữ',
+        'lx_rev4_quote'  => 'Trộm vía dùng thích lắm các mom ạ! Sinh xong người mệt với sợ lạnh, may có em xịt giữ ấm này cứu cánh. Tắm xong cho bé xịt chút vào lòng bàn chân bé, còn mẹ thì xịt massage lưng với cổ vai gáy là thấy dịu hẳn. Chai 30ml dạng xịt dùng tiện, không bị dính tay như mấy loại dầu xoa thông thường. Mùi gừng sả thơm tự nhiên, ấm dịu nhẹ. Recomment cho các mom dùng thử nha!',
+        'lx_rev4_avatar' => 'TT',
+
+        'lx_rev5_name'   => 'MC Khánh Chi',
+        'lx_rev5_role'   => 'Truyền hình',
+        'lx_rev5_quote'  => 'Chai 30ml nhỏ gọn xinh xắn, để trong túi xách mang đi làm hay đi du lịch đều tiện. Mẹ mình bị đau mỏi vai gáy xịt xoa bóp cũng khen êm và thư giãn lắm. Sẽ ủng hộ Home Care dài dài!',
+        'lx_rev5_avatar' => 'KC',
     );
 
     foreach ($data as $key => $val) {
-        update_option($key, $val);
-        update_option('options_' . $key, $val);
+        // Only set if not already defined in options table (never overwrite user edits or cleared fields)
+        if (get_option('options_' . $key, '__LX_NOT_EXISTS__') === '__LX_NOT_EXISTS__') {
+            update_option('options_' . $key, $val);
+        }
+        if (get_option($key, '__LX_NOT_EXISTS__') === '__LX_NOT_EXISTS__') {
+            update_option($key, $val);
+        }
     }
 
-    update_option('lx_content_sync_version', '2.0.0');
+    update_option('lx_content_sync_version', '2.1.0');
 }
 add_action('init', 'lx_sync_khi_han_sinh_khuong_content');

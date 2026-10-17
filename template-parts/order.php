@@ -25,24 +25,30 @@ $old_price  = (int) lx_get_field('lx_old_price', 'option', 87000);
 <section class="order wave" id="dat-hang">
   <div class="container">
     <div class="center">
-      <h2 class="reveal lx_wow_item"><?php echo $title; ?></h2>
-      <p class="lead reveal lx_wow_item"><?php echo esc_html($lead); ?></p>
+      <?php if (!empty($title)) : ?><h2 class="reveal lx_wow_item"><?php echo $title; ?></h2><?php endif; ?>
+      <?php if (!empty($lead)) : ?><p class="lead reveal lx_wow_item"><?php echo esc_html($lead); ?></p><?php endif; ?>
     </div>
     <div class="order-grid">
       <div class="offer reveal">
-        <div class="offer-head"><?php echo esc_html($badge); ?></div>
+        <?php if (!empty($badge)) : ?><div class="offer-head"><?php echo esc_html($badge); ?></div><?php endif; ?>
         <?php echo lx_render_image_slot('lx_img_offer', 'offer', 'ẢNH 18: Banner ưu đãi trải nghiệm Khí Hàn Sinh Khương 49.000đ', '1200×675px (16:9)', '', 'aspect-ratio:16/9;'); ?>
-        <table>
-          <thead><tr><th>Tên</th><th>Giá gốc</th><th>Giá ưu đãi</th></tr></thead>
-          <tbody><tr><td><b><?php echo esc_html($product_name); ?></b></td><td class="old"><?php echo number_format($old_price, 0, ',', '.'); ?>đ</td><td class="new"><?php echo number_format($unit_price, 0, ',', '.'); ?>đ</td></tr></tbody>
-        </table>
-        <ul>
-          <li><?php echo esc_html($b1); ?></li>
-          <li><?php echo esc_html($b2); ?></li>
-          <li><?php echo esc_html($b3); ?></li>
-          <li><?php echo esc_html($b4); ?></li>
-        </ul>
-        <div class="stock"><small>Chỉ còn <span id="stockLeft"><?php echo esc_html($stock_left); ?></span> suất flash sale hôm nay</small><div class="stock-bar"><i id="stockBar"></i></div></div>
+        <?php if (!empty($product_name) || !empty($unit_price)) : ?>
+          <table>
+            <thead><tr><th>Tên</th><th>Giá gốc</th><th>Giá ưu đãi</th></tr></thead>
+            <tbody><tr><td><b><?php echo esc_html($product_name); ?></b></td><td class="old"><?php echo number_format($old_price, 0, ',', '.'); ?>đ</td><td class="new"><?php echo number_format($unit_price, 0, ',', '.'); ?>đ</td></tr></tbody>
+          </table>
+        <?php endif; ?>
+        <?php if (!empty($b1) || !empty($b2) || !empty($b3) || !empty($b4)) : ?>
+          <ul>
+            <?php if (!empty($b1)) : ?><li><?php echo esc_html($b1); ?></li><?php endif; ?>
+            <?php if (!empty($b2)) : ?><li><?php echo esc_html($b2); ?></li><?php endif; ?>
+            <?php if (!empty($b3)) : ?><li><?php echo esc_html($b3); ?></li><?php endif; ?>
+            <?php if (!empty($b4)) : ?><li><?php echo esc_html($b4); ?></li><?php endif; ?>
+          </ul>
+        <?php endif; ?>
+        <?php if (!empty($stock_left)) : ?>
+          <div class="stock"><small>Chỉ còn <span id="stockLeft"><?php echo esc_html($stock_left); ?></span> suất flash sale hôm nay</small><div class="stock-bar"><i id="stockBar"></i></div></div>
+        <?php endif; ?>
       </div>
 
       <?php echo lx_render_order_form(); ?>

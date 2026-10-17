@@ -27,34 +27,42 @@ $save_price = $old_price - $unit_price;
 <section class="hero" id="top">
   <div class="container hero-grid">
     <div class="reveal">
-      <h1 class="lx_wow_item"><?php echo $title; ?></h1>
-      <p class="sub lx_wow_item"><?php echo esc_html($subtitle); ?></p>
-      <p class="desc lx_wow_item"><?php echo $desc; ?></p>
+      <?php if (!empty($title)) : ?><h1 class="lx_wow_item"><?php echo $title; ?></h1><?php endif; ?>
+      <?php if (!empty($subtitle)) : ?><p class="sub lx_wow_item"><?php echo esc_html($subtitle); ?></p><?php endif; ?>
+      <?php if (!empty($desc)) : ?><p class="desc lx_wow_item"><?php echo $desc; ?></p><?php endif; ?>
 
-      <div class="countdown"><?php echo esc_html($countdown_title); ?>
-        <span class="cd-box"><span id="cd-h">02</span><small>giờ</small></span>
-        <span class="cd-box"><span id="cd-m">00</span><small>phút</small></span>
-        <span class="cd-box"><span id="cd-s">00</span><small>giây</small></span>
-      </div>
+      <?php if (!empty($countdown_title)) : ?>
+        <div class="countdown"><?php echo esc_html($countdown_title); ?>
+          <span class="cd-box"><span id="cd-h">02</span><small>giờ</small></span>
+          <span class="cd-box"><span id="cd-m">00</span><small>phút</small></span>
+          <span class="cd-box"><span id="cd-s">00</span><small>giây</small></span>
+        </div>
+      <?php endif; ?>
 
-      <div class="price-card">
-        <span class="flash">FLASH SALE</span>
-        <span class="price-now"><?php echo number_format($unit_price, 0, ',', '.'); ?>đ</span>
-        <span class="price-old"><?php echo number_format($old_price, 0, ',', '.'); ?>đ</span>
-        <span class="save">Tiết kiệm <?php echo number_format($save_price, 0, ',', '.'); ?>đ</span>
-      </div>
+      <?php if (!empty($unit_price)) : ?>
+        <div class="price-card">
+          <span class="flash">FLASH SALE</span>
+          <span class="price-now"><?php echo number_format($unit_price, 0, ',', '.'); ?>đ</span>
+          <?php if (!empty($old_price)) : ?><span class="price-old"><?php echo number_format($old_price, 0, ',', '.'); ?>đ</span><?php endif; ?>
+          <?php if (!empty($save_price) && $save_price > 0) : ?><span class="save">Tiết kiệm <?php echo number_format($save_price, 0, ',', '.'); ?>đ</span><?php endif; ?>
+        </div>
+      <?php endif; ?>
 
-      <a href="#dat-hang" class="btn btn-buy" data-cta><?php echo esc_html($cta_text); ?></a>
-      <p class="hero-note lx_wow_item"><?php echo $note; ?></p>
+      <?php if (!empty($cta_text)) : ?>
+        <a href="#dat-hang" class="btn btn-buy" data-cta><?php echo esc_html($cta_text); ?></a>
+      <?php endif; ?>
+      <?php if (!empty($note)) : ?><p class="hero-note lx_wow_item"><?php echo $note; ?></p><?php endif; ?>
     </div>
 
     <div class="hero-visual reveal">
       <div class="glow"></div>
       <?php echo lx_render_image_slot('lx_img_hero', 'hero', 'ẢNH 1: Ảnh sản phẩm chính – chai xịt Khí Hàn Sinh Khương 30ml', 'Tỉ lệ vuông 1:1 · 1000×1000px', 'product-img hero-img-sq'); ?>
-      <div class="badge-circle"><span>GIẢM</span><b><?php echo esc_html($badge_percent); ?></b><span>hôm nay</span></div>
-      <div class="chip c1"><?php echo esc_html($chip1); ?></div>
-      <div class="chip c2"><?php echo esc_html($chip2); ?></div>
-      <div class="chip c3"><?php echo esc_html($chip3); ?></div>
+      <?php if (!empty($badge_percent)) : ?>
+        <div class="badge-circle"><span>GIẢM</span><b><?php echo esc_html($badge_percent); ?></b><span>hôm nay</span></div>
+      <?php endif; ?>
+      <?php if (!empty($chip1)) : ?><div class="chip c1"><?php echo esc_html($chip1); ?></div><?php endif; ?>
+      <?php if (!empty($chip2)) : ?><div class="chip c2"><?php echo esc_html($chip2); ?></div><?php endif; ?>
+      <?php if (!empty($chip3)) : ?><div class="chip c3"><?php echo esc_html($chip3); ?></div><?php endif; ?>
     </div>
   </div>
 </section>
