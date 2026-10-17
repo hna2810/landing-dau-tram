@@ -33,10 +33,12 @@ $old_price  = (int) lx_get_field('lx_old_price', 'option', 87000);
         <?php if (!empty($badge)) : ?><div class="offer-head"><?php echo esc_html($badge); ?></div><?php endif; ?>
         <?php echo lx_render_image_slot('lx_img_offer', 'offer', 'ẢNH 18: Banner ưu đãi trải nghiệm Khí Hàn Sinh Khương 49.000đ', '1200×675px (16:9)', '', 'aspect-ratio:16/9;'); ?>
         <?php if (!empty($product_name) || !empty($unit_price)) : ?>
-          <table>
-            <thead><tr><th>Tên</th><th>Giá gốc</th><th>Giá ưu đãi</th></tr></thead>
-            <tbody><tr><td><b><?php echo esc_html($product_name); ?></b></td><td class="old"><?php echo number_format($old_price, 0, ',', '.'); ?>đ</td><td class="new"><?php echo number_format($unit_price, 0, ',', '.'); ?>đ</td></tr></tbody>
-          </table>
+          <div class="offer-table-wrap">
+            <table>
+              <thead><tr><th>Tên</th><th>Giá gốc</th><th>Giá ưu đãi</th></tr></thead>
+              <tbody><tr><td><b><?php echo esc_html($product_name); ?></b></td><td class="old"><?php echo number_format($old_price, 0, ',', '.'); ?>đ</td><td class="new"><?php echo number_format($unit_price, 0, ',', '.'); ?>đ</td></tr></tbody>
+            </table>
+          </div>
         <?php endif; ?>
         <?php if (!empty($b1) || !empty($b2) || !empty($b3) || !empty($b4)) : ?>
           <ul>
