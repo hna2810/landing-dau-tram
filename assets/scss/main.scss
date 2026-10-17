@@ -637,8 +637,106 @@ header.nav .container{display:flex;align-items:center;justify-content:space-betw
 /* Final CTA + footer */
 .final{background:transparent;text-align:center}
 .final p{color:var(--muted);max-width:620px;margin:0 auto 22px}
-footer{position:relative;background:linear-gradient(180deg,#ffeed0 0%,#ffe4b0 50%,#fedb98 100%);backdrop-filter:blur(8px);border-top:1px solid rgba(243,185,138,.45);color:#6d5b4b;font-size:14px;padding:34px 0;text-align:center}
-footer a{color:var(--leaf-dark);font-weight:700}
+.footer, footer {
+  position: relative;
+  background: #231b15;
+  background: linear-gradient(180deg, #261d17 0%, #1c1511 100%);
+  border-top: 2px solid rgba(212, 160, 80, .4);
+  color: rgba(255, 255, 255, .84);
+  text-align: center;
+  padding: 40px 20px 104px;
+  font-size: 16px;
+  box-sizing: border-box;
+
+  .container {
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 0;
+  }
+
+  .footer-title {
+    font-size: 20px;
+    font-weight: 800;
+    color: #ffffff;
+    margin: 0 0 8px;
+    letter-spacing: .2px;
+  }
+
+  .footer-website {
+    font-size: 16px;
+    font-weight: 600;
+    color: #ffffff;
+    margin: 0 0 8px;
+
+    a {
+      color: #f7a059;
+      text-decoration: underline;
+      font-weight: 700;
+      transition: color .2s;
+
+      &:hover {
+        color: #ffffff;
+      }
+    }
+  }
+
+  .footer-hotline {
+    font-size: 16px;
+    font-weight: 700;
+    color: #ffffff;
+    margin: 0 0 12px;
+
+    a {
+      color: #f7a059;
+      text-decoration: underline;
+      font-weight: 800;
+      transition: color .2s;
+
+      &:hover {
+        color: #ffffff;
+      }
+    }
+  }
+
+  .footer-company {
+    font-size: 16px;
+    font-weight: 800;
+    color: #ffffff;
+    text-transform: uppercase;
+    letter-spacing: .2px;
+    margin: 0 0 8px;
+    line-height: 1.5;
+  }
+
+  .footer-address {
+    font-size: 16px;
+    color: rgba(255, 255, 255, .88);
+    margin: 0 0 8px;
+    line-height: 1.5;
+  }
+
+  .footer-tax {
+    font-size: 12px;
+    color: rgba(255, 255, 255, .72);
+    max-width: 680px;
+    margin: 0 auto 16px;
+    line-height: 1.6;
+  }
+
+  .footer-copy {
+    margin-top: 16px;
+    padding-top: 16px;
+    border-top: 1px solid rgba(255, 255, 255, .12);
+    font-size: 12px;
+    color: rgba(255, 255, 255, .52);
+  }
+}
+
+@media (min-width: 961px) {
+  .footer, footer {
+    padding: 48px 20px 48px;
+  }
+}
 
 /* Sticky + floats */
 .sticky{position:fixed;left:0;right:0;bottom:0;z-index:60;background:rgba(255,255,255,.95);backdrop-filter:blur(8px);border-radius:24px 24px 0 0;box-shadow:0 -6px 20px rgba(0,0,0,.08);padding:10px 16px;display:flex;align-items:center;gap:12px;transform:translateY(110%);transition:transform .35s}
