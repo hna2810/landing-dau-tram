@@ -1075,7 +1075,7 @@ function lx_register_acf_field_group() {
             ),
             array(
                 'key' => 'field_lx_img_offer',
-                'label' => __('📷 ẢNH 25: Banner ưu đãi: sản phẩm + giá 49K/87K (1200×675px, 16:9)', 'lx-landing'),
+                'label' => __('📷 ẢNH 18: Banner ưu đãi: sản phẩm + giá 49K/87K (1000×1000px, 1:1 vuông)', 'lx-landing'),
                 'name' => 'lx_img_offer',
                 'type' => 'image',
                 'return_format' => 'url',

@@ -21,6 +21,8 @@ $b4           = lx_get_field('lx_order_bullet4', 'option', 'Tư vấn miễn ph�
 
 $unit_price = (int) lx_get_field('lx_unit_price', 'option', 49000);
 $old_price  = (int) lx_get_field('lx_old_price', 'option', 87000);
+
+$slot_offer = lx_render_image_slot('lx_img_offer', 'offer', 'ẢNH 18: Banner ưu đãi trải nghiệm Khí Hàn Sinh Khương 49.000đ', '1000×1000px (1:1 vuông)', 'offer-img-slot');
 ?>
 <section class="order wave" id="dat-hang">
   <div class="container">
@@ -31,7 +33,11 @@ $old_price  = (int) lx_get_field('lx_old_price', 'option', 87000);
     <div class="order-grid">
       <div class="offer reveal">
         <?php if (!empty($badge)) : ?><div class="offer-head"><?php echo esc_html($badge); ?></div><?php endif; ?>
-        <?php echo lx_render_image_slot('lx_img_offer', 'offer', 'ẢNH 18: Banner ưu đãi trải nghiệm Khí Hàn Sinh Khương 49.000đ', '1200×675px (16:9)', '', 'aspect-ratio:16/9;'); ?>
+        <?php if (!empty($slot_offer)) : ?>
+          <div class="offer-img-box">
+            <?php echo $slot_offer; ?>
+          </div>
+        <?php endif; ?>
         <?php if (!empty($product_name) || !empty($unit_price)) : ?>
           <div class="offer-table-wrap">
             <table>
