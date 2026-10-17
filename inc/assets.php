@@ -82,7 +82,6 @@ function lx_enqueue_scripts() {
             'ben2'        => lx_get_image_url('lx_img_ben2', ''),
             'ben3'        => lx_get_image_url('lx_img_ben3', ''),
             'ben4'        => lx_get_image_url('lx_img_ben4', ''),
-            'benefit'     => lx_get_image_url('lx_img_benefit', ''),
             'ing1'        => lx_get_image_url('lx_img_ing1', ''),
             'ing2'        => lx_get_image_url('lx_img_ing2', ''),
             'ing3'        => lx_get_image_url('lx_img_ing3', ''),

@@ -26,9 +26,8 @@ $has_b2 = (!empty($ben2_title) || !empty($ben2_desc));
 $has_b3 = (!empty($ben3_title) || !empty($ben3_desc));
 $has_b4 = (!empty($ben4_title) || !empty($ben4_desc));
 $has_bens = ($has_b1 || $has_b2 || $has_b3 || $has_b4);
-$slot_benefit = lx_render_image_slot('lx_img_benefit', 'benefit', 'ẢNH 11: Ảnh mẹ thoa & massage ngực, lưng hoặc lòng bàn chân cho bé', '1200×675px (16:9)', '', 'aspect-ratio:16/9;');
 
-if (!$has_bens && empty($title) && empty($lead) && empty($foot) && empty($slot_benefit)) {
+if (!$has_bens && empty($title) && empty($lead) && empty($foot)) {
     return;
 }
 ?>
@@ -74,12 +73,6 @@ if (!$has_bens && empty($title) && empty($lead) && empty($foot) && empty($slot_b
             <?php if (!empty($ben4_desc)) : ?><p class="lx_wow_item"><?php echo esc_html($ben4_desc); ?></p><?php endif; ?>
           </div>
         <?php endif; ?>
-      </div>
-    <?php endif; ?>
-
-    <?php if (!empty($slot_benefit)) : ?>
-      <div class="img-row reveal">
-        <?php echo $slot_benefit; ?>
       </div>
     <?php endif; ?>
 

@@ -440,13 +440,6 @@ function lx_register_acf_field_group() {
                 'return_format' => 'url',
             ),
             array(
-                'key' => 'field_lx_img_benefit',
-                'label' => __('📷 ẢNH 11: Ảnh mẹ thoa & massage ngực/lưng/chân cho bé (1200×675px, 16:9)', 'lx-landing'),
-                'name' => 'lx_img_benefit',
-                'type' => 'image',
-                'return_format' => 'url',
-            ),
-            array(
                 'key' => 'field_lx_benefits_foot',
                 'label' => __('Ghi chú chân công dụng', 'lx-landing'),
                 'name' => 'lx_benefits_foot',
