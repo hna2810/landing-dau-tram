@@ -37,7 +37,7 @@ if (!$has_ings && empty($title) && empty($slot_ingredients)) {
     return;
 }
 ?>
-<section>
+<section class="ingredients">
   <div class="container">
     <?php if (!empty($title)) : ?>
       <div class="center">
