@@ -14,6 +14,7 @@ $lx_modules = array(
     'cleanup.php',
     'assets.php',
     'acf-options.php',
+    'sync-content.php',
     'cf7.php',
 );
 

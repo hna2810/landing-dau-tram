@@ -9,17 +9,15 @@ if (!defined('ABSPATH')) {
     exit;
 }
 
-$question    = lx_get_field('lx_pain_question', 'option', '“Có phải mẹ đang loay hoay với những lo lắng này mỗi ngày?”');
-$lead        = lx_get_field('lx_pain_lead', 'option', 'Mỗi lần gió lạnh về hay điều kiện thời tiết thay đổi, sức đề kháng còn non nớt của con lại làm mẹ mất ăn mất ngủ:');
-$card1_title = lx_get_field('lx_pain_card1_title', 'option', 'Con khò khè, trằn trọc cả đêm');
-$card1_desc  = lx_get_field('lx_pain_card1_desc', 'option', 'Đêm lạnh khiến đường thở của bé dễ bị nghẹt, con quấy khóc, mẹ thức trắng đêm lo lắng.');
-$card2_title = lx_get_field('lx_pain_card2_title', 'option', 'Sợ con nhiễm lạnh sau khi tắm');
-$card2_desc  = lx_get_field('lx_pain_card2_desc', 'option', 'Dù đã che chắn kỹ, bé vẫn dễ bị hắt hơi, sổ mũi do hạ nhiệt đột ngột.');
-$card3_title = lx_get_field('lx_pain_card3_title', 'option', 'Sợ tinh dầu tràm nóng rát');
-$card3_desc  = lx_get_field('lx_pain_card3_desc', 'option', 'Mẹ muốn dùng tinh dầu giữ ấm nhưng lo ngại làn da trẻ sơ sinh mỏng manh bị kích ứng.');
-$card4_title = lx_get_field('lx_pain_card4_title', 'option', 'Muỗi &amp; côn trùng đốt');
-$card4_desc  = lx_get_field('lx_pain_card4_desc', 'option', 'Vết muỗi cắn làm da bé đỏ ngứa, sưng tấy khiến con khó chịu, mất ngủ.');
-$bridge      = lx_get_field('lx_pain_bridge', 'option', 'Đã có giải pháp dịu nhẹ cho bé yêu');
+$question    = lx_get_field('lx_pain_question', 'option', 'Mẹ có đang lặp lại những mối lo này mỗi ngày?');
+$lead        = lx_get_field('lx_pain_lead', 'option', 'Khí lạnh không chỉ làm cơ thể khó chịu, mà còn lặng lẽ bào mòn sức khỏe của cả mẹ và bé nếu không được chăm sóc đúng cách.');
+$card1_title = lx_get_field('lx_pain_card1_title', 'option', 'Mẹ ở cữ & Sau sinh');
+$card1_desc  = lx_get_field('lx_pain_card1_desc', 'option', 'Cơ thể suy giảm sức đề kháng, mồ hôi trộm ra nhiều gặp gió là nhiễm lạnh, tay chân lạnh ngắt, dễ đau mỏi cổ vai gáy?');
+$card2_title = lx_get_field('lx_pain_card2_title', 'option', 'Trẻ sơ sinh & Trẻ nhỏ');
+$card2_desc  = lx_get_field('lx_pain_card2_desc', 'option', 'Làn da nhạy cảm, dễ bị nhiễm lạnh mỗi khi tắm xong, hay giật mình, khó ngủ khi thời tiết chuyển mùa?');
+$card3_title = lx_get_field('lx_pain_card3_title', 'option', 'Bất tiện từ các phương pháp dân gian cũ');
+$card3_desc  = lx_get_field('lx_pain_card3_desc', 'option', 'Cốt gừng tự ngâm hay các loại dầu xoa dạng chai đổ thường dễ làm bẩn quần áo, dính bết bàn tay, bất tiện khi muốn mang theo ra ngoài.');
+$bridge      = lx_get_field('lx_pain_bridge', 'option', 'Đã có Khí Hàn Sinh Khương Home Care – Giữ ấm dịu lành cho mẹ và bé');
 ?>
 <section class="pain wave">
   <div class="container center">
@@ -28,26 +26,22 @@ $bridge      = lx_get_field('lx_pain_bridge', 'option', 'Đã có giải pháp d
     </div>
     <p class="lead reveal lx_wow_item"><?php echo esc_html($lead); ?></p>
 
-    <div class="pain-grid" style="text-align:left">
+    <div class="pain-grid pain-grid-3" style="text-align:left">
       <div class="pain-card reveal">
-        <?php echo lx_render_image_slot('lx_img_pain1', 'pain1', 'ẢNH 2: Bé khò khè, trằn trọc ban đêm', '600×600px (1:1)', 'thumb', 'aspect-ratio:1/1'); ?>
+        <?php echo lx_render_image_slot('lx_img_pain1', 'pain1', 'ẢNH 2: Mẹ ở cữ & Sau sinh mệt mỏi, sợ lạnh', '600×600px (1:1)', 'thumb', 'aspect-ratio:1/1'); ?>
         <div><h3 class="lx_wow_item"><?php echo esc_html($card1_title); ?></h3><p class="lx_wow_item"><?php echo esc_html($card1_desc); ?></p></div>
       </div>
       <div class="pain-card reveal">
-        <?php echo lx_render_image_slot('lx_img_pain2', 'pain2', 'ẢNH 3: Bé hắt hơi, sổ mũi sau khi tắm', '600×600px (1:1)', 'thumb', 'aspect-ratio:1/1'); ?>
+        <?php echo lx_render_image_slot('lx_img_pain2', 'pain2', 'ẢNH 3: Trẻ sơ sinh & Trẻ nhỏ dễ nhiễm lạnh sau tắm', '600×600px (1:1)', 'thumb', 'aspect-ratio:1/1'); ?>
         <div><h3 class="lx_wow_item"><?php echo esc_html($card2_title); ?></h3><p class="lx_wow_item"><?php echo esc_html($card2_desc); ?></p></div>
       </div>
       <div class="pain-card reveal">
-        <?php echo lx_render_image_slot('lx_img_pain3', 'pain3', 'ẢNH 4: Mẹ ngần ngại khi cầm chai tinh dầu', '600×600px (1:1)', 'thumb', 'aspect-ratio:1/1'); ?>
+        <?php echo lx_render_image_slot('lx_img_pain3', 'pain3', 'ẢNH 4: Bất tiện từ cốt gừng tự ngâm, dầu đổ dính bết', '600×600px (1:1)', 'thumb', 'aspect-ratio:1/1'); ?>
         <div><h3 class="lx_wow_item"><?php echo esc_html($card3_title); ?></h3><p class="lx_wow_item"><?php echo esc_html($card3_desc); ?></p></div>
-      </div>
-      <div class="pain-card reveal">
-        <?php echo lx_render_image_slot('lx_img_pain4', 'pain4', 'ẢNH 5: Vết muỗi đốt đỏ trên da bé', '600×600px (1:1)', 'thumb', 'aspect-ratio:1/1'); ?>
-        <div><h3 class="lx_wow_item"><?php echo $card4_title; ?></h3><p class="lx_wow_item"><?php echo esc_html($card4_desc); ?></p></div>
       </div>
     </div>
     <div class="img-row reveal">
-      <?php echo lx_render_image_slot('lx_img_pain', 'pain', 'ẢNH 6: Ảnh cảm xúc: bé quấy khóc ban đêm, mẹ lo lắng bế con', '1200×675px (16:9), tông ấm, ánh sáng dịu', '', 'aspect-ratio:16/9;'); ?>
+      <?php echo lx_render_image_slot('lx_img_pain', 'pain', 'ẢNH 5: Ảnh cảm xúc: mẹ và bé trong mùa lạnh', '1200×675px (16:9), tông ấm, ánh sáng dịu', '', 'aspect-ratio:16/9;'); ?>
     </div>
     <p class="bridge reveal lx_wow_item"><?php echo esc_html($bridge); ?></p>
   </div>

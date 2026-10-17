@@ -35,13 +35,13 @@ function lx_ensure_cf7_form() {
         . '  [text* your-address id:fAddress class:input autocomplete:street-address placeholder "Số nhà, tên đường, phường/xã, quận/huyện, tỉnh/thành..."]' . "\n"
         . '</div>' . "\n"
         . '<div class="field" style="display:none">' . "\n"
-        . '  [hidden package default:"1 chai 30ml – 49.000đ (giá gốc 87.000đ) + FREESHIP"]' . "\n"
+        . '  [hidden package default:"1 chai 30ml – 49.000đ (giá niêm yết 87.000đ) + FREESHIP"]' . "\n"
         . '</div>' . "\n"
         . '<div class="field">' . "\n"
         . '  <label for="fNote">Ghi chú (nếu có)</label>' . "\n"
         . '  [text your-note id:fNote class:input placeholder "Ví dụ: Giao giờ hành chính, gọi trước khi giao..."]' . "\n"
         . '</div>' . "\n"
-        . '[submit class:btn class:btn-buy class:btn-block id:submitBtn "Đặt mua ngay – Bảo vệ sức khỏe bé"]' . "\n"
+        . '[submit class:btn class:btn-buy class:btn-block id:submitBtn "ĐẶT MUA NGAY - BẢO VỆ SỨC KHỎE CHO CẢ GIA ĐÌNH"]' . "\n"
         . '<p class="form-foot">(Tư vấn miễn phí &amp; Kiểm tra hàng trước khi thanh toán)</p>';
 
     $messages = array(
@@ -243,7 +243,7 @@ function lx_render_order_form() {
           <input id="fAddr" name="address" type="text" autocomplete="street-address" placeholder="Số nhà, đường, phường/xã, quận/huyện, tỉnh/thành">
           <div class="msg">Vui lòng nhập địa chỉ nhận hàng</div>
         </div>
-        <button type="submit" class="btn btn-buy" id="submitBtn">Đặt mua ngay – Bảo vệ sức khỏe bé</button>
+        <button type="submit" class="btn btn-buy" id="submitBtn">ĐẶT MUA NGAY - BẢO VỆ SỨC KHỎE CHO CẢ GIA ĐÌNH</button>
         <p class="form-foot">(Tư vấn miễn phí &amp; Kiểm tra hàng trước khi thanh toán)</p>
       </div>
       <div class="success" id="formSuccess">

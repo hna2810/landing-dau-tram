@@ -1,0 +1,128 @@
+<?php
+/**
+ * Auto-sync Khí Hàn Sinh Khương content into WordPress options & ACF
+ *
+ * @package LXLanding
+ */
+
+if (!defined('ABSPATH')) {
+    exit;
+}
+
+function lx_sync_khi_han_sinh_khuong_content() {
+    $synced_ver = get_option('lx_content_sync_version', '');
+    if ($synced_ver === '2.0.0') {
+        return;
+    }
+
+    $data = array(
+        // General
+        'lx_hotline'      => '0962131515',
+        'lx_zalo'         => '0962131515',
+        'lx_unit_price'   => 49000,
+        'lx_old_price'    => 87000,
+        'lx_topbar_text'  => 'FLASH SALE chỉ <b>49.000đ</b> (niêm yết 87.000đ) · <b>FREESHIP TOÀN QUỐC</b>',
+        'lx_nav_cta_text' => 'Mua ngay 49K',
+
+        // Hero
+        'lx_hero_title'           => 'Mẹ bầu, mẹ ở cữ sợ lạnh, bé dễ nhiễm cảm?',
+        'lx_hero_subtitle'        => 'Giữ ấm cơ thể với tinh dầu thảo mộc thuần chay Home Care',
+        'lx_hero_desc'            => 'Sự kết hợp tinh túy giữa <b>Gừng tươi, Tía tô, Rau mùi &amp; Sả chanh</b> trong thiết kế dạng xịt thông minh giúp làm ấm cơ thể, giải tỏa mệt mỏi vùng cổ vai gáy, xua tan nỗi lo cảm lạnh mùa đông hay phòng điều hòa mà không lo cay rát da.',
+        'lx_hero_countdown_title' => 'Flash sale kết thúc sau:',
+        'lx_hero_cta_text'        => 'FREESHIP TOÀN QUỐC - MUA NGAY!',
+        'lx_hero_note'            => '👉 Được dùng trong các liệu trình chăm sóc mẹ &amp; bé tại nhà, tại trung tâm ở cữ của <b>Home Care</b>.',
+        'lx_hero_badge_percent'   => '-44%',
+        'lx_hero_chip1'           => 'Chiết xuất thuần chay',
+        'lx_hero_chip2'           => 'Dạng xịt tiện lợi',
+        'lx_hero_chip3'           => 'An tâm cho mẹ & bé',
+
+        // Pain
+        'lx_pain_question'    => 'Mẹ có đang lặp lại những mối lo này mỗi ngày?',
+        'lx_pain_lead'        => 'Khí lạnh không chỉ làm cơ thể khó chịu, mà còn lặng lẽ bào mòn sức khỏe của cả mẹ và bé nếu không được chăm sóc đúng cách.',
+        'lx_pain_card1_title' => 'Mẹ ở cữ & Sau sinh',
+        'lx_pain_card1_desc'  => 'Cơ thể suy giảm sức đề kháng, mồ hôi trộm ra nhiều gặp gió là nhiễm lạnh, tay chân lạnh ngắt, dễ đau mỏi cổ vai gáy?',
+        'lx_pain_card2_title' => 'Trẻ sơ sinh & Trẻ nhỏ',
+        'lx_pain_card2_desc'  => 'Làn da nhạy cảm, dễ bị nhiễm lạnh mỗi khi tắm xong, hay giật mình, khó ngủ khi thời tiết chuyển mùa?',
+        'lx_pain_card3_title' => 'Bất tiện từ các phương pháp dân gian cũ',
+        'lx_pain_card3_desc'  => 'Cốt gừng tự ngâm hay các loại dầu xoa dạng chai đổ thường dễ làm bẩn quần áo, dính bết bàn tay, bất tiện khi muốn mang theo ra ngoài.',
+        'lx_pain_bridge'      => 'Đã có Khí Hàn Sinh Khương Home Care – Giữ ấm dịu lành cho mẹ và bé',
+
+        // Benefits
+        'lx_benefits_title' => 'Giữ ấm dịu nhẹ, <em>bảo vệ sức khỏe</em> cho cả gia đình',
+        'lx_benefits_lead'  => 'Khí Hàn Sinh Khương Home Care mang đến trải nghiệm giữ ấm hoàn toàn mới: Nhẹ nhàng – Tinh tế – Tiện lợi.',
+        'lx_ben1_title'     => 'Giữ ấm cơ thể &amp; Đẩy khí lạnh',
+        'lx_ben1_desc'      => 'Giúp cơ thể bé luôn ấm áp, hỗ trợ đẩy khí hàn, đặc biệt thích hợp dùng khi thời tiết se lạnh, giao mùa hoặc sau khi tắm.',
+        'lx_ben2_title'     => 'Thiết kế dạng xịt 30ml thông minh',
+        'lx_ben2_desc'      => 'Tiện lợi, không dính tay, dễ định lượng dùng, dễ dàng bỏ túi xách mang đi bất cứ đâu.',
+        'lx_ben3_title'     => 'Ấm dịu vừa đủ – Không gây rát da',
+        'lx_ben3_desc'      => 'Chiết xuất gừng tự nhiên tạo độ ấm dễ chịu, an lành, dịu nhẹ cho làn da nhạy cảm.',
+        'lx_ben4_title'     => 'Hương thơm thảo mộc thư giãn',
+        'lx_ben4_desc'      => 'Mùi hương tự nhiên từ sả chanh, rau mùi và tía tô giúp giải tỏa căng thẳng, mang lại cảm giác thư thái như đi spa.',
+        'lx_benefits_foot'  => 'Thoa và massage nhẹ nhàng giúp mẹ và bé thư giãn, giảm căng thẳng và ngủ sâu giấc hơn.',
+
+        // Ingredients
+        'lx_ing_title'  => 'Bảng thành phần tự nhiên – <em>Công thức thảo mộc thuần chay độc quyền</em>',
+        'lx_ing1_name'  => 'Chiết xuất rễ Gừng',
+        'lx_ing1_latin' => 'Zingiber Officinale Root Extract',
+        'lx_ing1_desc'  => 'Mang tính ấm tự nhiên, giúp thúc đẩy tuần hoàn máu dưới da, giữ ấm lòng bàn chân, lưng và ngực, đẩy tan hàn khí tích tụ.',
+        'lx_ing2_name'  => 'Tinh dầu Lá tía tô',
+        'lx_ing2_latin' => 'Perilla Frutescens Leaf Oil',
+        'lx_ing2_desc'  => 'Giúp làm dịu làn da, hỗ trợ giữ ấm cơ thể nhẹ nhàng, bảo vệ mẹ và bé trước các tác nhân gió lạnh bên ngoài.',
+        'lx_ing3_name'  => 'Tinh dầu Rau mùi',
+        'lx_ing3_latin' => 'Coriandrum Sativum Herb Oil',
+        'lx_ing3_desc'  => 'Mang lại hương thơm thảo mộc đặc trưng, giúp thư giãn tinh thần, tạo sự dễ chịu, thoải mái cho mẹ và bé.',
+        'lx_ing4_name'  => 'Tinh dầu Sả chanh',
+        'lx_ing4_latin' => 'Cymbopogon Citratus Leaf Oil',
+        'lx_ing4_desc'  => 'Hương thơm tươi mát, xua tan căng thẳng, hỗ trợ giữ ấm và làm mềm da.',
+
+        // Usage
+        'lx_usage_title'       => '2 Bước đơn giản để <em>cơ thể luôn ấm áp &amp; thư giãn</em>',
+        'lx_usage_subtitle'    => 'Chăm sóc nhanh chóng, tiện lợi với thiết kế dạng xịt thông minh',
+        'lx_usage_step1_title' => 'Xịt tinh dầu lên vùng cần giữ ấm',
+        'lx_usage_step1_desc'  => 'Xịt một lượng vừa đủ lên các vùng cơ thể cần giữ ấm: cổ, vai, gáy, lưng, ngực hoặc lòng bàn chân.',
+        'lx_usage_step2_title' => 'Massage nhẹ nhàng 1–2 phút',
+        'lx_usage_step2_desc'  => 'Massage nhẹ nhàng trong 1–2 phút để tinh dầu thẩm thấu sâu.',
+        'lx_usage_tip'         => '<b>💡 Mẹo nhỏ:</b> Sử dụng trước và sau khi tắm cho bé, hoặc kết hợp cùng tinh dầu tràm để nhân đôi hiệu quả giữ ấm.',
+        'lx_usage_warn'        => '<b>👉 Lưu ý:</b> Nên xịt một lượng nhỏ ra tay trước khi dùng cho trẻ sơ sinh. Tránh xịt trực tiếp lên vùng mặt, gần mắt, mũi hoặc vết thương hở.',
+
+        // Proof
+        'lx_proof_title'    => 'Hàng ngàn mẹ tin dùng &amp; đồng hành cùng <em>tinh dầu giữ ấm thảo mộc thuần chay Home Care</em>',
+        'lx_proof_subtitle' => 'Đánh giá chân thực từ khách hàng',
+        'lx_stat1_num'      => '10000',
+        'lx_stat1_lbl'      => 'Chai Khí Hàn Sinh Khương đã gửi tới các gia đình toàn quốc',
+        'lx_stat2_num'      => '98',
+        'lx_stat2_lbl'      => 'Mẹ bỉm hài lòng với độ ấm dịu nhẹ & khả năng thẩm thấu nhanh',
+        'lx_stat3_num'      => '95',
+        'lx_stat3_lbl'      => 'Đánh giá cao thiết kế dạng xịt 30ml nhỏ gọn, tiện lợi',
+        'lx_trust_box1'     => '<b>👉 Dùng trong liệu trình chuyên nghiệp:</b> Khí Hàn Sinh Khương Home Care là sản phẩm được các chuyên viên chăm sóc mẹ và bé của Home Care sử dụng trực tiếp trong các liệu trình massage tắm bé và tắm xông hơi cho mẹ tại nhà, tại trung tâm ở cữ.',
+        'lx_trust_box2'     => '<b>👉 Phù hợp cho cả gia đình:</b> An lành cho trẻ sơ sinh, trẻ nhỏ, mẹ bầu và mẹ sau sinh trong thời gian ở cữ.',
+        'lx_proof_cta_text' => 'Đặt mua ngay – chỉ 49.000đ',
+
+        // Standards & Specs
+        'lx_standards_title'   => 'An tâm tự hào với <em>tiêu chuẩn chất lượng mẹ &amp; bé</em>',
+        'lx_spec_product_name' => 'Khí Hàn Sinh Khương Hoàng Cung',
+        'lx_spec_cbmp'         => '81/26/CBMP-NB',
+        'lx_spec_brand'        => 'Home Care – Đơn vị đồng hành cùng hàng nghìn mẹ bầu & sau sinh trên khắp 3 miền Bắc - Trung - Nam',
+        'lx_spec_design'       => 'Dạng chai xịt tiện lợi, dễ dàng mang theo mọi nơi',
+        'lx_spec_commitment'   => 'Nguồn gốc thảo mộc thuần chay, có tem chống hàng giả, kiểm định rõ ràng',
+
+        // Order
+        'lx_order_title'        => 'Cho con cơ thể ấm – <em>Cho mẹ giấc ngủ ngon</em>',
+        'lx_order_lead'         => 'Đừng để khí lạnh làm ảnh hưởng sức khỏe mẹ và bé! Đặt mua Khí Hàn Sinh Khương ngay!',
+        'lx_order_badge'        => 'ƯU ĐÃI ĐẶC BIỆT DÀNH TẶNG MẸ TRONG HÔM NAY',
+        'lx_order_product_name' => 'Khí Hàn Sinh Khương Hoàng Cung 30ml',
+        'lx_order_stock_left'   => '15',
+        'lx_order_bullet1'      => 'Chai 30ml tiện lợi – Dùng tiết kiệm cho cả gia đình!',
+        'lx_order_bullet2'      => 'Miễn phí vận chuyển toàn quốc (Freeship)',
+        'lx_order_bullet3'      => 'Kiểm tra hàng trước khi thanh toán',
+        'lx_order_bullet4'      => 'Tư vấn miễn phí & Đồng hành cùng mẹ trong suốt quá trình sử dụng',
+    );
+
+    foreach ($data as $key => $val) {
+        update_option($key, $val);
+        update_option('options_' . $key, $val);
+    }
+
+    update_option('lx_content_sync_version', '2.0.0');
+}
+add_action('init', 'lx_sync_khi_han_sinh_khuong_content');

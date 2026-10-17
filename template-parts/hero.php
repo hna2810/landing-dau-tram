@@ -9,16 +9,16 @@ if (!defined('ABSPATH')) {
     exit;
 }
 
-$title           = lx_get_field('lx_hero_title', 'option', "Giữ ấm lồng ngực,<br><span>ngủ ngon trọn đêm</span>");
-$subtitle        = lx_get_field('lx_hero_subtitle', 'option', 'Để con yêu không bị cơn ho, khò khè cản trở');
-$desc            = lx_get_field('lx_hero_desc', 'option', 'Tinh dầu tràm kết hợp <b>dầu bơ, ô liu và argan</b> – giải pháp dịu nhẹ giúp bảo vệ đường thở của bé mỗi khi thời tiết chuyển mùa hay đêm lạnh.');
+$title           = lx_get_field('lx_hero_title', 'option', 'Mẹ bầu, mẹ ở cữ sợ lạnh, bé dễ nhiễm cảm?');
+$subtitle        = lx_get_field('lx_hero_subtitle', 'option', 'Giữ ấm cơ thể với tinh dầu thảo mộc thuần chay Home Care');
+$desc            = lx_get_field('lx_hero_desc', 'option', 'Sự kết hợp tinh túy giữa <b>Gừng tươi, Tía tô, Rau mùi &amp; Sả chanh</b> trong thiết kế dạng xịt thông minh giúp làm ấm cơ thể, giải tỏa mệt mỏi vùng cổ vai gáy, xua tan nỗi lo cảm lạnh mùa đông hay phòng điều hòa mà không lo cay rát da.');
 $countdown_title = lx_get_field('lx_hero_countdown_title', 'option', 'Flash sale kết thúc sau:');
-$cta_text        = lx_get_field('lx_hero_cta_text', 'option', 'Freeship toàn quốc – Mua ngay!');
-$note            = lx_get_field('lx_hero_note', 'option', 'Được dùng trong các liệu trình chăm sóc mẹ &amp; bé tại nhà của <b>Home Care</b>.');
+$cta_text        = lx_get_field('lx_hero_cta_text', 'option', 'FREESHIP TOÀN QUỐC - MUA NGAY!');
+$note            = lx_get_field('lx_hero_note', 'option', '👉 Được dùng trong các liệu trình chăm sóc mẹ &amp; bé tại nhà, tại trung tâm ở cữ của <b>Home Care</b>.');
 $badge_percent   = lx_get_field('lx_hero_badge_percent', 'option', '-44%');
-$chip1           = lx_get_field('lx_hero_chip1', 'option', 'Tràm + Bơ + Ô liu + Argan');
-$chip2           = lx_get_field('lx_hero_chip2', 'option', 'Dịu nhẹ cho da bé');
-$chip3           = lx_get_field('lx_hero_chip3', 'option', 'Chai 30ml');
+$chip1           = lx_get_field('lx_hero_chip1', 'option', 'Chiết xuất thuần chay');
+$chip2           = lx_get_field('lx_hero_chip2', 'option', 'Dạng xịt tiện lợi');
+$chip3           = lx_get_field('lx_hero_chip3', 'option', 'An tâm cho mẹ & bé');
 
 $unit_price = (int) lx_get_field('lx_unit_price', 'option', 49000);
 $old_price  = (int) lx_get_field('lx_old_price', 'option', 87000);
@@ -50,7 +50,7 @@ $save_price = $old_price - $unit_price;
 
     <div class="hero-visual reveal">
       <div class="glow"></div>
-      <?php echo lx_render_image_slot('lx_img_hero', 'hero', 'ẢNH 1: Ảnh sản phẩm chính – chai tinh dầu tràm 30ml', 'Tỉ lệ vuông 1:1 · 1000×1000px', 'product-img hero-img-sq'); ?>
+      <?php echo lx_render_image_slot('lx_img_hero', 'hero', 'ẢNH 1: Ảnh sản phẩm chính – chai xịt Khí Hàn Sinh Khương 30ml', 'Tỉ lệ vuông 1:1 · 1000×1000px', 'product-img hero-img-sq'); ?>
       <div class="badge-circle"><span>GIẢM</span><b><?php echo esc_html($badge_percent); ?></b><span>hôm nay</span></div>
       <div class="chip c1"><?php echo esc_html($chip1); ?></div>
       <div class="chip c2"><?php echo esc_html($chip2); ?></div>
