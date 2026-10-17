@@ -11,7 +11,7 @@ if (!defined('ABSPATH')) {
 
 function lx_sync_khi_han_sinh_khuong_content() {
     $synced_ver = get_option('lx_content_sync_version', '');
-    if ($synced_ver === '2.2.0') {
+    if ($synced_ver === '2.3.0') {
         return;
     }
 
@@ -174,6 +174,13 @@ function lx_sync_khi_han_sinh_khuong_content() {
         update_option('lx_footer_copyright', '© 2026 Home Care. All rights reserved.');
     }
 
-    update_option('lx_content_sync_version', '2.2.0');
+    // Ensure hero title has <em> emphasis tags
+    $cur_hero = get_option('options_lx_hero_title', '');
+    if (strpos($cur_hero, '<em>') === false && (strpos($cur_hero, 'sợ lạnh') !== false || strpos($cur_hero, 'nhiễm cảm') !== false)) {
+        update_option('options_lx_hero_title', 'Mẹ ở cữ <em>sợ lạnh</em>, bé dễ <em>nhiễm cảm</em>?');
+        update_option('lx_hero_title', 'Mẹ ở cữ <em>sợ lạnh</em>, bé dễ <em>nhiễm cảm</em>?');
+    }
+
+    update_option('lx_content_sync_version', '2.3.0');
 }
 add_action('init', 'lx_sync_khi_han_sinh_khuong_content');
