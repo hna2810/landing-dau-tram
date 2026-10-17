@@ -189,12 +189,15 @@ function lx_render_usage_video() {
     ob_start();
     ?>
     <div class="usage-video-wrap reveal">
-      <div class="usage-phone-frame">
-        <div class="usage-phone-notch"></div>
+      <div class="usage-phone-frame iphone-frame">
         <div class="usage-video-box" id="usageVideoBox"
              data-has-video="<?php echo $has_video ? '1' : '0'; ?>"
              data-yt-id="<?php echo esc_attr($yt_id); ?>"
              data-video-url="<?php echo esc_url($video_url); ?>">
+          
+          <div class="iphone-dynamic-island">
+            <span class="island-camera"></span>
+          </div>
           
           <div class="usage-video-ratio">
             <?php if (!empty($poster_url)) : ?>
@@ -303,6 +306,7 @@ function lx_render_usage_video() {
             </button>
 
             <div class="usage-video-container" id="usageVideoContainer"></div>
+            <div class="iphone-home-indicator"></div>
           </div>
         </div>
       </div>
