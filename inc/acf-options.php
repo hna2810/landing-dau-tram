@@ -601,8 +601,15 @@ function lx_register_acf_field_group() {
             ),
             array(
                 'key' => 'field_lx_img_handheld',
-                'label' => __('📷 ẢNH 17: Chai xịt Khí Hàn Sinh Khương có tem chống giả & kiểm định (1000×1000px, 1:1)', 'lx-landing'),
+                'label' => __('📷 ẢNH 17: Chai xịt có tem chống hàng giả (800×1000px, 4:5 hoặc 1:1)', 'lx-landing'),
                 'name' => 'lx_img_handheld',
+                'type' => 'image',
+                'return_format' => 'url',
+            ),
+            array(
+                'key' => 'field_lx_img_certificate',
+                'label' => __('📷 ẢNH 18: Phiếu công bố & Giấy kiểm định chất lượng (800×1000px, 4:5 hoặc 1:1)', 'lx-landing'),
+                'name' => 'lx_img_certificate',
                 'type' => 'image',
                 'return_format' => 'url',
             ),

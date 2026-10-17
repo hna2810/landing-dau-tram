@@ -89,6 +89,7 @@ function lx_enqueue_scripts() {
             'ing4'        => lx_get_image_url('lx_img_ing4', ''),
             'ingredients' => lx_get_image_url('lx_img_ingredients', ''),
             'handheld'    => lx_get_image_url('lx_img_handheld', ''),
+            'certificate' => lx_get_image_url('lx_img_certificate', ''),
             'step1'       => lx_get_image_url('lx_img_step1', ''),
             'step2'       => lx_get_image_url('lx_img_step2', ''),
             'step3'       => lx_get_image_url('lx_img_step3', ''),

@@ -32,9 +32,12 @@ if (!empty($spec3_val)) $active_specs[] = array('label' => $spec3_label, 'val' =
 if (!empty($spec4_val)) $active_specs[] = array('label' => $spec4_label, 'val' => $spec4_val);
 if (!empty($spec5_val)) $active_specs[] = array('label' => $spec5_label, 'val' => $spec5_val);
 
-$slot_handheld = lx_render_image_slot('lx_img_handheld', 'handheld', 'ẢNH 17: Chai xịt Khí Hàn Sinh Khương có tem chống giả & kiểm định', '1000×1000px (1:1)', '', 'aspect-ratio:1/1;background-color:rgba(255,255,255,.6)');
+$slot_handheld    = lx_render_image_slot('lx_img_handheld', 'handheld', 'ẢNH 17: Chai xịt có tem chống hàng giả', '800×1000px (4:5)', 'std-img-slot');
+$slot_certificate = lx_render_image_slot('lx_img_certificate', 'certificate', 'ẢNH 18: Giấy kiểm định & Công bố mỹ phẩm', '800×1000px (4:5)', 'std-img-slot');
 
-if (empty($active_specs) && empty($title) && empty($slot_handheld)) {
+$has_visual = (!empty($slot_handheld) || !empty($slot_certificate));
+
+if (empty($active_specs) && empty($title) && !$has_visual) {
     return;
 }
 ?>
@@ -46,9 +49,37 @@ if (empty($active_specs) && empty($title) && empty($slot_handheld)) {
     </div>
 
     <div class="standards-wrap reveal">
-      <?php if (!empty($slot_handheld)) : ?>
+      <?php if ($has_visual) : ?>
         <div class="standards-visual">
-          <?php echo $slot_handheld; ?>
+          <div class="standards-visual-grid<?php echo (empty($slot_handheld) || empty($slot_certificate)) ? ' is-single' : ''; ?>">
+            <?php if (!empty($slot_handheld)) : ?>
+              <div class="standard-img-card">
+                <div class="std-img-box">
+                  <?php echo $slot_handheld; ?>
+                </div>
+                <div class="std-img-caption">
+                  <span class="std-img-icon">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+                  </span>
+                  <span class="std-img-text">Tem chống hàng giả</span>
+                </div>
+              </div>
+            <?php endif; ?>
+
+            <?php if (!empty($slot_certificate)) : ?>
+              <div class="standard-img-card">
+                <div class="std-img-box">
+                  <?php echo $slot_certificate; ?>
+                </div>
+                <div class="std-img-caption">
+                  <span class="std-img-icon">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>
+                  </span>
+                  <span class="std-img-text">Kiểm định &amp; Công bố</span>
+                </div>
+              </div>
+            <?php endif; ?>
+          </div>
         </div>
       <?php endif; ?>
 

@@ -16,7 +16,7 @@
     images: Object.assign({
       hero: '', pain1: '', pain2: '', pain3: '', pain4: '', pain: '',
       ben1: '', ben2: '', ben3: '', ben4: '', benefit: '',
-      ing1: '', ing2: '', ing3: '', ing4: '', ingredients: '', handheld: '',
+      ing1: '', ing2: '', ing3: '', ing4: '', ingredients: '', handheld: '', certificate: '',
       step1: '', step2: '', step3: '',
       feedback1: '', feedback2: '', feedback3: '', service: '', offer: ''
     }, wpConfig.images || {}),
