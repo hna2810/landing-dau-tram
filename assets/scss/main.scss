@@ -119,7 +119,7 @@ header.nav .container{display:flex;align-items:center;justify-content:space-betw
 /* Thumbnails in cards */
 .ph.thumb{flex:0 0 108px;width:108px;padding:8px;border-radius:20px;gap:2px}
 .ph.card-img{margin:10px 0 14px;border-radius:20px;padding:10px}
-.ph.round{flex:0 0 72px;width:72px;border-radius:50%;padding:4px}
+.ph.round{flex:0 0 72px;width:72px;height:72px;border-radius:50%;padding:4px}
 .ph.thumb b,.ph.card-img b{font-size:12.5px}
 .ph.thumb small,.ph.round small,.ph.round b{display:none}
 .ph .ph-n{white-space:nowrap}
@@ -178,10 +178,11 @@ header.nav .container{display:flex;align-items:center;justify-content:space-betw
 .ingre h3{font-size:17px}
 .ingre .latin{font-size:13px;font-style:italic;color:var(--muted);margin-bottom:4px}
 .ingre p{font-size:15px;color:var(--muted)}
-.ingre-visual{position:relative;max-width:480px;margin:0 auto;width:100%;border-radius:var(--radius);overflow:hidden}
-.ingre-visual .ph{border-radius:var(--radius);width:100%}
+.ingre-visual{position:relative;max-width:480px;margin:0 auto;width:100%;border-radius:var(--radius);overflow:hidden;border:2px solid rgba(212,170,100,.85);box-shadow:0 16px 40px rgba(195,160,110,.16),0 2px 8px rgba(0,0,0,.04);background:#fff;transition:border-color .25s ease,box-shadow .25s ease}
+.ingre-visual:hover{border-color:var(--leaf-dark);box-shadow:0 20px 48px rgba(74,135,106,.2)}
+.ingre-visual .ph{border-radius:26px;width:100%}
 .ingre-visual .ph.filled{display:block;border:none;background:none;padding:0}
-.ingre-visual .ph.filled img{width:100%;height:auto;display:block;border-radius:var(--radius);box-shadow:0 12px 32px rgba(0,0,0,.08)}
+.ingre-visual .ph.filled img{width:100%;height:auto;display:block;border-radius:26px}
 .orbit{position:absolute;inset:0;border-radius:50%;border:2px dashed var(--mint)}
 .orbit-center{position:absolute;inset:26%;border-radius:50%;background:radial-gradient(circle at 35% 30%,#fff,#fff6d6);font-family:var(--head);display:flex;align-items:center;justify-content:center;text-align:center;font-weight:800;color:var(--leaf-dark);box-shadow:var(--shadow);font-size:15px;padding:10px}
 .orbit-item{position:absolute;width:86px;height:86px;border-radius:50%;background:#fff;box-shadow:var(--shadow);display:flex;flex-direction:column;align-items:center;justify-content:center;font-size:12px;font-weight:700;text-align:center;line-height:1.2}

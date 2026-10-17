@@ -691,6 +691,7 @@ header.nav .container {
 .ph.round {
   flex: 0 0 72px;
   width: 72px;
+  height: 72px;
   border-radius: 50%;
   padding: 4px;
 }
@@ -1121,10 +1122,19 @@ header.nav .container {
   width: 100%;
   border-radius: var(--radius);
   overflow: hidden;
+  border: 2px solid rgba(212, 170, 100, 0.85);
+  box-shadow: 0 16px 40px rgba(195, 160, 110, 0.16), 0 2px 8px rgba(0, 0, 0, 0.04);
+  background: #fff;
+  transition: border-color 0.25s ease, box-shadow 0.25s ease;
+}
+
+.ingre-visual:hover {
+  border-color: var(--leaf-dark);
+  box-shadow: 0 20px 48px rgba(74, 135, 106, 0.2);
 }
 
 .ingre-visual .ph {
-  border-radius: var(--radius);
+  border-radius: 26px;
   width: 100%;
 }
 
@@ -1139,8 +1149,7 @@ header.nav .container {
   width: 100%;
   height: auto;
   display: block;
-  border-radius: var(--radius);
-  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.08);
+  border-radius: 26px;
 }
 
 .orbit {

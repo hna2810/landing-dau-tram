@@ -30,8 +30,7 @@ $has_i1 = (!empty($ing1_name) || !empty($ing1_desc));
 $has_i2 = (!empty($ing2_name) || !empty($ing2_desc));
 $has_i3 = (!empty($ing3_name) || !empty($ing3_desc));
 $has_i4 = (!empty($ing4_name) || !empty($ing4_desc));
-$has_ings = ($has_i1 || $has_i2 || $has_i3 || $has_i4);
-$slot_ingredients = lx_render_image_slot('lx_img_ingredients', 'ingredients', 'ẢNH 10: Ảnh chai xịt Khí Hàn Sinh Khương bên cạnh thảo mộc tự nhiên', '1000×1000px (1:1)', '', 'aspect-ratio:1/1;');
+$slot_ingredients = lx_render_image_slot('lx_img_ingredients', 'ingredients', 'ẢNH 10: Ảnh chai xịt Khí Hàn Sinh Khương bên cạnh thảo mộc tự nhiên', '1000×1000px (1:1)');
 
 if (!$has_ings && empty($title) && empty($slot_ingredients)) {
     return;
@@ -49,7 +48,7 @@ if (!$has_ings && empty($title) && empty($slot_ingredients)) {
         <div class="ingre-list">
           <?php if ($has_i1) : ?>
             <div class="ingre reveal">
-              <?php echo lx_render_image_slot('lx_img_ing1', 'ing1', 'ẢNH 6: Gừng tươi', '400×400px (1:1)', 'round', 'aspect-ratio:1/1'); ?>
+              <?php echo lx_render_image_slot('lx_img_ing1', 'ing1', 'ẢNH 6: Gừng tươi', '400×400px (1:1)', 'round'); ?>
               <div>
                 <?php if (!empty($ing1_name)) : ?><h3 class="lx_wow_item"><?php echo esc_html($ing1_name); ?></h3><?php endif; ?>
                 <?php if (!empty($ing1_lat)) : ?><div class="latin"><?php echo esc_html($ing1_lat); ?></div><?php endif; ?>
@@ -60,7 +59,7 @@ if (!$has_ings && empty($title) && empty($slot_ingredients)) {
 
           <?php if ($has_i2) : ?>
             <div class="ingre reveal">
-              <?php echo lx_render_image_slot('lx_img_ing2', 'ing2', 'ẢNH 7: Lá tía tô', '400×400px (1:1)', 'round', 'aspect-ratio:1/1'); ?>
+              <?php echo lx_render_image_slot('lx_img_ing2', 'ing2', 'ẢNH 7: Lá tía tô', '400×400px (1:1)', 'round'); ?>
               <div>
                 <?php if (!empty($ing2_name)) : ?><h3 class="lx_wow_item"><?php echo esc_html($ing2_name); ?></h3><?php endif; ?>
                 <?php if (!empty($ing2_lat)) : ?><div class="latin"><?php echo esc_html($ing2_lat); ?></div><?php endif; ?>
@@ -71,7 +70,7 @@ if (!$has_ings && empty($title) && empty($slot_ingredients)) {
 
           <?php if ($has_i3) : ?>
             <div class="ingre reveal">
-              <?php echo lx_render_image_slot('lx_img_ing3', 'ing3', 'ẢNH 8: Rau mùi', '400×400px (1:1)', 'round', 'aspect-ratio:1/1'); ?>
+              <?php echo lx_render_image_slot('lx_img_ing3', 'ing3', 'ẢNH 8: Rau mùi', '400×400px (1:1)', 'round'); ?>
               <div>
                 <?php if (!empty($ing3_name)) : ?><h3 class="lx_wow_item"><?php echo esc_html($ing3_name); ?></h3><?php endif; ?>
                 <?php if (!empty($ing3_lat)) : ?><div class="latin"><?php echo esc_html($ing3_lat); ?></div><?php endif; ?>
@@ -82,7 +81,7 @@ if (!$has_ings && empty($title) && empty($slot_ingredients)) {
 
           <?php if ($has_i4) : ?>
             <div class="ingre reveal">
-              <?php echo lx_render_image_slot('lx_img_ing4', 'ing4', 'ẢNH 9: Sả chanh', '400×400px (1:1)', 'round', 'aspect-ratio:1/1'); ?>
+              <?php echo lx_render_image_slot('lx_img_ing4', 'ing4', 'ẢNH 9: Sả chanh', '400×400px (1:1)', 'round'); ?>
               <div>
                 <?php if (!empty($ing4_name)) : ?><h3 class="lx_wow_item"><?php echo esc_html($ing4_name); ?></h3><?php endif; ?>
                 <?php if (!empty($ing4_lat)) : ?><div class="latin"><?php echo esc_html($ing4_lat); ?></div><?php endif; ?>
