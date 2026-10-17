@@ -60,13 +60,23 @@ function lx_ensure_cf7_form() {
         'post_type'      => 'wpcf7_contact_form',
         'post_status'    => 'publish',
         'posts_per_page' => 1,
-        'title'          => 'Đặt Hàng Tinh Dầu Tràm Home Care',
+        'title'          => 'Đặt Hàng Tinh Dầu Giữ Ấm Home Care',
     ));
+
+    if (empty($existing)) {
+        $existing = get_posts(array(
+            'post_type'      => 'wpcf7_contact_form',
+            'post_status'    => 'publish',
+            'posts_per_page' => 1,
+            'title'          => 'Đặt Hàng Tinh Dầu Tràm Home Care',
+        ));
+    }
 
     if (!empty($existing)) {
         $fid = $existing[0]->ID;
         wp_update_post(array(
             'ID'           => $fid,
+            'post_title'   => 'Đặt Hàng Tinh Dầu Giữ Ấm Home Care',
             'post_content' => $form_content,
         ));
         update_post_meta($fid, '_form', $form_content);
@@ -87,7 +97,7 @@ function lx_ensure_cf7_form() {
     }
 
     $form_id = wp_insert_post(array(
-        'post_title'  => 'Đặt Hàng Tinh Dầu Tràm Home Care',
+        'post_title'  => 'Đặt Hàng Tinh Dầu Giữ Ấm Home Care',
         'post_type'   => 'wpcf7_contact_form',
         'post_status' => 'publish',
     ));
@@ -96,7 +106,7 @@ function lx_ensure_cf7_form() {
         $server_host = isset($_SERVER['SERVER_NAME']) ? sanitize_text_field($_SERVER['SERVER_NAME']) : 'dautram.homecarevietnam.com';
         $mail_tags = array(
             'active'    => true,
-            'subject'   => 'Đơn đặt hàng Tinh Dầu Tràm từ [your-name]',
+            'subject'   => 'Đơn đặt hàng Tinh Dầu Giữ Ấm từ [your-name]',
             'sender'    => '[_site_title] <wordpress@' . $server_host . '>',
             'recipient' => get_option('admin_email'),
             'body'      => "Thông tin đơn hàng mới từ Landing Page:\n\n"
@@ -173,7 +183,7 @@ function lx_cf7_save_to_google_sheet($contact_form) {
             'phone'      => $phone,
             'address'    => $address,
             'package'    => '1 chai 30ml – 49.000đ (Freeship)',
-            'product'    => 'Tinh dầu tràm giữ ấm cho bé 30ml',
+            'product'    => 'Tinh dầu giữ ấm Khí Hàn Sinh Khương 30ml',
             'price'      => $price,
             'quantity'   => $quantity,
             'note'       => $note,
@@ -218,7 +228,7 @@ function lx_render_order_form() {
     if (class_exists('WPCF7_ContactForm')) {
         $form_id = lx_ensure_cf7_form();
         if ($form_id) {
-            return do_shortcode('[contact-form-7 id="' . $form_id . '" title="Đặt Hàng Tinh Dầu Tràm Home Care"]');
+            return do_shortcode('[contact-form-7 id="' . $form_id . '" title="Đặt Hàng Tinh Dầu Giữ Ấm Home Care"]');
         }
     }
 

@@ -641,10 +641,10 @@ header.nav .container{display:flex;align-items:center;justify-content:space-betw
 .final p{color:var(--muted);max-width:620px;margin:0 auto 22px}
 .footer, footer {
   position: relative;
-  background: #ffeed0;
-  background: linear-gradient(180deg, #ffeed0 0%, #ffe4b0 50%, #fedb98 100%);
-  border-top: 1px solid rgba(243, 185, 138, .6);
-  color: #5c4735;
+  background: #1b4518;
+  background: linear-gradient(180deg, #225620 0%, #163a14 100%);
+  border-top: 2px solid rgba(255, 225, 140, .45);
+  color: rgba(255, 255, 255, .88);
   text-align: center;
   padding: 40px 20px 104px;
   font-size: 16px;
@@ -659,7 +659,7 @@ header.nav .container{display:flex;align-items:center;justify-content:space-betw
   .footer-title {
     font-size: 20px;
     font-weight: 800;
-    color: #231b15;
+    color: #ffffff;
     margin: 0 0 8px;
     letter-spacing: .2px;
   }
@@ -667,17 +667,17 @@ header.nav .container{display:flex;align-items:center;justify-content:space-betw
   .footer-website {
     font-size: 16px;
     font-weight: 600;
-    color: #3d2c1e;
+    color: rgba(255, 255, 255, .95);
     margin: 0 0 8px;
 
     a {
-      color: #2e6c29;
+      color: #ffd166;
       text-decoration: underline;
       font-weight: 700;
       transition: color .2s;
 
       &:hover {
-        color: #1a4517;
+        color: #ffffff;
       }
     }
   }
@@ -685,17 +685,17 @@ header.nav .container{display:flex;align-items:center;justify-content:space-betw
   .footer-hotline {
     font-size: 16px;
     font-weight: 700;
-    color: #3d2c1e;
+    color: rgba(255, 255, 255, .95);
     margin: 0 0 12px;
 
     a {
-      color: #2e6c29;
+      color: #ffd166;
       text-decoration: underline;
       font-weight: 800;
       transition: color .2s;
 
       &:hover {
-        color: #1a4517;
+        color: #ffffff;
       }
     }
   }
@@ -703,7 +703,7 @@ header.nav .container{display:flex;align-items:center;justify-content:space-betw
   .footer-company {
     font-size: 16px;
     font-weight: 800;
-    color: #231b15;
+    color: #ffffff;
     text-transform: uppercase;
     letter-spacing: .2px;
     margin: 0 0 8px;
@@ -712,14 +712,14 @@ header.nav .container{display:flex;align-items:center;justify-content:space-betw
 
   .footer-address {
     font-size: 16px;
-    color: #523c28;
+    color: rgba(255, 255, 255, .88);
     margin: 0 0 8px;
     line-height: 1.5;
   }
 
   .footer-tax {
     font-size: 12px;
-    color: #6e543c;
+    color: rgba(255, 255, 255, .72);
     max-width: 680px;
     margin: 0 auto 16px;
     line-height: 1.6;
@@ -728,9 +728,9 @@ header.nav .container{display:flex;align-items:center;justify-content:space-betw
   .footer-copy {
     margin-top: 16px;
     padding-top: 16px;
-    border-top: 1px solid rgba(180, 130, 70, .25);
+    border-top: 1px solid rgba(255, 255, 255, .15);
     font-size: 12px;
-    color: #7d6550;
+    color: rgba(255, 255, 255, .52);
   }
 }
 

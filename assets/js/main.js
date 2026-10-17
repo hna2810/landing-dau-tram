@@ -70,7 +70,7 @@
     }
     var titleEl = slot.querySelector('b');
     var img = new Image();
-    img.alt = titleEl ? titleEl.textContent : 'Tinh dầu tràm Home Care';
+    img.alt = titleEl ? titleEl.textContent : 'Tinh dầu giữ ấm Home Care';
     img.loading = 'lazy';
     img.onload = function () {
       slot.innerHTML = '';
@@ -274,7 +274,7 @@
       var addrVal = $('#fAddr') ? $('#fAddr').value.trim() : '';
 
       var order = {
-        product: 'Tinh dầu tràm giữ ấm cho bé 30ml',
+        product: 'Tinh dầu giữ ấm Khí Hàn Sinh Khương 30ml',
         name: nameVal,
         phone: phoneVal,
         address: addrVal,
@@ -332,7 +332,7 @@
 
     if (toast && toastText) {
       var show = function () {
-        toastText.innerHTML = '<b>' + pick(names) + '</b> (' + pick(places) + ') vừa đặt <b>tinh dầu tràm</b><br><small>' + (Math.floor(Math.random() * 9) + 1) + ' phút trước</small>';
+        toastText.innerHTML = '<b>' + pick(names) + '</b> (' + pick(places) + ') vừa đặt <b>tinh dầu giữ ấm</b><br><small>' + (Math.floor(Math.random() * 9) + 1) + ' phút trước</small>';
         toast.classList.add('show');
         setTimeout(function () { toast.classList.remove('show'); }, 4500);
         if (left > 4 && Math.random() < 0.5) {

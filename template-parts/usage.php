@@ -20,7 +20,7 @@ $step2_title = lx_get_field('lx_usage_step2_title', 'option', 'Massage nhẹ nh�
 $step2_desc  = lx_get_field('lx_usage_step2_desc', 'option', 'Massage nhẹ nhàng trong 1–2 phút để tinh dầu thẩm thấu sâu.');
 $step2_icon  = lx_get_image_url('lx_usage_step2_icon', '');
 
-$tip_text    = lx_get_field('lx_usage_tip', 'option', '<b>💡 Mẹo nhỏ:</b> Sử dụng trước và sau khi tắm cho bé, hoặc kết hợp cùng tinh dầu tràm để nhân đôi hiệu quả giữ ấm.');
+$tip_text    = lx_get_field('lx_usage_tip', 'option', '<b>💡 Mẹo nhỏ:</b> Sử dụng trước và sau khi tắm cho bé, hoặc kết hợp massage nhẹ nhàng để nhân đôi hiệu quả giữ ấm.');
 $warn_text   = lx_get_field('lx_usage_warn', 'option', '<b>👉 Lưu ý:</b> Nên xịt một lượng nhỏ ra tay trước khi dùng cho trẻ sơ sinh. Tránh xịt trực tiếp lên vùng mặt, gần mắt, mũi hoặc vết thương hở.');
 
 $has_s1 = (!empty($step1_title) || !empty($step1_desc));

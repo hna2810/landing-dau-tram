@@ -11,7 +11,7 @@ if (!defined('ABSPATH')) {
 
 function lx_sync_khi_han_sinh_khuong_content() {
     $synced_ver = get_option('lx_content_sync_version', '');
-    if ($synced_ver === '2.4.0') {
+    if ($synced_ver === '2.5.0') {
         return;
     }
 
@@ -82,7 +82,7 @@ function lx_sync_khi_han_sinh_khuong_content() {
         'lx_usage_step1_desc'  => 'Xịt một lượng vừa đủ lên các vùng cơ thể cần giữ ấm: cổ, vai, gáy, lưng, ngực hoặc lòng bàn chân.',
         'lx_usage_step2_title' => 'Massage nhẹ nhàng 1–2 phút',
         'lx_usage_step2_desc'  => 'Massage nhẹ nhàng trong 1–2 phút để tinh dầu thẩm thấu sâu.',
-        'lx_usage_tip'         => '<b>💡 Mẹo nhỏ:</b> Sử dụng trước và sau khi tắm cho bé, hoặc kết hợp cùng tinh dầu tràm để nhân đôi hiệu quả giữ ấm.',
+        'lx_usage_tip'         => '<b>💡 Mẹo nhỏ:</b> Sử dụng trước và sau khi tắm cho bé, hoặc kết hợp massage nhẹ nhàng để nhân đôi hiệu quả giữ ấm.',
         'lx_usage_warn'        => '<b>👉 Lưu ý:</b> Nên xịt một lượng nhỏ ra tay trước khi dùng cho trẻ sơ sinh. Tránh xịt trực tiếp lên vùng mặt, gần mắt, mũi hoặc vết thương hở.',
 
         // Proof
@@ -189,6 +189,15 @@ function lx_sync_khi_han_sinh_khuong_content() {
         update_option('lx_order_cta_text', 'MUA NGAY 49K – FREESHIP');
     }
 
-    update_option('lx_content_sync_version', '2.4.0');
+    // Ensure usage tip doesn't mention tinh dầu tràm
+    $cur_tip = get_option('options_lx_usage_tip', '');
+    if (strpos($cur_tip, 'tinh dầu tràm') !== false) {
+        $new_tip = str_replace('kết hợp cùng tinh dầu tràm', 'kết hợp massage nhẹ nhàng', $cur_tip);
+        $new_tip = str_replace('tinh dầu tràm', 'tinh dầu giữ ấm', $new_tip);
+        update_option('options_lx_usage_tip', $new_tip);
+        update_option('lx_usage_tip', $new_tip);
+    }
+
+    update_option('lx_content_sync_version', '2.5.0');
 }
 add_action('init', 'lx_sync_khi_han_sinh_khuong_content');

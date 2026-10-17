@@ -198,7 +198,7 @@ function lx_render_usage_video() {
           
           <div class="usage-video-ratio">
             <?php if (!empty($poster_url)) : ?>
-              <img src="<?php echo esc_url($poster_url); ?>" alt="Hướng dẫn sử dụng tinh dầu tràm" class="usage-video-poster" id="usageVideoPoster" loading="lazy">
+              <img src="<?php echo esc_url($poster_url); ?>" alt="Hướng dẫn sử dụng tinh dầu giữ ấm" class="usage-video-poster" id="usageVideoPoster" loading="lazy">
             <?php else : ?>
               <div class="usage-video-placeholder-bg">
                 <div class="usage-placeholder-inner">
