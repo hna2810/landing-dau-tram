@@ -224,6 +224,12 @@ function lx_sync_khi_han_sinh_khuong_content() {
         }
     }
 
-    update_option('lx_content_sync_version', '2.6.0');
+    // Ensure hero video url option default
+    if (get_option('options_lx_hero_video_url', '__LX_NOT_EXISTS__') === '__LX_NOT_EXISTS__') {
+        update_option('options_lx_hero_video_url', 'https://www.youtube.com/shorts/4kOgpS5Yq5g');
+        update_option('lx_hero_video_url', 'https://www.youtube.com/shorts/4kOgpS5Yq5g');
+    }
+
+    update_option('lx_content_sync_version', '2.7.0');
 }
 add_action('init', 'lx_sync_khi_han_sinh_khuong_content');

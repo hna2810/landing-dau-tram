@@ -168,7 +168,7 @@ function lx_render_image_slot($field_name, $key, $title, $spec = '', $classes = 
 function lx_render_video_frame($context = 'usage') {
     if ($context === 'hero') {
         $video_url   = lx_get_field('lx_hero_video_url', 'option', '');
-        $poster_url  = lx_get_image_url('lx_hero_video_poster', '', 'full', 'option');
+        $poster_url  = lx_get_image_url('lx_hero_video_poster', '', 'option');
         $video_sub   = lx_get_field('lx_hero_video_sub', 'option', '');
 
         // Fallback to usage video if hero video not set
@@ -176,11 +176,11 @@ function lx_render_video_frame($context = 'usage') {
             $video_url = lx_get_field('lx_usage_video_url', 'option', 'https://www.youtube.com/shorts/4kOgpS5Yq5g');
         }
         if (empty($poster_url)) {
-            $poster_url = lx_get_image_url('lx_usage_video_poster', '', 'full', 'option');
+            $poster_url = lx_get_image_url('lx_usage_video_poster', '', 'option');
         }
     } else {
         $video_url   = lx_get_field('lx_usage_video_url', 'option', 'https://www.youtube.com/shorts/4kOgpS5Yq5g');
-        $poster_url  = lx_get_image_url('lx_usage_video_poster', '', 'full', 'option');
+        $poster_url  = lx_get_image_url('lx_usage_video_poster', '', 'option');
         $video_sub   = lx_get_field('lx_usage_video_sub', 'option', 'Xem video 30s hướng dẫn mẹ dùng đúng cách');
     }
 
