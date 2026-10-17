@@ -142,15 +142,17 @@ header.nav .container{display:flex;align-items:center;justify-content:space-betw
 
 /* Benefits */
 .benefits{background:radial-gradient(1100px 550px at 50% 0%,rgba(255,230,130,.5) 0%,transparent 65%),radial-gradient(800px 420px at 90% 75%,rgba(243,185,138,.25) 0%,transparent 55%),radial-gradient(700px 380px at 8% 30%,rgba(111,174,143,.12) 0%,transparent 50%),linear-gradient(180deg,#fffbf2 0%,#fff6d6 20%,#ffefa8 55%,#fff6d6 85%,#fffbf3 100%);border-top:1px solid rgba(255,235,170,.6);border-bottom:1px solid rgba(255,235,170,.6);box-shadow:inset 0 1px 0 rgba(255,255,255,.9),inset 0 -1px 0 rgba(255,255,255,.9)}
-.ben-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;margin-top:32px}
-.ben-card{background:#fff;border-radius:var(--radius);padding:26px 20px;box-shadow:0 14px 34px rgba(212,170,100,.12),0 2px 6px rgba(0,0,0,.02);border:1.5px solid rgba(255,235,160,.9);transition:transform .25s,box-shadow .25s}
-.ben-card:hover{transform:translateY(-6px);box-shadow:0 18px 40px rgba(212,170,100,.18)}
-.ben-num{font-family:var(--head);font-weight:700;font-size:14px;color:var(--amber-dark)}
-.ben-ico{width:62px;height:62px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:30px;margin:8px 0 14px;background:var(--amber-light)}
-.ben-card:nth-child(2) .ben-ico{background:#e8f3fb}.ben-card:nth-child(3) .ben-ico{background:var(--pink)}.ben-card:nth-child(4) .ben-ico{background:var(--leaf-light)}
-.ben-card h3{font-size:18px;margin-bottom:8px}
-.ben-card p{font-size:15px;color:var(--muted)}
-.ben-foot{margin:28px auto 0;max-width:720px;text-align:center;background:#fff;border-radius:99px;padding:14px 24px;font-weight:600;color:var(--leaf-dark);box-shadow:0 8px 24px rgba(195,160,110,.07);border:1px solid rgba(255,246,214,.8)}
+.ben-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:20px;align-items:start;margin-top:36px}
+.ben-card{background:#fff;border-radius:24px;padding:16px 16px 24px;box-shadow:0 14px 34px rgba(212,170,100,.12),0 2px 6px rgba(0,0,0,.02);border:1.5px solid rgba(255,235,160,.9);transition:box-shadow .25s ease,border-color .25s ease;display:flex;flex-direction:column}
+.ben-card:nth-child(even){margin-top:32px}
+.ben-card:hover{box-shadow:0 22px 48px rgba(212,170,100,.22);border-color:var(--amber)}
+.ben-card .card-img{margin:0 0 16px;border-radius:18px;width:100%;overflow:hidden;box-shadow:0 6px 18px rgba(0,0,0,.06)}
+.ben-card .card-img.filled{position:relative;height:0;padding-bottom:92%;background:#f8f6f0;border:none}
+.ben-card .card-img.filled img{position:absolute;top:0;left:0;width:100%;height:100%;object-fit:cover;object-position:center;border-radius:inherit}
+.ben-card .card-img:not(.filled){min-height:200px;padding:16px 12px}
+.ben-card h3{font-size:18px;margin-bottom:8px;line-height:1.35}
+.ben-card p{font-size:15px;color:var(--muted);line-height:1.55}
+.ben-foot{margin:36px auto 0;max-width:720px;text-align:center;background:#fff;border-radius:99px;padding:14px 24px;font-weight:600;color:var(--leaf-dark);box-shadow:0 8px 24px rgba(195,160,110,.07);border:1px solid rgba(255,246,214,.8)}
 
 /* Ingredients */
 .ingredients{background:radial-gradient(circle at 12% 25%,rgba(111,174,143,.12) 0%,transparent 50%),radial-gradient(circle at 88% 70%,rgba(255,246,214,.6) 0%,transparent 55%),linear-gradient(180deg,#fffbf3 0%,#f6fbf8 35%,#edf7f2 60%,#f7fcf9 85%,#fffdf8 100%)}
@@ -336,7 +338,8 @@ body:has(.sticky:not(.show)) .float-call{bottom:16px}
   .hero-visual{order:-1;max-width:460px;margin:0 auto}
   .ingre-visual{order:-1;max-width:460px;margin:0 auto 24px;width:100%}
   .hero{padding-top:20px}
-  .ben-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .ben-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:24px 16px;align-items:start}
+  .ben-card:nth-child(even){margin-top:24px}
   .reviews,.steps{grid-template-columns:minmax(0,1fr)}
   .reviews{gap:16px}
   .review,.reviews.is-5-items .review:nth-child(4),.reviews .review:nth-child(4):nth-last-child(2),.review.rev-center-start{grid-column:auto}
@@ -348,6 +351,9 @@ body:has(.sticky:not(.show)) .float-call{bottom:16px}
 @media (max-width:600px){
   section{padding:48px 0;overflow-x:clip}
   .pain-grid,.pain-grid-3,.ben-grid,.trust-box{grid-template-columns:minmax(0,1fr)}
+  .ben-card:nth-child(even){margin-top:0}
+  .ben-card{padding:16px 14px 20px}
+  .ben-card .card-img.filled{padding-bottom:75%}
   .pain-card{padding:16px 14px;gap:12px;min-width:0;width:100%;box-sizing:border-box}
   .ph.thumb{flex:0 0 88px;width:88px}
   .stats{grid-template-columns:repeat(3,minmax(0,1fr));gap:6px}.stat{padding:14px 4px;min-width:0}.stat .num{font-size:20px}.stat .lbl{font-size:11px;line-height:1.35;word-break:break-word}.stat .stars{font-size:10px;letter-spacing:1px}

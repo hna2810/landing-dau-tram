@@ -368,7 +368,7 @@ function lx_register_acf_field_group() {
             ),
             array(
                 'key' => 'field_lx_img_ben1',
-                'label' => __('📷 ẢNH 7: Bé ấm áp trong khăn sau khi tắm (800×600px, 4:3)', 'lx-landing'),
+                'label' => __('📷 ẢNH 7: Bé ấm áp trong khăn sau khi tắm (800×800px, 1:1 vuông)', 'lx-landing'),
                 'name' => 'lx_img_ben1',
                 'type' => 'image',
                 'return_format' => 'url',
@@ -390,7 +390,7 @@ function lx_register_acf_field_group() {
             ),
             array(
                 'key' => 'field_lx_img_ben2',
-                'label' => __('📷 ẢNH 8: Bé ngủ say, thở êm (800×600px, 4:3)', 'lx-landing'),
+                'label' => __('📷 ẢNH 8: Bé ngủ say, thở êm (800×800px, 1:1 vuông)', 'lx-landing'),
                 'name' => 'lx_img_ben2',
                 'type' => 'image',
                 'return_format' => 'url',
@@ -412,7 +412,7 @@ function lx_register_acf_field_group() {
             ),
             array(
                 'key' => 'field_lx_img_ben3',
-                'label' => __('📷 ẢNH 9: Mẹ thoa dầu lên vết muỗi đốt (800×600px, 4:3)', 'lx-landing'),
+                'label' => __('📷 ẢNH 9: Mẹ thoa dầu lên vết muỗi đốt (800×800px, 1:1 vuông)', 'lx-landing'),
                 'name' => 'lx_img_ben3',
                 'type' => 'image',
                 'return_format' => 'url',
@@ -434,7 +434,7 @@ function lx_register_acf_field_group() {
             ),
             array(
                 'key' => 'field_lx_img_ben4',
-                'label' => __('📷 ẢNH 10: Cận cảnh giọt dầu trên da bé (800×600px, 4:3)', 'lx-landing'),
+                'label' => __('📷 ẢNH 10: Cận cảnh giọt dầu trên da bé (800×800px, 1:1 vuông)', 'lx-landing'),
                 'name' => 'lx_img_ben4',
                 'type' => 'image',
                 'return_format' => 'url',

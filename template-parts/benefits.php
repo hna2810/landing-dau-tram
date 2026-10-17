@@ -40,8 +40,7 @@ if (!$has_bens && empty($title) && empty($lead) && empty($foot)) {
       <div class="ben-grid" style="text-align:left">
         <?php if ($has_b1) : ?>
           <div class="ben-card reveal">
-            <span class="ben-num">01</span>
-            <?php echo lx_render_image_slot('lx_img_ben1', 'ben1', 'ẢNH 7: Bé ấm áp trong khăn sau khi tắm', '800×600px (4:3)', 'card-img', 'aspect-ratio:4/3'); ?>
+            <?php echo lx_render_image_slot('lx_img_ben1', 'ben1', 'ẢNH 7: Bé ấm áp trong khăn sau khi tắm', '800×800px (1:1)', 'card-img'); ?>
             <?php if (!empty($ben1_title)) : ?><h3 class="lx_wow_item"><?php echo $ben1_title; ?></h3><?php endif; ?>
             <?php if (!empty($ben1_desc)) : ?><p class="lx_wow_item"><?php echo esc_html($ben1_desc); ?></p><?php endif; ?>
           </div>
@@ -49,8 +48,7 @@ if (!$has_bens && empty($title) && empty($lead) && empty($foot)) {
 
         <?php if ($has_b2) : ?>
           <div class="ben-card reveal">
-            <span class="ben-num">02</span>
-            <?php echo lx_render_image_slot('lx_img_ben2', 'ben2', 'ẢNH 8: Bé ngủ say, thở êm', '800×600px (4:3)', 'card-img', 'aspect-ratio:4/3'); ?>
+            <?php echo lx_render_image_slot('lx_img_ben2', 'ben2', 'ẢNH 8: Bé ngủ say, thở êm', '800×800px (1:1)', 'card-img'); ?>
             <?php if (!empty($ben2_title)) : ?><h3 class="lx_wow_item"><?php echo esc_html($ben2_title); ?></h3><?php endif; ?>
             <?php if (!empty($ben2_desc)) : ?><p class="lx_wow_item"><?php echo esc_html($ben2_desc); ?></p><?php endif; ?>
           </div>
@@ -58,8 +56,7 @@ if (!$has_bens && empty($title) && empty($lead) && empty($foot)) {
 
         <?php if ($has_b3) : ?>
           <div class="ben-card reveal">
-            <span class="ben-num">03</span>
-            <?php echo lx_render_image_slot('lx_img_ben3', 'ben3', 'ẢNH 9: Mẹ thoa dầu lên vết muỗi đốt', '800×600px (4:3)', 'card-img', 'aspect-ratio:4/3'); ?>
+            <?php echo lx_render_image_slot('lx_img_ben3', 'ben3', 'ẢNH 9: Mẹ thoa dầu lên vết muỗi đốt', '800×800px (1:1)', 'card-img'); ?>
             <?php if (!empty($ben3_title)) : ?><h3 class="lx_wow_item"><?php echo esc_html($ben3_title); ?></h3><?php endif; ?>
             <?php if (!empty($ben3_desc)) : ?><p class="lx_wow_item"><?php echo esc_html($ben3_desc); ?></p><?php endif; ?>
           </div>
@@ -67,8 +64,7 @@ if (!$has_bens && empty($title) && empty($lead) && empty($foot)) {
 
         <?php if ($has_b4) : ?>
           <div class="ben-card reveal">
-            <span class="ben-num">04</span>
-            <?php echo lx_render_image_slot('lx_img_ben4', 'ben4', 'ẢNH 10: Cận cảnh giọt dầu trên da bé', '800×600px (4:3)', 'card-img', 'aspect-ratio:4/3'); ?>
+            <?php echo lx_render_image_slot('lx_img_ben4', 'ben4', 'ẢNH 10: Cận cảnh giọt dầu trên da bé', '800×800px (1:1)', 'card-img'); ?>
             <?php if (!empty($ben4_title)) : ?><h3 class="lx_wow_item"><?php echo $ben4_title; ?></h3><?php endif; ?>
             <?php if (!empty($ben4_desc)) : ?><p class="lx_wow_item"><?php echo esc_html($ben4_desc); ?></p><?php endif; ?>
           </div>
