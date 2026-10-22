@@ -188,6 +188,12 @@ function lx_sync_khi_han_sinh_khuong_content() {
         update_option('options_lx_order_cta_text', 'MUA NGAY 49K – FREESHIP');
         update_option('lx_order_cta_text', 'MUA NGAY 49K – FREESHIP');
     }
+    // Cấu hình email nhận thông báo đơn hàng
+    $cur_order_email = get_option('options_lx_order_email', '');
+    if (empty($cur_order_email)) {
+        update_option('options_lx_order_email', 'tuyenhomecare@gmail.com');
+        update_option('lx_order_email', 'tuyenhomecare@gmail.com');
+    }
 
     // Ensure usage tip doesn't mention tinh dầu tràm
     $cur_tip = get_option('options_lx_usage_tip', '');

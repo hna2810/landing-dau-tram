@@ -1069,6 +1069,14 @@ function lx_register_acf_field_group() {
                 'type' => 'tab',
             ),
             array(
+                'key' => 'field_lx_order_email',
+                'label' => __('Email nhận thông báo đơn hàng', 'lx-landing'),
+                'name' => 'lx_order_email',
+                'type' => 'email',
+                'instructions' => __('Nhập email nhận thông báo khi có đơn hàng mới từ Landing Page (mặc định: tuyenhomecare@gmail.com).', 'lx-landing'),
+                'default_value' => 'tuyenhomecare@gmail.com',
+            ),
+            array(
                 'key' => 'field_lx_order_title',
                 'label' => __('Tiêu đề khối đặt hàng', 'lx-landing'),
                 'name' => 'lx_order_title',

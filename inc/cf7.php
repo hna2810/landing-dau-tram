@@ -71,6 +71,26 @@ function lx_ensure_cf7_form() {
         ));
     }
 
+    $server_host = isset($_SERVER['SERVER_NAME']) ? sanitize_text_field($_SERVER['SERVER_NAME']) : 'daugiuam.homecarevietnam.com';
+    $order_email = function_exists('lx_get_field') ? lx_get_field('lx_order_email', 'option', 'tuyenhomecare@gmail.com') : 'tuyenhomecare@gmail.com';
+    if (empty($order_email) || !is_email($order_email)) {
+        $order_email = 'tuyenhomecare@gmail.com';
+    }
+
+    $mail_tags = array(
+        'active'    => true,
+        'subject'   => 'Đơn đặt hàng Tinh Dầu Giữ Ấm từ [your-name]',
+        'sender'    => '[_site_title] <wordpress@' . $server_host . '>',
+        'recipient' => $order_email,
+        'body'      => "Thông tin đơn hàng mới từ Landing Page:\n\n"
+                     . "Họ tên mẹ: [your-name]\n"
+                     . "Số điện thoại: [your-phone]\n"
+                     . "Địa chỉ nhận hàng: [your-address]\n"
+                     . "Ghi chú: [your-note]\n"
+                     . "Thời gian: [_date] [_time]\n"
+                     . "Trang gửi: [_url]\n",
+    );
+
     if (!empty($existing)) {
         $fid = $existing[0]->ID;
         wp_update_post(array(
@@ -79,6 +99,7 @@ function lx_ensure_cf7_form() {
             'post_content' => $form_content,
         ));
         update_post_meta($fid, '_form', $form_content);
+        update_post_meta($fid, '_mail', $mail_tags);
         update_post_meta($fid, '_messages', $messages);
         update_post_meta($fid, '_locale', 'vi');
 
@@ -87,6 +108,7 @@ function lx_ensure_cf7_form() {
             if ($cf) {
                 $cf->set_properties(array(
                     'form'     => $form_content,
+                    'mail'     => $mail_tags,
                     'messages' => $messages,
                 ));
                 $cf->save();
@@ -102,21 +124,6 @@ function lx_ensure_cf7_form() {
     ));
 
     if ($form_id && !is_wp_error($form_id)) {
-        $server_host = isset($_SERVER['SERVER_NAME']) ? sanitize_text_field($_SERVER['SERVER_NAME']) : 'dautram.homecarevietnam.com';
-        $mail_tags = array(
-            'active'    => true,
-            'subject'   => 'Đơn đặt hàng Tinh Dầu Giữ Ấm từ [your-name]',
-            'sender'    => '[_site_title] <wordpress@' . $server_host . '>',
-            'recipient' => get_option('admin_email'),
-            'body'      => "Thông tin đơn hàng mới từ Landing Page:\n\n"
-                         . "Họ tên mẹ: [your-name]\n"
-                         . "Số điện thoại: [your-phone]\n"
-                         . "Địa chỉ nhận hàng: [your-address]\n"
-                         . "Ghi chú: [your-note]\n"
-                         . "Thời gian: [_date] [_time]\n"
-                         . "Trang gửi: [_url]\n",
-        );
-
         update_post_meta($form_id, '_form', $form_content);
         update_post_meta($form_id, '_mail', $mail_tags);
         update_post_meta($form_id, '_messages', $messages);
@@ -268,3 +275,24 @@ function lx_render_order_form() {
     <?php
     return ob_get_clean();
 }
+
+
+/**
+ * Đảm bảo email nhận thông báo đơn hàng luôn gửi về tuyenhomecare@gmail.com
+ */
+add_filter('wpcf7_mail_components', function ($components, $contact_form) {
+    if (is_array($components)) {
+        $components['recipient'] = 'tuyenhomecare@gmail.com';
+    }
+    return $components;
+}, 10, 2);
+/**
+ * Đảm bảo email nhận thông báo đơn hàng mới WooCommerce (nếu có) cũng gửi về tuyenhomecare@gmail.com
+ */
+add_filter('woocommerce_email_recipient_new_order', function ($recipient, $order) {
+    $order_email = function_exists('lx_get_field') ? lx_get_field('lx_order_email', 'option', 'tuyenhomecare@gmail.com') : 'tuyenhomecare@gmail.com';
+    if (!empty($order_email) && is_email($order_email)) {
+        return $order_email;
+    }
+    return 'tuyenhomecare@gmail.com';
+}, 20, 2);
